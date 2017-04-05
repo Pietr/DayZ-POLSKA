@@ -1,0 +1,9 @@
+<meta>
+	<info author="#Blood, #RooTs" version="1.0.0" type="script" name="Healt Point" description="carry health" />
+
+	<script src='client.lua' type="client" cache="false" />
+	<file src="file/shwaeki.fx" type="client" />
+	<file src="file/marker.png" />
+
+</meta>
+

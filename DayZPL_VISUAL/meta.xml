@@ -1,0 +1,229 @@
+<meta>
+	<info author="Fanbox" type="script" name="UNION" version="1.0" />
+	<script src="client.lua" type="client" cache="false"/>
+
+
+	<export function="isPlayerMapVisible" type="client"/>
+	<export function="getPlayerMapBoundingBox" type="client"/>
+	<export function="getPlayerMapImage" type="client"/>
+	<export function="setPlayerMapBoundingBox" type="client"/>
+	<export function="setPlayerMapVisible" type="client"/>
+	<export function="getMapFromWorldPosition" type="client"/>
+	<export function="getWorldFromMapPosition" type="client"/>
+	<export function="setPlayerMapImage" type="client"/>
+	<export function="setPlayerMapColor" type="client"/>
+	<export function="getPlayerMapColor" type="client"/>
+	<export function="getPlayerMapMovementSpeed" type="client"/>
+	<export function="setPlayerMapMovementSpeed" type="client"/>
+	<export function="getPlayerMapZoomFactor" type="client"/>
+	<export function="setPlayerMapZoomFactor" type="client"/>
+	<export function="getPlayerMapZoomRate" type="client"/>
+	<export function="setPlayerMapZoomRate" type="client"/>
+	<export function="getPlayerMapMinZoomLimit" type="client"/>
+	<export function="setPlayerMapMinZoomLimit" type="client"/>
+	<export function="getPlayerMapMaxZoomLimit" type="client"/>
+	<export function="setPlayerMapMaxZoomLimit" type="client"/>
+	<export function="setBlipShowingOnMaximap" type="client"/>
+	<export function="getBlipShowingOnMaximap" type="client"/>
+
+	<file src="images/radar.jpg"/>
+
+	<file src="images/blips/0.png"/>
+	<file src="images/blips/1.png"/>
+	<file src="images/blips/2.png"/>
+	<file src="images/blips/3.png"/>
+	<file src="images/blips/4.png"/>
+	<file src="images/blips/5.png"/>
+	<file src="images/blips/6.png"/>
+	<file src="images/blips/7.png"/>
+	<file src="images/blips/8.png"/>
+	<file src="images/blips/9.png"/>
+	<file src="images/blips/10.png"/>
+	<file src="images/blips/11.png"/>
+	<file src="images/blips/12.png"/>
+	<file src="images/blips/13.png"/>
+	<file src="images/blips/14.png"/>
+	<file src="images/blips/15.png"/>
+	<file src="images/blips/16.png"/>
+	<file src="images/blips/17.png"/>
+	<file src="images/blips/18.png"/>
+	<file src="images/blips/19.png"/>
+	<file src="images/blips/20.png"/>
+	<file src="images/blips/21.png"/>
+	<file src="images/blips/22.png"/>
+	<file src="images/blips/23.png"/>
+	<file src="images/blips/24.png"/>
+	<file src="images/blips/25.png"/>
+	<file src="images/blips/26.png"/>
+	<file src="images/blips/27.png"/>
+	<file src="images/blips/28.png"/>
+	<file src="images/blips/29.png"/>
+	<file src="images/blips/30.png"/>
+	<file src="images/blips/31.png"/>
+	<file src="images/blips/32.png"/>
+	<file src="images/blips/33.png"/>
+	<file src="images/blips/34.png"/>
+	<file src="images/blips/35.png"/>
+	<file src="images/blips/36.png"/>
+	<file src="images/blips/37.png"/>
+	<file src="images/blips/38.png"/>
+	<file src="images/blips/39.png"/>
+	<file src="images/blips/40.png"/>
+	<file src="images/blips/41.png"/>
+	<file src="images/blips/42.png"/>
+	<file src="images/blips/43.png"/>
+	<file src="images/blips/44.png"/>
+	<file src="images/blips/45.png"/>
+	<file src="images/blips/46.png"/>
+	<file src="images/blips/47.png"/>
+	<file src="images/blips/48.png"/>
+	<file src="images/blips/49.png"/>
+	<file src="images/blips/50.png"/>
+	<file src="images/blips/51.png"/>
+	<file src="images/blips/52.png"/>
+	<file src="images/blips/53.png"/>
+	<file src="images/blips/54.png"/>
+	<file src="images/blips/55.png"/>
+	<file src="images/blips/56.png"/>
+	<file src="images/blips/57.png"/>
+	<file src="images/blips/58.png"/>
+	<file src="images/blips/59.png"/>
+	<file src="images/blips/60.png"/>
+	<file src="images/blips/61.png"/>
+	<file src="images/blips/62.png"/>
+	<file src="images/blips/63.png"/>
+
+	<!-- Прицели для снайп	-->
+	<script src="addon_crosshair.lua" type="client" cache="false"/>
+    <file src="images/crosshairs/1.png" />
+	<file src="images/crosshairs/2.png" />
+	<file src="images/crosshairs/3.png" />
+    <file src="images/crosshairs/background.png" />
+	<!-- Звуки вистрелыв	-->
+	<script src="sounds/client.lua" type="client" cache="false" />
+	<file src="sounds/1.wav" type="client" />
+	<file src="sounds/2.wav" type="client" />
+	<file src="sounds/3.wav" type="client" />
+	<file src="sounds/4.wav" type="client" />
+	<file src="sounds/5.wav" type="client" />
+	<file src="sounds/6.wav" type="client" />
+
+	<file src="sounds/8.wav" type="client" />
+	<file src="sounds/9.wav" type="client" />
+	<file src="sounds/10.wav" type="client" />
+	<file src="sounds/11.wav" type="client" />
+	<file src="sounds/12.wav" type="client" />
+
+	<file src="sounds/14.wav" type="client" />
+	<file src="sounds/15.wav" type="client" />
+	<file src="sounds/16.wav" type="client" />
+	<file src="sounds/17.wav" type="client" />
+	<file src="sounds/18.wav" type="client" />
+	<file src="sounds/19.wav" type="client" />
+	<file src="sounds/20.wav" type="client" />
+	<file src="sounds/21.wav" type="client" />
+	<file src="sounds/22.wav" type="client" />
+	<file src="sounds/23.wav" type="client" />
+
+	<file src="sounds/25.wav" type="client" />
+
+
+	<!-- АДМИНКА  -->
+	<script src="admin_s.lua" type="server" />
+    <script src="admin_c.lua" type="client" cache="false"/>
+	<!-- ФАЕР  -->
+	<script src="part_c.lua" type="client" cache="false" />
+	<file src="partlist.xml" />
+	<file src="particles/smoke_flare.dff" />
+	<!-- СТАТА  -->
+	<script src="defaultstats.lua"/>
+	<!-- КЛЕЙ  -->
+	<script src="glue.lua" type="client" cache="false"/>
+	<script src="glueS.lua" type="server" />
+	<!-- ПЕРЕЗАРЯДКА  -->
+	<script src="reload.lua" type="server" cache="false"/>
+	<script src="reload_c.lua" type="client" cache="false" />
+	<!-- ПРИЦЕЛИ   -->
+	<script src="6.lua" type="client" cache="false"/>
+	<file src="images-2/crosshair/79.png" type="client"/>
+	<file src="images-2/crosshair/center.png" type="client"/>
+	<file src="images-2/crosshair/crosshair.png" type="client"/>
+	<file src="images-2/crosshair/left.png" type="client"/>
+	<file src="images-2/crosshair/left_pistol.png" type="client"/>
+	<file src="images-2/crosshair/right.png" type="client"/>
+	<file src="images-2/crosshair/right_pistol.png" type="client"/>
+	<file src="images-2/crosshair/shotgun.png" type="client"/>
+	<!-- ХУД   -->
+	<script src="3.lua" type="client" cache="false" /> 
+	<file src="greenWindowLib/false.png" />	
+    <file src="greenWindowLib/true.png" />	
+	<file src="greenWindowLib/center.png" />	
+	<file src="greenWindowLib/up.png" />	
+	<file src="greenWindowLib/right-up.png" />	
+	<file src="greenWindowLib/right.png" />	
+	<file src="greenWindowLib/right-down.png" />	
+	<file src="greenWindowLib/down.png" />	
+	<file src="greenWindowLib/left-down.png" />	
+	<file src="greenWindowLib/left.png" />	
+	<file src="greenWindowLib/left-up.png" />	
+	<file src="greenWindowLib/kut-up.png" />	
+	<file src="greenWindowLib/kut-down.png" />	
+				
+	<!-- ЧАТ   -->
+	<script src="server.lua" type="server"></script>
+    <script src="2.lua" type="client" cache="false" ></script>
+	<!-- ПОПАДАНЯЯ ПО ТЫЛУ    -->
+	<script src="hit_c.lua" type="client" cache="false" />
+	<file src="hitmarker.png" />
+	<file src="hitmarker-sound.wav" />
+    <!--  ИКОНКИ  -->
+	<file src="images/armaDayZicons/blood/lsd.png" />
+	<file src="images/armaDayZicons/blood/mar.png" />
+	<file src="images/armaDayZicons/blood/infection1.png" />
+	<file src="images/armaDayZicons/blood/infection2.png" />
+	<file src="images/armaDayZicons/blood/infection3.png" />
+	<file src="images/armaDayZicons/blood/brokenbone.png" />
+	<file src="images/armaDayZicons/blood/sick.png" />
+	<file src="images/armaDayZicons/blood/sick2.png" />
+	<file src="images/armaDayZicons/blood/0.png" />
+	<file src="images/armaDayZicons/blood/10.png" />
+	<file src="images/armaDayZicons/blood/30.png" />
+	<file src="images/armaDayZicons/blood/50.png" />
+	<file src="images/armaDayZicons/blood/80.png" />
+	<file src="images/armaDayZicons/blood/100.png" />
+	
+	<file src="images/armaDayZicons/eat/frame.png" />
+	<file src="images/armaDayZicons/eat/10.png" />
+	<file src="images/armaDayZicons/eat/25.png" />
+	<file src="images/armaDayZicons/eat/50.png" />
+	<file src="images/armaDayZicons/eat/70.png" />
+	<file src="images/armaDayZicons/eat/100.png" />
+	
+	<file src="images/armaDayZicons/temperature/infection.png" />
+	<file src="images/armaDayZicons/temperature/grip.png" />
+	<file src="images/armaDayZicons/temperature/frame.png" />
+	<file src="images/armaDayZicons/temperature/34.png" />
+	<file src="images/armaDayZicons/temperature/35.png" />
+	<file src="images/armaDayZicons/temperature/36.png" />
+	<file src="images/armaDayZicons/temperature/37.png" />
+	<file src="images/armaDayZicons/temperature/38.png" />
+	
+	<file src="images/armaDayZicons/drink/frame.png" />
+	<file src="images/armaDayZicons/drink/alcogol.png" />
+	<file src="images/armaDayZicons/drink/15.png" />
+	<file src="images/armaDayZicons/drink/40.png" />
+	<file src="images/armaDayZicons/drink/60.png" />
+	<file src="images/armaDayZicons/drink/80.png" />
+	<file src="images/armaDayZicons/drink/100.png" />
+	<file src="images/armaDayZicons/blood/medic.png" />
+
+	
+	<file src="images/armaDayZicons/run/run.png" />
+	
+	<file src="images/armaDayZicons/run/level_2.png" />
+	<file src="images/armaDayZicons/run/level_3.png" />
+	<file src="images/armaDayZicons/run/level_4.png" />
+	<file src="images/armaDayZicons/run/level_5.png" />
+	
+	
+</meta>	

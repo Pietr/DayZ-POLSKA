@@ -1,0 +1,14 @@
+<meta>
+	<info author="__Vector__" name="flashbang" type="script" version="1.2.0" description="This resource replaces explosion granades with flashbang granades" />
+
+	<!-- script files -->
+	<script src="client.lua" type="client" />
+	<script src="server.lua" type="server" />
+
+	<!-- sound files -->
+	<file src="sounds/flashbang_explode.mp3" />
+	
+	<!-- exported functions -->
+	<export function="toggleFlashbangGranade" type="client" />
+	<export function="toggleFlashbangGranade" type="server" />
+</meta>

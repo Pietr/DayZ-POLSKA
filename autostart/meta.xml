@@ -1,0 +1,4 @@
+<meta>
+<info author="Pietr" discription="Autostart script fo DayZ-POLSKA" version="1.0" type="script"/>
+	<script src="server.lua" type="server" />
+</meta>

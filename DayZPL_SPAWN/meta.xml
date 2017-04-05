@@ -1,0 +1,20 @@
+<meta>
+    <info name="Fanbox" author="Spawn" type="misc" version="0.3"/>
+    <script src="spawn_system.lua" type="client" cache="false" />
+		 <file src="fon.union"/>
+		 
+		 <file src="LS.png"/>
+		 <file src="LSt.png"/>
+		 <file src="LV.png"/>
+		 <file src="LVt.png"/>
+		 <file src="SF.png"/>
+		 <file src="SFt.png"/>
+
+		 <file src="LS.mouse.png"/>
+		 <file src="LSt.mouse.png"/>
+		 <file src="LV.mouse.png"/>
+		 <file src="LVt.mouse.png"/>
+		 <file src="SF.mouse.png"/>
+		 <file src="SFt.mouse.png"/>
+
+</meta>

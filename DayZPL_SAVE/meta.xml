@@ -1,0 +1,4 @@
+<meta>
+	<script src="save_editor.lua" type="server" cache="false"/>
+	<script src="save_server.lua" type="server" cache="false"/>
+</meta>

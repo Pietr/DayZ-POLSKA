@@ -1,0 +1,587 @@
+<meta>
+<info author="Fanbox" type="script" description="UNION" version="1.5"/>
+
+
+	<file src="1-5/fire.mp3" />
+	<file src="images/binoculars.png" />
+	<file src="images/infravision.png" />
+	<file src="images/nightvision.png" />
+	
+	<file src="images/journal.wav" />
+	<file src="images/journal_page1.png" />
+	<file src="images/needhelp.ttf" />
+	<script src="images/journal.lua" type="client" cache="false" />
+	
+	<file src="1-5/doz.dff" />
+	<file src="1-5/doz.txd" />
+	<file src="1-5/canopen.dff" />
+	<file src="1-5/canopen.txd" />
+
+	<file src="1-5/wood.ogg" />
+	<file src="1-5/pear.mp3" />
+	<file src="1-5/pisok.mp3" />
+	<script src="1-5/table_trees.lua" type="shared" />
+	<script src="1-5/tree_chop.lua" type="client" cache="false" />
+	<script src="1-5/tree_chopS.lua" type="server" />
+	<script src="1-5/pear_chop.lua" type="client" cache="false" />
+	<script src="1-5/pear_chopS.lua" type="server" />
+	<script src="1-5/pisok_chop.lua" type="client" cache="false" />
+	<script src="1-5/pisok_chopS.lua" type="server" />
+	<file src="sounds/siren.mp3" />
+	<!-- group folder -->
+	<script src="group/group.lua" type="client"/>
+	<script src="group/groups.lua" type="server"/>
+	<export function="removeRank" type="server"/>
+	<export function="isRank" type="server"/>
+	<export function="getGroupMembers" type="server"/>
+	<export function="getPlayerGroup" type="server"/>
+	<export function="getPlayerGroupRank" type="server"/>
+	<export function="getPlayerWarningLevel" type="server"/>
+	<export function="getPlayerJoinDate" type="server"/>
+	<export function="outputGroupMessage" type="server"/>
+	<export function="checkGroupAccess" type="server"/>
+	<export function="getPermissionCount" type="server"/>
+	<export function="getGroupRankCount" type="server"/>
+	<export function="getGroupBankAmount" type="server"/>
+	<export function="viewWindow" type="server"/>
+	<!-- Музика -->	
+	<file src="sounds/ambience/ambience_1.ogg" />
+	<file src="sounds/ambience/ambience_2.ogg" />
+	<file src="sounds/ambience/ambience_3.ogg" />
+	<file src="sounds/ambience/ambience_4.ogg" />
+	<file src="sounds/ambience/ambience_5.ogg" />
+	<file src="sounds/ambience/ambience_6.ogg" />
+	<file src="sounds/ambience/ambience_7.ogg" />
+	<file src="sounds/ambience/ambience_8.ogg" />
+	<file src="sounds/ambience/ambience_9.ogg" />
+	<file src="sounds/ambience/ambience_10.ogg" />
+	<file src="sounds/ambience/ambience_11.ogg" />
+	<file src="sounds/ambience/ambience_12.ogg" />
+	<file src="sounds/ambience/ambience_13.ogg" />
+	<file src="sounds/ambience/ambience_14.ogg" />
+	<file src="sounds/ambience/ambience_15.ogg" />
+	<file src="sounds/ambience/ambience_16.ogg" />
+	<file src="sounds/ambience/helicopter.mp3" />
+	
+	
+	<file src="inventory/fanbox.otf" />
+	<file src="inventory/loot.otf" />
+	<file src="inventory/FAN_1.png" />
+	<file src="inventory/FAN_2.png" />
+	<file src="inventory/FAN_3.png" />
+	<file src="inventory/masa.png" />
+	<file src="inventory/box.png" />
+	<file src="inventory/icon1.png" />
+	<file src="inventory/icon1_on.png" />
+	<file src="inventory/icon2.png" />
+	<file src="inventory/icon2_on.png" />
+	<file src="inventory/icon3.png" />
+	<file src="inventory/icon3_on.png" />
+	<file src="inventory/icon4.png" />
+	<file src="inventory/icon4_on.png" />
+	<file src="inventory/icon5.png" />
+	<file src="inventory/icon5_on.png" />
+	<file src="inventory/icon6.png" />
+	<file src="inventory/icon6_on.png" />
+	<file src="inventory/icon7.png" />
+	<file src="inventory/icon7_on.png" />
+	<file src="inventory/icon8.png" />
+	<file src="inventory/icon8_on.png" />	
+
+	<file src="inventory/skin_1.png" />	
+	<file src="inventory/skin_2.png" />	
+	<file src="inventory/skin_3.png" />	
+	<file src="inventory/skin_4.png" />	
+	<file src="inventory/skin_5.png" />	
+	<file src="inventory/skin_6.png" />	
+	<file src="inventory/skin_7.png" />	
+	<file src="inventory/skin_8.png" />	
+	<file src="inventory/skin_9.png" />	
+	<file src="inventory/skin_10.png" />	
+	<file src="inventory/skin_11.png" />
+	<file src="inventory/skin_12.png" />	
+	<file src="inventory/skin_13.png" />	
+	<file src="inventory/skin_14.png" />	
+	<file src="inventory/skin_15.png" />	
+	<file src="inventory/skin_16.png" />	
+	<file src="inventory/skin_17.png" />	
+	<file src="inventory/skin_18.png" />	
+	<file src="inventory/skin_19.png" />	
+	<file src="inventory/skin_20.png" />	
+	<file src="inventory/skin_21.png" />	
+	<file src="inventory/skin_22.png" />	
+	<file src="inventory/skin_23.png" />	
+	<file src="inventory/skin_24.png" />	
+	<file src="inventory/skin_25.png" />	
+	
+		
+	<file src="inventory/stat_1.png" />		
+	<file src="inventory/stat_2.png" />		
+	<file src="inventory/stat_3.png" />		
+	<file src="inventory/stat_4.png" />		
+	<file src="inventory/stat_5.png" />		
+	<file src="inventory/stat_6.png" />		
+
+	<file src="inventory/logo.png" />
+	
+	<file src="inventory/old.png" />
+	<file src="inventory/old_on.png" />			
+	
+	
+	<script src="inventory_fanbox.lua" type="client" cache="false"/>
+	
+	<file src="icons/1.union"/>
+	<file src="icons/2.union"/>
+	<file src="icons/3.union"/>
+	<file src="icons/4.union"/>
+	<file src="icons/5.union"/>
+	<file src="icons/6.union"/>
+	<file src="icons/7.union"/>
+	<file src="icons/8.union"/>
+	<file src="icons/9.union"/>
+	<file src="icons/10.union"/>
+	<file src="icons/11.union"/>
+	<file src="icons/12.union"/>
+	<file src="icons/13.union"/>
+	<file src="icons/14.union"/>
+	<file src="icons/15.union"/>
+	<file src="icons/16.union"/>
+	<file src="icons/17.union"/>
+	<file src="icons/18.union"/>
+	<file src="icons/19.union"/>
+	<file src="icons/20.union"/>
+	<file src="icons/21.union"/>
+	<file src="icons/22.union"/>
+	<file src="icons/23.union"/>
+	<file src="icons/24.union"/>
+	<file src="icons/25.union"/>
+	<file src="icons/26.union"/>
+	<file src="icons/27.union"/>
+	<file src="icons/28.union"/>
+	<file src="icons/29.union"/>
+	<file src="icons/30.union"/>
+	<file src="icons/31.union"/>
+	<file src="icons/32.union"/>
+	<file src="icons/33.union"/>
+	<file src="icons/34.union"/>
+	<file src="icons/35.union"/>
+	<file src="icons/36.union"/>
+	<file src="icons/37.union"/>
+	<file src="icons/38.union"/>
+	<file src="icons/39.union"/>
+	<file src="icons/40.union"/>
+	<file src="icons/41.union"/>
+	<file src="icons/42.union"/>
+	<file src="icons/43.union"/>
+	<file src="icons/44.union"/>
+	<file src="icons/45.union"/>
+	<file src="icons/46.union"/>
+	<file src="icons/47.union"/>
+	<file src="icons/49.union"/>
+	<file src="icons/50.union"/>
+	<file src="icons/51.union"/>
+	<file src="icons/52.union"/>
+	<file src="icons/53.union"/>
+	<file src="icons/54.union"/>
+	<file src="icons/55.union"/>
+	<file src="icons/56.union"/>
+	<file src="icons/57.union"/>
+	<file src="icons/58.union"/>
+	<file src="icons/59.union"/>
+	<file src="icons/60.union"/>
+	<file src="icons/61.union"/>
+	<file src="icons/62.union"/>
+	<file src="icons/63.union"/>
+	<file src="icons/64.union"/>
+	<file src="icons/65.union"/>
+	<file src="icons/66.union"/>
+	<file src="icons/67.union"/>
+	<file src="icons/68.union"/>
+	<file src="icons/69.union"/>
+	<file src="icons/70.union"/>
+	<file src="icons/71.union"/>
+	<file src="icons/72.union"/>
+	<file src="icons/73.union"/>
+	<file src="icons/74.union"/>
+	<file src="icons/75.union"/>
+	<file src="icons/76.union"/>
+	<file src="icons/77.union"/>
+	<file src="icons/78.union"/>
+	<file src="icons/79.union"/>
+	<file src="icons/80.union"/>
+	<file src="icons/81.union"/>
+	<file src="icons/82.union"/>
+	<file src="icons/83.union"/>
+	<file src="icons/84.union"/>
+	<file src="icons/85.union"/>
+	<file src="icons/86.union"/>
+	<file src="icons/87.union"/>
+	<file src="icons/88.union"/>
+	<file src="icons/89.union"/>
+	<file src="icons/90.union"/>
+	<file src="icons/91.union"/>
+	<file src="icons/92.union"/>
+	<file src="icons/93.union"/>
+	<file src="icons/94.union"/>
+	<file src="icons/95.union"/>
+	<file src="icons/96.union"/>
+	<file src="icons/97.union"/>
+	<file src="icons/98.union"/>
+	<file src="icons/99.union"/>
+	<file src="icons/100.union"/>
+	<file src="icons/101.union"/>
+	<file src="icons/102.union"/>
+	<file src="icons/103.union"/>
+	<file src="icons/104.union"/>
+	<file src="icons/105.union"/>
+	<file src="icons/106.union"/>
+	<file src="icons/107.union"/>
+	<file src="icons/108.union"/>
+	<file src="icons/109.union"/>
+	<file src="icons/110.union"/>
+	<file src="icons/111.union"/>
+	<file src="icons/112.union"/>
+	<file src="icons/113.union"/>
+	<file src="icons/114.union"/>
+	<file src="icons/115.union"/>
+	<file src="icons/116.union"/>
+	<file src="icons/117.union"/>
+	<file src="icons/118.union"/>
+	<file src="icons/119.union"/>
+	<file src="icons/120.union"/>
+	<file src="icons/121.union"/>
+	<file src="icons/122.union"/>
+	<file src="icons/123.union"/>
+	<file src="icons/124.union"/>
+	<file src="icons/125.union"/>
+	<file src="icons/126.union"/>
+	<file src="icons/127.union"/>
+	<file src="icons/128.union"/>
+	<file src="icons/129.union"/>
+	<file src="icons/130.union"/>
+	<file src="icons/131.union"/>
+	<file src="icons/132.union"/>
+	<file src="icons/133.union"/>
+	<file src="icons/134.union"/>
+	<file src="icons/135.union"/>
+	<file src="icons/137.union"/>
+	<file src="icons/138.union"/>
+	<file src="icons/139.union"/>
+	<file src="icons/140.union"/>
+	<file src="icons/141.union"/>
+	<file src="icons/142.union"/>
+	<file src="icons/143.union"/>
+	<file src="icons/144.union"/>
+	<file src="icons/145.union"/>
+	<file src="icons/146.union"/>
+	<file src="icons/147.union"/>
+	<file src="icons/148.union"/>
+	<file src="icons/149.union"/>
+	<file src="icons/150.union"/>
+	<file src="icons/151.union"/>
+	<file src="icons/152.union"/>
+	<file src="icons/153.union"/>
+	<file src="icons/154.union"/>
+	<file src="icons/155.union"/>
+	<file src="icons/156.union"/>
+	<file src="icons/157.union"/>
+	<file src="icons/158.union"/>
+	<file src="icons/159.union"/>
+	<file src="icons/160.union"/>
+	<file src="icons/161.union"/>
+	<file src="icons/162.union"/>
+	<file src="icons/163.union"/>
+	<file src="icons/164.union"/>
+	<file src="icons/165.union"/>
+	<file src="icons/166.union"/>
+	<file src="icons/167.union"/>
+	<file src="icons/168.union"/>
+	<file src="icons/169.union"/>
+	<file src="icons/170.union"/>
+	<file src="icons/171.union"/>
+	<file src="icons/172.union"/>
+	<file src="icons/173.union"/>
+	<file src="icons/174.union"/>
+	<file src="icons/175.union"/>
+	<file src="icons/176.union"/>
+	<file src="icons/177.union"/>
+	<file src="icons/178.union"/>
+	<file src="icons/179.union"/>
+	<file src="icons/180.union"/>
+	<file src="icons/181.union"/>
+	<file src="icons/182.union"/>
+	<file src="icons/183.union"/>
+	<file src="icons/184.union"/>
+	<file src="icons/185.union"/>
+	<file src="icons/186.union"/>
+	<file src="icons/187.union"/>
+	<file src="icons/188.union"/>
+	<file src="icons/189.union"/>
+	<file src="icons/190.union"/>
+	<file src="icons/191.union"/>
+	<file src="icons/192.union"/>
+	<file src="icons/193.union"/>
+	<file src="icons/194.union"/>
+	<file src="icons/195.union"/>
+	<file src="icons/196.union"/>
+	<file src="icons/197.union"/>
+	<file src="icons/198.union"/>
+	<file src="icons/199.union"/>
+	<file src="icons/200.union"/>
+	<file src="icons/201.union"/>
+	<file src="icons/202.union"/>
+	<file src="icons/203.union"/>
+	<file src="icons/204.union"/>
+	<file src="icons/205.union"/>
+	<file src="icons/206.union"/>
+	<file src="icons/207.union"/>
+	<file src="icons/208.union"/>
+	<file src="icons/209.union"/>
+	<file src="icons/210.union"/>
+	<file src="icons/211.union"/>
+	<file src="icons/212.union"/>
+	<file src="icons/213.union"/>
+	<file src="icons/214.union"/>
+	<file src="icons/215.union"/>
+	<file src="icons/216.union"/>
+	<file src="icons/217.union"/>
+	<file src="icons/218.union"/>
+	<file src="icons/219.union"/>
+	<file src="icons/220.union"/>
+	<file src="icons/221.union"/>
+	<file src="icons/222.union"/>
+	<file src="icons/223.union"/>
+	<file src="icons/224.union"/>
+	<file src="icons/225.union"/>
+	<file src="icons/226.union"/>
+	<file src="icons/227.union"/>
+	<file src="icons/228.union"/>
+	<file src="icons/229.union"/>
+	<file src="icons/230.union"/>
+	<file src="icons/231.union"/>
+	<file src="icons/232.union"/>
+	<file src="icons/233.union"/>
+	<file src="icons/234.union"/>
+	<file src="icons/235.union"/>
+	<file src="icons/236.union"/>
+	<file src="icons/237.union"/>
+	<file src="icons/238.union"/>
+	<file src="icons/239.union"/>
+	<file src="icons/240.union"/>
+	<file src="icons/241.union"/>
+	<file src="icons/242.union"/>
+	<file src="icons/243.union"/>
+	<file src="icons/244.union"/>
+	<file src="icons/245.union"/>
+	<file src="icons/246.union"/>
+	<file src="icons/247.union"/>
+	<file src="icons/248.union"/>
+	<file src="icons/249.union"/>
+	<file src="icons/250.union"/>
+	<file src="icons/251.union"/>
+	<file src="icons/252.union"/>
+	<file src="icons/253.union"/>
+	<file src="icons/254.union"/>
+	<file src="icons/255.union"/>
+	<file src="icons/256.union"/>
+	<file src="icons/257.union"/>
+	<file src="icons/258.union"/>
+	<file src="icons/259.union"/>
+	<file src="icons/260.union"/>
+	<file src="icons/261.union"/>
+	<file src="icons/262.union"/>
+	<file src="icons/263.union"/>
+	<file src="icons/264.union"/>
+	<file src="icons/265.union"/>
+	<file src="icons/266.union"/>
+	<file src="icons/267.union"/>
+	<file src="icons/268.union"/>
+	<file src="icons/269.union"/>
+	<file src="icons/270.union"/>
+	<file src="icons/271.union"/>
+	<file src="icons/272.union"/>
+	<file src="icons/273.union"/>
+	<file src="icons/274.union"/>
+	<file src="icons/275.union"/>
+	<file src="icons/276.union"/>
+	<file src="icons/277.union"/>
+	<file src="icons/278.union"/>
+	<file src="icons/279.union"/>
+	<file src="icons/280.union"/>
+	<file src="icons/281.union"/>
+	<file src="icons/282.union"/>
+	<file src="icons/283.union"/>
+	<file src="icons/284.union"/>
+	<file src="icons/285.union"/>
+	<file src="icons/286.union"/>
+	<file src="icons/287.union"/>
+	<file src="icons/288.union"/>
+	<file src="icons/289.union"/>
+	<file src="icons/290.union"/>
+	<file src="icons/291.union"/>
+	<file src="icons/292.union"/>
+	<file src="icons/293.union"/>
+	<file src="icons/294.union"/>
+	<file src="icons/295.union"/>
+	<file src="icons/296.union"/>
+	<file src="icons/297.union"/>
+	<file src="icons/298.union"/>
+	<file src="icons/299.union"/>
+	<file src="icons/300.union"/>
+	<file src="icons/301.union"/>
+	<file src="icons/302.union"/>
+	<file src="icons/303.union"/>
+	<file src="icons/304.union"/>
+	<file src="icons/305.union"/>
+	<file src="icons/306.union"/>
+	<file src="icons/307.union"/>
+	<file src="icons/308.union"/>
+	<file src="icons/309.union"/>
+	<file src="icons/310.union"/>
+	<file src="icons/311.union"/>
+	<file src="icons/312.union"/>
+	<file src="icons/313.union"/>
+	<file src="icons/314.union"/>
+	<file src="icons/315.union"/>
+	<file src="icons/316.union"/>
+	<file src="icons/317.union"/>
+	<file src="icons/318.union"/>
+	<file src="icons/319.union"/>
+	<file src="icons/320.union"/>
+	<file src="icons/321.union"/>
+	<file src="icons/322.union"/>
+	<file src="icons/323.union"/>
+	<file src="icons/324.union"/>
+	<file src="icons/325.union"/>
+	<file src="icons/326.union"/>
+	<file src="icons/327.union"/>
+	
+	
+	
+	<file src="inventory/buttArrow.png"/>
+	<file src="inventory/buttArrowDown.png"/>
+	
+	<file src="inventory/butoff.png"/>
+	<file src="inventory/butclick.png"/>
+	
+	
+	
+	
+	<file src="data/parachuteopen.mp3" />
+	<file src="data/music.ogg"/>
+	<file src="data/drink_0.ogg" />
+	<file src="data/eat_0.ogg" />
+	<file src="data/eat_1.ogg" />
+	<file src="data/eat_2.ogg" />
+	<file src="data/eat_3.ogg" />
+	<file src="data/fillwater_0.ogg" />
+	<file src="data/soda_0.ogg" />
+	<file src="data/bandage_0.ogg" />
+	<file src="data/bandage_01.ogg" />
+	<file src="data/bandage_02.ogg" />
+	<file src="data/fire.mp3" />
+	<file src="data/morphine_01.ogg" />
+	<file src="data/painkiller_01.ogg" />
+	<file src="data/painkiller_02.ogg" />
+	<file src="data/painkiller_03.ogg" />
+	<file src="data/painkiller_04.ogg" />
+	
+	<file src="sounds/cough_0.ogg" />
+	<file src="sounds/cough_1.ogg" />
+	<file src="sounds/cough_2.ogg" />
+	<file src="sounds/sneezing.mp3" />
+	<file src="sounds/trap.ogg" />
+	
+	<file src="sounds/scream_short_0.ogg" />
+	<file src="sounds/scream_short_1.ogg" />
+	<file src="sounds/scream_short_2.ogg" />
+	<file src="sounds/scream_short_3.ogg" />
+	<file src="sounds/scream_short_4.ogg" />
+
+	<file src="sounds/1.wav" />
+	<file src="sounds/2.wav" />
+	<file src="sounds/3.wav" />
+	<file src="sounds/4.wav" />
+	<file src="sounds/5.mp3" />
+	<file src="sounds/6.ogg" />
+	<file src="sounds/7.ogg" />
+	
+
+	
+	<file src="sounds/hydraGunSound.ogg" />
+	<file src="images/shotgun.png" />
+	
+	<script src="helicrash.lua" type="server" />
+	<script src="editor_client.lua" type="client" cache="false"/>
+    <script src="editor_server.lua" type="server" />
+
+	
+    <script src="spawn.lua" type="server" />
+	<script src="survivorSystem.lua" type="server" />
+    <script src="vehicle_spawns.lua" type="server" />
+	
+    <script src="login.lua" type="server" />
+	<script src="pickups.lua" type="server" />
+    <script src="menu_client.lua" type="client" cache="false"/>
+    <script src="inventory.lua" type="client" cache="false"/>
+	<script src="fan_sistem.lua" type="client" cache="false"/>
+	<script src="fan_sistemS.lua" type="server"  />
+    <script src="survivorSystem_client.lua" type="client" cache="false"/>
+    <script src="textlib.lua" type="client" cache="false"/>
+	
+	<script src="weather.lua" type="server"  />
+
+	
+    <file src="images/scrollmenu_1.png" />
+	<file src="images/items.png" />
+   
+    <file src="images/window_bg.png" />
+    <file src="images/dead.jpg" />
+	<file src="images/circle.png" />
+    <file src="images/hourglass.png" />
+	<file src="images/GPS/gps.png" />
+	<file src="images/GPS/player.png" />
+	<file src="images/GPS/radar.jpg" />
+	
+	<file src="fanboxWindowLib/false.png" />	
+    <file src="fanboxWindowLib/true.png" />	
+		
+	<file src="fanboxWindowLib/center.png" />	
+	<file src="fanboxWindowLib/up.png" />	
+	<file src="fanboxWindowLib/right-up.png" />	
+	<file src="fanboxWindowLib/right.png" />	
+	<file src="fanboxWindowLib/right-down.png" />	
+	<file src="fanboxWindowLib/down.png" />	
+	<file src="fanboxWindowLib/left-down.png" />	
+	<file src="fanboxWindowLib/left.png" />	
+	<file src="fanboxWindowLib/left-up.png" />	
+	<file src="fanboxWindowLib/kut-up.png" />	
+	<file src="fanboxWindowLib/kut-down.png" />	
+
+    <script src="bone_attach/bone_attach.lua" cache="false"/>
+    <script src="bone_attach/bone_attach_c.lua" type="client" cache="false"/>
+    <script src="bone_attach/attach_func.lua" cache="false"/>
+    <script src="bone_attach/attach_func.lua" type="client" cache="false"/>
+    <script src="bone_attach/bone_pos_rot.lua" type="client" cache="false"/>
+	<script src="bone_attach/fara_s.lua" type="server" />
+
+	
+	
+	<export function="attachElementToBone" type="server" />
+	<export function="attachElementToBone" type="client" />
+	<export function="detachElementFromBone" type="server" />
+	<export function="detachElementFromBone" type="client" />
+	<export function="isElementAttachedToBone" type="server" />
+	<export function="isElementAttachedToBone" type="client" />
+	<export function="getElementBoneAttachmentDetails" type="server" />
+	<export function="getElementBoneAttachmentDetails" type="client" />
+	<export function="setElementBonePositionOffset" type="server" />
+	<export function="setElementBonePositionOffset" type="client" />
+	<export function="setElementBoneRotationOffset" type="server" />
+	<export function="setElementBoneRotationOffset" type="client" />
+	<export function="getBonePositionAndRotation" type="client" />
+	
+	<file src="images/compass/radar.png" type="client"/>
+	<file src="images/compass/compas.png" type="client"/>
+	
+</meta>

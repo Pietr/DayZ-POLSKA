@@ -1,0 +1,7 @@
+<meta>
+    <info name="Admin Panel" author="William Blake" version="0.1" type="script" />
+	<script src="Config_C.lua" type="shared" cache="false" />
+	<script src="Config_S.lua" type="shared" cache="false" />	
+    <script src="System_C.lua" type="client" />
+    <script src="System_S.lua" type="server" />
+</meta>

@@ -1,0 +1,7 @@
+<meta>
+    <info type="script" name="WH" author="Fanbox" version="0.69" description="Dayz Teammates wallhack"></info>
+
+    <script src="teammates.lua" type="client" cache="false" />
+	<script src="vision_c.lua" type="client" cache="false" />
+
+</meta>

@@ -1,0 +1,24 @@
+<meta>
+<info author="KING-ABADY" name="add Blip" version="2.0" type="script" />
+<script src="1.lua" type="client" />
+	<file src="images/Blipid5.jpg"/>
+	<file src="images/Blipid6.jpg"/>
+		<file src="images/Blipid7.jpg"/>
+		<file src="images/Blipid11.jpg"/>
+		<file src="images/Blipid12.jpg"/>
+		<file src="images/Blipid13.jpg"/>
+		<file src="images/Blipid15.jpg"/>
+		<file src="images/Blipid17.jpg"/>
+		<file src="images/Blipid19.jpg"/>
+		<file src="images/Blipid20.jpg"/>
+		<file src="images/Blipid21.jpg"/>
+		<file src="images/Blipid23.jpg"/>
+		<file src="images/Blipid27.jpg"/>
+		<file src="images/Blipid30.jpg"/>
+		<file src="images/Blipid58.jpg"/>
+		<file src="images/Blipid59.jpg"/>
+		<file src="images/Blipid60.jpg"/>
+		<file src="images/Blipid61.jpg"/>
+				<file src="images/Blipid62.jpg"/>
+<script src="2.lua" type="server" />
+</meta>

@@ -1,0 +1,22 @@
+﻿--------------------------------------- Komendy ---------------------------------------
+/unbug - wyciąga cię z tekstur
+/kill - samobójstwo
+
+--------------------------------------- Bindy -----------------------------------------
+F1 - Pomoc
+F2 - Panel grup
+F3 - Ukrywanie ikon/chatu
+F5 - Debug monitor
+F11 - Mapa
+
+M - Chat globalny
+O - Dziennik
+K - Tryb pierwszej osoby
+J - Inwentarz
+I - Gogle IR
+N - Gogle NV
+L - Zmiana świateł
+H - Wchodzenie na działko na pojeździe
+X - Przyklejanie się do niektórych pojazdów (glue)
+[ - Radio internetowe
+, - Czołganie/zjazd po linie z helki

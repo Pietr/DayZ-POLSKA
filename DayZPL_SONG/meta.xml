@@ -1,0 +1,72 @@
+<meta>
+	<info author="" version="1.1" name="WeaponSounds" description="" type="script" />
+	<script src="ambi_c.lua" cache="false" type="client" />
+
+	<file src="day/1.wav" />
+	<file src="day/2.wav" />
+	<file src="day/3.wav" />
+	<file src="day/4.wav" />
+	<file src="day/5.wav" />
+	<file src="day/6.wav" />
+	<file src="day/7.wav" />
+	<file src="day/8.wav" />
+	<file src="day/9.wav" />
+	<file src="day/10.wav" />
+	<file src="day/11.wav" />
+	<file src="day/12.wav" />
+	<file src="day/13.wav" />
+	<file src="day/14.wav" />
+	<file src="day/15.wav" />
+	<file src="day/16.wav" />
+	<file src="day/17.wav" />
+	<file src="day/18.wav" />
+	<file src="day/19.wav" />
+	<file src="day/20.wav" />
+	<file src="day/21.wav" />
+	<file src="day/22.wav" />
+	<file src="day/23.wav" />
+	<file src="day/24.wav" />
+	<file src="day/25.wav" />
+	<file src="day/26.wav" />
+	<file src="day/27.wav" />
+	<file src="day/28.wav" />
+	<file src="day/29.wav" />
+	<file src="day/30.wav" />
+	<file src="day/31.wav" />
+	<file src="day/32.wav" />
+	<file src="day/33.wav" />
+	<file src="day/34.wav" />
+	<file src="day/35.wav" />
+	<file src="day/36.wav" />
+	<file src="day/37.wav" />
+	<file src="day/38.wav" />
+	<file src="day/39.wav" />
+	<file src="day/40.wav" />
+	<file src="day/41.wav" />
+	<file src="day/42.wav" />
+	<file src="day/43.wav" />
+	<file src="day/44.wav" />
+	<file src="day/45.wav" />
+	<file src="day/46.wav" />
+	<file src="day/47.wav" />
+	<file src="day/48.wav" />
+	<file src="day/49.wav" />
+	
+	<file src="night/1.wav" />
+	<file src="night/2.wav" />
+	<file src="night/3.wav" />
+	<file src="night/4.wav" />
+	<file src="night/5.wav" />
+	<file src="night/6.wav" />
+	<file src="night/7.wav" />
+	<file src="night/8.wav" />
+	<file src="night/9.wav" />
+	<file src="night/10.wav" />
+	<file src="night/11.wav" />
+	<file src="night/12.wav" />
+
+
+	<file src="explosion1.mp3" />
+	<file src="explosion2.mp3" />
+	<file src="explosion3.mp3" />
+</meta>

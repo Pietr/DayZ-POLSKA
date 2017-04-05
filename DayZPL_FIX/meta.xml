@@ -1,0 +1,13 @@
+<meta>
+	<info author='xXMADEXx' name='Server Updates' type='script' version='1.4' />
+	<script src='client.lua' type='client' />
+	<script src='settings.lua' type='server' />
+	<script src='server.lua' type='server' />
+	<settings>
+		<setting name="*_AutoUpdateCheck" value='true'  accept='true,false' desc='this resources access to function.callrRemote!!' />
+	</settings>
+	
+	<export function='isPlayerInACL' type='server' />
+	<export function='removeUpdate' type='server' />
+	<export function='addUpdate' type='server' />
+</meta>

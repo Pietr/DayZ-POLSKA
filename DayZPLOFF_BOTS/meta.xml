@@ -1,0 +1,5 @@
+<meta>
+	<info author="Fanbox" version="0.0.1" type="misc" name="Bots NPC" description="My bots" />
+	<script src="server.lua" type="server" />
+	<script src="client.lua" type="client" />
+</meta>

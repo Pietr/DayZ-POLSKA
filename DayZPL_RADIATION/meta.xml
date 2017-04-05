@@ -1,0 +1,5 @@
+<meta>
+    <info author="SnackDayZ" description="DayZ radiation" version="1" type="gamemode" />
+	<script src='client.lua' type='client' cache="false"/>
+	<file src="radsound.mp3" />
+</meta>

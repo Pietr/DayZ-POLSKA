@@ -1,0 +1,7 @@
+<meta>
+	<info author="SnackDayZ" type="script" name="GIP (Give-an-Item Panel)" version="1.0.0"/>
+	<script src="client.lua" type="client"  cache="false" />
+	<script src="server.lua" type="server" />
+	
+	
+</meta>

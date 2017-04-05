@@ -1,0 +1,10 @@
+<meta>
+	<info author="CrazyK" version="1.0.0" name="Informations-spot" type="script" />
+	    <!-- scripts -->
+	    <script src="client/informations-c.lua" type="client" />
+		<!-- files -->
+		<file src="models/info.txd"/>
+		<file src="models/info.dff"/>
+</meta>
+
+    
