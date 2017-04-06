@@ -2878,6 +2878,7 @@ addCommandHandler("items",function()
 		end
 	end	
 end)
+
 addCommandHandler("itemsd",function()
 	local serial = getPlayerSerial(getLocalPlayer())
 	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "1FFF705136AF698B22888A6BF243C971" then

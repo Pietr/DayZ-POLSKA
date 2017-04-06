@@ -491,6 +491,9 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 		for _, add in ipairs(clothHead) do
 		if getElementData ( getLocalPlayer(), "clothHead" ) == add[1] then 
 		damage = damage*add[2]
+		else
+		headshot = true
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-getElementData(getLocalPlayer(),"blood"))
 		end
 		end
 		end
@@ -501,10 +504,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 			setElementData(getLocalPlayer(),"brokenbone",true)
 		end
 		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-math.random(damage*0.75,damage*1.25))
-		
-		
-		
-		
+
 		if not getElementData(getLocalPlayer(),"bandit") then
 			setElementData(attacker,"humanity",getElementData(attacker,"humanity")-math.random(40,200))
 			if getElementData(attacker,"humanity") < 0 then
@@ -595,8 +595,8 @@ function pedGetDamageDayZ ( attacker, weapon, bodypart, loss )
 		elseif weapon and weapon > 1 and attacker and getElementType(attacker) == "player" then
 			damage = getWeaponDamage (weapon)
 			if bodypart == 9 then
-				damage = damage*1.5
 				headshot = true
+				setElementData(source,"blood",getElementData(source,"blood")-getElementData(source,"blood"))
 			end
 			setElementData(source,"blood",getElementData(source,"blood")-math.random(damage*0.95,damage*1.25))
 			if getElementData(source,"blood") <= 0 then
