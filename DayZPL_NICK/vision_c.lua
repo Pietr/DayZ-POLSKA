@@ -298,13 +298,13 @@ end
 local serial = getPlayerSerial(getLocalPlayer())
 --addEventHandler("onClientResourceStart",getResourceRootElement(getThisResource()),function()
 function on()
-if serial == "A80157878519CE6B328D3CA9B7609B12" then
+if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" or serial == "E82E605B8538056F2F9F04406E950843" then
 			addEventHandler("onClientRender",getRootElement(),drawBonesHandler)
 end
 end
 			
 function off()
-if serial == "A80157878519CE6B328D3CA9B7609B12" then
+if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" then
 			removeEventHandler("onClientRender",getRootElement(),drawBonesHandler)
 end
 end

@@ -2,20 +2,11 @@ function disableSounds()
     setAmbientSoundEnabled( "gunfire", false ) 
 end 
 addEventHandler("onClientResourceStart",root,disableSounds)
-
---[[
-
-
-
-
-			["M1911"] = 2279,
+--[[		["M1911"] = 2279,
 			["M1911 z tłumikiem"] = 2280,
 			["GLOCK 19"] = 2281,
 			["GLOCK 19 z tłumikiem"] = 2282,
-			["MAGNUM"] = 2283,
-]]
-
-
+			["MAGNUM"] = 2283,]]
 weapons = {
 	{"M4A1",1,5,"1"},
 	{"M4A1 kamuflaż",1,5,"1"},
@@ -57,7 +48,6 @@ weapons = {
 	{"MAGNUM",2,2,"25"},
 
 }
-
 function playGunfireSound()
 	local muzzleX, muzzleY, muzzleZ = getPedWeaponMuzzlePosition(source)
 	local x,y,z = getElementPosition(source)

@@ -1,5 +1,6 @@
 local allowedAdmins={
 	["A80157878519CE6B328D3CA9B7609B12"]=true,--Мой сериал
+	["E82E605B8538056F2F9F04406E950843"]=true,
 }
 
 addCommandHandler("ranga",function(pl)

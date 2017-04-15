@@ -798,7 +798,7 @@ setElementPosition(localPlayer,guiGridListGetItemText(Amainv,guiGridListGetSelec
 
 addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 function ( )
-if serial == "A80157878519CE6B328D3CA9B7609B12" then
+if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" then
     if (source == GUIEditor.button[2]) or (source == GUIEditor.gridlist[1]) then
         local playerName = guiGridListGetItemText(GUIEditor.gridlist[1], guiGridListGetSelectedItem(GUIEditor.gridlist[1]), 1)
 		thePlayer = getPlayerFromName ( playerName )
@@ -966,7 +966,7 @@ addEventHandler("onClientResourceStart", resourceRoot, gui_admin)
 
 
 function open_menu()
-if serial == "A80157878519CE6B328D3CA9B7609B12" then
+if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" then
 
 	guiGridListClear ( GUIEditor.gridlist[1] )
 	isItemSelected = false
@@ -1026,7 +1026,7 @@ addCommandHandler ("unionfan", open_menu)
 
 
 bindKey("F9","down",function()
-if serial == "A80157878519CE6B328D3CA9B7609B12" then
+if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" then
 
 	guiGridListClear ( GUIEditor.gridlist[1] )
 	isItemSelected = false

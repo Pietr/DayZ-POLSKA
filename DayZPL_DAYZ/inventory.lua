@@ -2841,7 +2841,7 @@ end
 --Тест команди для проверки функционала
 addCommandHandler("items",function()
 	local serial = getPlayerSerial(getLocalPlayer())
-	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "1FFF705136AF698B22888A6BF243C971" then
+	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" or serial == "1FFF705136AF698B22888A6BF243C971" then
 		for id, item in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
 			setElementData(getLocalPlayer(),item[1],1)
 		end
@@ -2881,7 +2881,7 @@ end)
 
 addCommandHandler("itemsd",function()
 	local serial = getPlayerSerial(getLocalPlayer())
-	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "1FFF705136AF698B22888A6BF243C971" then
+	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" or serial == "1FFF705136AF698B22888A6BF243C971" then
 		for id, item in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
 			setElementData(getLocalPlayer(),item[1],0)
 		end

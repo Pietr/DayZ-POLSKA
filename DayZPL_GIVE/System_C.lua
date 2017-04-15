@@ -341,7 +341,7 @@ end, 1000,0)
 
 bindKey(SystemBind,"down",function()
 	local serial = getPlayerSerial(getLocalPlayer())
-	if serial == "A80157878519CE6B328D3CA9B7609B12" then
+	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843" then
 	if isVisible == false then
 		guiSetVisible(mainWnd, true)
 		showCursor(true)
@@ -356,7 +356,7 @@ end)
 
 addCommandHandler("give", function()
 	local serial = getPlayerSerial(getLocalPlayer())
-	if serial == "A80157878519CE6B328D3CA9B7609B12"  then
+	if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F9F04406E950843"  then
 	if isVisible == false then
 		guiSetVisible(mainWnd, true)
 		showCursor(true)
