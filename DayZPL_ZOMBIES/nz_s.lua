@@ -204,7 +204,11 @@ function wentZombieToWalk (zomb)
 					if not getElementData ( zomb, "target" ) and not getElementData ( zomb, 'rotating' ) then
 						local rdmangle = math.random( 1, 359 )
 						setPedRotation( zomb, rdmangle )
-						setPedAnimation ( zomb, "PED", "WALK_fatold", -1, true, true, true)
+						if getElementData(zomb, "spawn_ztype") == 10 then
+							setPedAnimation ( zomb, "PED", "walk_armed", -1, true, true, true)
+						else
+							setPedAnimation ( zomb, "PED", "WALK_fatold", -1, true, true, true)
+						end
 						setTimer ( wentZombieToWalk, 10000, 1, zomb )
 						if getElementData ( zomb, "boss_blood" ) then
 						setElementAlpha ( zomb, 5 )
@@ -233,7 +237,11 @@ function wentZombieToWalk (zomb)
 					if not getElementData ( zomb, "target" ) and not getElementData ( zomb, 'rotating' ) then
 						local rdmangle = math.random( 1, 359 )
 						setPedRotation( zomb, rdmangle )
-						setPedAnimation ( zomb, "PED", "WALK_fatold", -1, true, true, true)
+						if getElementData(zomb, "spawn_ztype") == 10 then
+							setPedAnimation ( zomb, "PED", "walk_armed", -1, true, true, true)
+						else
+							setPedAnimation ( zomb, "PED", "WALK_fatold", -1, true, true, true)
+						end
 						setTimer ( wentZombieToWalk, 10000, 1, zomb )
 						if getElementData ( zomb, "boss_blood" ) then
 						setElementAlpha ( zomb, 5 )
