@@ -1,0 +1,11 @@
+<meta>
+	<info author="Pietr" version="1.0" name="WeaponSounds" description="Just some custom Sounds for Weapons." type="script" />
+	<script src="sounds.lua" type="client" />
+	<script src="gashrower.lua" type="client" />
+	<script src="grenadethrower.lua" type="client" />
+	<file src="sounds/explosion/explosion1.wav" />
+	<file src="sounds/explosion/explosion2.wav" />
+	<file src="sounds/explosion/explosion3.wav" />
+	<file src="sounds/itm_grenade_up.wav" />
+	<file src="sounds/wpn_grenadelauncher_fire_3d_01.wav" />
+</meta>
