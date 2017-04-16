@@ -55,38 +55,38 @@ end
 --LV
 addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 function ( )       
-if (source == LV) then
-local player = getLocalPlayer()         
-local spawnPositions = {
+	if (source == LV) then
+	local player = getLocalPlayer()         
+	local spawnPositions = {
 
- {1013.4131, 2836.7227, 25.982132},
- {941.17676, 1228.7578, 8.3374691},
- {2529.4121, 647.05859, 10.820313},
- {2954.248, 1568.6279, 38.502312},
- {2915.0332, 2745.0986, 20.254463},
- {2771.2422, 2934.6406, 23.995731},
- {2176.4707, 2673.2031, 10.820313},
- {1196.0781, 699.34668, 10.484993},
- {1908.4971, 594.77148, 10.820313},
- {2346.4053, 2901.9609, 17.685976},
- {1856.209, 2921.5684, 25.572714},
- {1169.9346, 2947.7129, 32.806831},
- 
-}
+	 {1013.4131, 2836.7227, 25.982132},
+	 {941.17676, 1228.7578, 8.3374691},
+	 {2529.4121, 647.05859, 10.820313},
+	 {2954.248, 1568.6279, 38.502312},
+	 {2915.0332, 2745.0986, 20.254463},
+	 {2771.2422, 2934.6406, 23.995731},
+	 {2176.4707, 2673.2031, 10.820313},
+	 {1196.0781, 699.34668, 10.484993},
+	 {1908.4971, 594.77148, 10.820313},
+	 {2346.4053, 2901.9609, 17.685976},
+	 {1856.209, 2921.5684, 25.572714},
+	 {1169.9346, 2947.7129, 32.806831},
+	 
+	}
 
-function tamanhas( tables )
-local count = 0
-for a in pairs( tables ) do
-count = count + 1
-end
-return count
-end 
+	function tamanhas( tables )
+		local count = 0
+		for a in pairs( tables ) do
+			count = count + 1
+		end
+		return count
+	end 
 
-local andrey = math.random(tamanhas(spawnPositions))
-setElementPosition (player , spawnPositions[andrey][1],spawnPositions[andrey][2],spawnPositions[andrey][3]  )   
-guiSetVisible ( fanstudio, false )
-showCursor ( false )
-end
+	local andrey = math.random(tamanhas(spawnPositions))
+	setElementPosition (player , spawnPositions[andrey][1],spawnPositions[andrey][2],spawnPositions[andrey][3]  )   
+	guiSetVisible ( fanstudio, false )
+	showCursor ( false )
+	end
 end)
 
 
