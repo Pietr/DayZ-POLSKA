@@ -86,6 +86,7 @@ playerDataTable = {
 		--Оружка
 		
 		{"M4A1",0},
+		{"M4A1 CCO",0},
 		{"M4A1 kamuflaż",0},
 		{"M4A1 z tłumikiem",0},
 		{"M4A1 kamuflaż z tłumikiem",0},

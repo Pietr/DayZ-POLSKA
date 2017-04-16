@@ -27,6 +27,7 @@ serverData = {
 	{"name"},
 		--Оружка
 		{"M4A1"},
+		{"M4A1 CCO"},
 		{"M4A1 kamuflaż"},
 		{"M4A1 z tłumikiem"},
 		{"M4A1 kamuflaż z tłumikiem"},

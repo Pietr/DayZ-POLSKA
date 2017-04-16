@@ -185,6 +185,7 @@ vehicleFuelInfo = {
 
 changeWeapons = {
 			["M4A1"] = 2414,
+			["M4A1 CCO"] = 2414,
 			["M4A1 kamuflaż"] = 2388,
 			["M4A1 z tłumikiem"] = 2397,
 			["M4A1 kamuflaż z tłumikiem"] = 2405,

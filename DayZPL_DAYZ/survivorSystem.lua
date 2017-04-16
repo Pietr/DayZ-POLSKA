@@ -1,6 +1,7 @@
 ﻿weaponAmmoTable = {
 		["STANAG"] = {
 		{"M4A1",31},
+		{"M4A1 CCO",31},
 		{"M4A1 z tłumikiem",31},
 		{"M4A1 kamuflaż",31},
 		{"M4A1 kamuflaż z tłumikiem",31},

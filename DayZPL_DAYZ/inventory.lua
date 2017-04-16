@@ -1,7 +1,8 @@
 ﻿inventoryItems = {
 	["Weapons"] = {
 		["Primary Weapon"] = {
-			{"M4A1",2, '252.union', 128, 64,"KARABIN", "Karabin szturmowy kalibru 5,56×45 mm."},
+			{"M4A1",2, '328.union', 128, 64,"KARABIN", "Karabin szturmowy wspierający wyrzut granatów i gazu."},
+			{"M4A1 CCO",2, '252.union', 128, 64,"KARABIN", "Karabin szturmowy kalibru 5,56×45 mm."},
 			{"M4A1 kamuflaż",2, '254.union', 128, 64,"KARABIN", "Karabin szturmowy kalibru 5,56×45 mm."},
 			{"M4A1 z tłumikiem",2, '253.union', 128, 64,"KARABIN", "Karabin szturmowy kalibru 5,56×45 mm."},
 			{"M4A1 kamuflaż z tłumikiem",2, '255.union', 128, 64,"KARABIN", "Karabin szturmowy kalibru5,56×45 mm."},
@@ -498,6 +499,7 @@ vests = {
 weaponAmmoTable = {
 		["STANAG"] = {
 		{"M4A1",31},
+		{"M4A1 CCO",31},
 		{"M4A1 z tłumikiem",31},
 		{"M4A1 kamuflaż",31},
 		{"M4A1 kamuflaż z tłumikiem",31},
@@ -628,6 +630,7 @@ onRuk = {
 
 colorItem = {
 	{"M4A1","STANAG"},
+	{"M4A1 CCO","STANAG"},
 	{"M4A1 z tłumikiem","STANAG"},
 	{"M4A1 kamuflaż","STANAG"},
 	{"M4A1 kamuflaż z tłumikiem","STANAG"},
@@ -680,6 +683,7 @@ ammoTableMove = {
 
 weaponMoveDelete_cur1 = {
 			{"M4A1"},
+			{"M4A1 CCO"},
 			{"M4A1 kamuflaż"},
 			{"M4A1 z tłumikiem"},
 			{"M4A1 kamuflaż z tłumikiem"},

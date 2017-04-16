@@ -2,6 +2,7 @@
 	["Weapons"] = {
 		["Primary Weapon"] = {
 			{"M4A1",2},
+			{"M4A1 CCO",2},
 			{"M4A1 kamuflaż",2},
 			{"M4A1 z tłumikiem",2},
 			{"M4A1 kamuflaż z tłumikiem",2},

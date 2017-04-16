@@ -34,6 +34,7 @@ local items =
 		"M4A1 CCO SD",
 		"M4A1 CCO",
 		"M4A1",
+		"M4A1 CCO",
         "G36C",
         "AK-47",
         "AK-74",

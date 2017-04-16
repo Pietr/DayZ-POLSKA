@@ -851,6 +851,7 @@ createHelpCarPacks()
 lootItemsMylitary = {
 	["weaponbox"] = {
 		{"M4A1",2414,1,90,0},
+		{"M4A1 CCO",2414,1,90,0},
 		{"M4A1 kamuflaż",2388,1,90,0},
 		{"M4A1 z tłumikiem",2397,1,90,0},
 		{"M4A1 kamuflaż z tłumikiem",2405,1,90,0},

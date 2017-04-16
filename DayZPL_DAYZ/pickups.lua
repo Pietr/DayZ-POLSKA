@@ -267,6 +267,7 @@ local itemTable = {
 
 	
 		{"M4A1",2414,1,90,1.1},
+		{"M4A1 CCO",2414,1,90,1.1},
 		{"M4A1 kamuflaż",2388,1,90,1.2},
 		{"M4A1 z tłumikiem",2397,1,90,0.53},
 		{"M4A1 kamuflaż z tłumikiem",2405,1,90,0.3},
@@ -1130,6 +1131,7 @@ ammoTableMove = {
 
 weaponMoveDelete_cur1 = {
 			{"M4A1"},
+			{"M4A1 CCO"},
 			{"M4A1 kamuflaż"},
 			{"M4A1 z tłumikiem"},
 			{"M4A1 kamuflaż z tłumikiem"},
@@ -1162,6 +1164,7 @@ weaponMoveDelete_cur1 = {
 weaponToAmmo = {
 	["M1911"] = "M1911 Mag",
 	["M4A1"] = "STANAG",
+	["M4A1 CCO"] = "STANAG",
 	["M4A1 z tłumikiem"] = "STANAG",
 	["M4A1 kamuflaż"] = "STANAG",
 	["M4A1 kamuflaż z tłumikiem"] = "STANAG",

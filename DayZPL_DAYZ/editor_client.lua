@@ -121,6 +121,7 @@ vehicleFuelTable = {
 
 weaponsShake = {
 			["M4A1"] = 0,
+			["M4A1 CCO"] = 0,
 			["M4A1 kamuflaż"] = 0,
 			["M4A1 z tłumikiem"] = 0,
 			["M4A1 kamuflaż z tłumikiem"] = 0,
@@ -153,6 +154,7 @@ weaponsShake = {
 
 damageTable = {
 			{"M4A1",3900},
+			{"M4A1 CCO",3900},
 			{"M4A1 kamuflaż",3900},
 			{"M4A1 z tłumikiem",3900},
 			{"M4A1 kamuflaż z tłumikiem",3900},

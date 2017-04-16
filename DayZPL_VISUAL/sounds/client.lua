@@ -9,6 +9,7 @@ addEventHandler("onClientResourceStart",root,disableSounds)
 			["MAGNUM"] = 2283,]]
 weapons = {
 	{"M4A1",1,5,"1"},
+	{"M4A1 CCO",1,5,"1"},
 	{"M4A1 kamuflaż",1,5,"1"},
 	{"M4A1 z tłumikiem",1,5,"2"},
 	{"M4A1 kamuflaż z tłumikiem",1,5,"2"},
