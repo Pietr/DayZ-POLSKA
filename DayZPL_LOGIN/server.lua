@@ -7,7 +7,7 @@ function loginPlayer (username, password, remember)
 				triggerClientEvent(source, "onPlayerDoneLogin", source, getAccountName (account), password)
 				triggerEvent("onPlayerDayZLogin", getRootElement(), getAccountName ( account), password, source)
 				triggerClientEvent (source, "closePanel", getRootElement ())
-				triggerClientEvent (source, "cNotification", getRootElement (), "Login", "Succesfully logged in, welcome.")
+				triggerClientEvent (source, "cNotification", getRootElement (), "Login", "Poprawnie się zalogowałeś")
 				if remember == true then
 					triggerClientEvent(source,"saveLoginToXML",getRootElement(),username,password)
 				else
@@ -37,7 +37,11 @@ function registerPlayer (usernameR, passwordR, passwordConfirmR)
 					if (account == false) then
 						local accountAdded = addAccount (tostring (usernameR),tostring (passwordR))
 						if (accountAdded) then
+							logIn (source, accountAdded, passwordR)
+							triggerEvent("onPlayerDayZRegister", getRootElement(), getAccountName(getPlayerAccount(source)) , passwordR, source)
+							triggerClientEvent(source, "onPlayerDoneLogin", source, getAccountName(getPlayerAccount(source)), passwordR)
 							triggerClientEvent (source, "closeRegister", getRootElement ())
+							triggerClientEvent (source, "closePanel", getRootElement ())
 							triggerClientEvent (source, "cNotification", getRootElement (), "Login", "Poprawnie się zarejestrowałeś")
 						else
 							triggerClientEvent (source, "cNotification", getRootElement (), "Register", "Login jest zajęty")

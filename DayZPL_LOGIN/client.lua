@@ -1,4 +1,5 @@
 sX, sY = guiGetScreenSize ()
+sY=sY*1.5
 loginFont = dxCreateFont ("files/font.ttf", 17)
 rememberMe = true
 registerWindow = false
