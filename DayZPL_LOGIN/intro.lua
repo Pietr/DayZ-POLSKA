@@ -77,7 +77,10 @@ function flyCamera()
 		zlat = zlat+0.00002
 	    if not isMenuVisuble then
 			isMenuVisuble = true
-			startShowingMenu()
+			createguis()
+			showCursor (true)
+			addEventHandler ( "onClientRender", root, gui )
+			addEventHandler ( "onClientRender", root, renderLoginPanel )
 		end
 	elseif progress > 0.60  then
 		zlat = zlat-0.002
@@ -101,9 +104,4 @@ function flyCamera()
 	
 	local x,y,z = interpolateBetween ( xp, yp, zp, xlat, ylat, zlat, progress, "Linear" )
 	setCameraMatrix ( x,y,z,xlat, ylat, zlat)
-end
-
-
-function startShowingMenu ()
-	startInfoWindow()
 end

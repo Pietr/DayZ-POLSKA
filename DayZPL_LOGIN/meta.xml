@@ -1,44 +1,16 @@
-﻿<meta>
-	<info author="Fanbox" name="Login" type="script" version="a0.6" />
-    <!-- Карта -->
+<meta>
+	<info name="xLoginPanel" author="xPipeez" type="script" version="1.2" />
+	
 	<map src="LoginTunel.map" dimension="0"></map>
     <script src="mapEditorScriptingExtension_s.lua" type="server"></script>
     <script src="mapEditorScriptingExtension_c.lua" type="client"></script>
 	
-	<script src="login_server.lua" type="server"/>
-	<script src="login_client.lua" type="client" cache = "false" />
-	<script src="textboxes.lua" type="client" cache = "false" />
-	<script src="textlib.lua" type="client" cache = "false" />
-
-	<oop>true</oop>
+	<script src="intro.lua" type="client" cache = "false" />
+	<script src="client.lua" type="client" />
+	<script src="server.lua" type="server" />
 	
-	 <script src="intro.lua" type="client" cache = "false" />
-	<file src="button.mp3"/>
-	<file src="list.mp3"/>
-	<file src="login_track.mp3"/>
-	
-	<file src="fanbox_play.png"/>
-	<file src="fanbox_play_on.png"/>
-	
-	<file src="fanbox_info.png"/>
-	<file src="fanbox_info_on.png"/>
-	
-	<file src="fanbox_help.png"/>
-	<file src="fanbox_help_on.png"/>
-	
-	<file src="fanbox_new.png"/>
-	<file src="fanbox_new_on.png"/>
-	
-	<file src="notepad.png"/>
-	
-    <file src="fanbox.ttf"/>
-	
-
-
-	 <file src="roller.png" type="client" />
-	 <file src="roller_back.png" type="client" />
-	
-	<include resource="imageButton" />
-	
-	
+	<file src="files/font.ttf"/>
+	<file src="files/username.png"/>
+	<file src="files/password.png"/>
+	<file src="files/login_track.mp3"/>
 </meta>
