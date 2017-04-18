@@ -35,6 +35,7 @@ function createguis()
 	passEditR = guiCreateEdit (sX/2-(400/2)+70, sY/2-(290/2)+130, 300, 40, "", false)
 	passConfirmEditR = guiCreateEdit (sX/2-(400/2)+70, sY/2-(290/2)+180, 300, 40, "", false)
 	
+	setTimer (function ()
 	local username, password = loadLoginFromXML()
 	if not (username ~= "" or password ~= "") then
 		remember = true
@@ -45,6 +46,8 @@ function createguis()
 		guiSetText (userEdit, tostring(username))
 		guiSetText (passEdit, tostring(password))
 	end
+	setElementData (localPlayer, "loginState", true)
+	end, 1000, 1)
 end
 
 texts = {
