@@ -52,7 +52,7 @@ function addPos()--Ничего не трогать до конца функци
 	outputChatBox("Punkt został dodany!")
 end
 bindKey("num_2","down",addPos)--Бинд кнопки для добавления позиции
-
+--local newFile = fileCreate("fanbox.txt") 
 function addPos2()--Ничего не трогать до конца функции
 	local andrey = math.random(tamanhas(spawnPositions))
 	local x,y,z=getElementPosition(getLocalPlayer())
@@ -63,6 +63,19 @@ function addPos2()--Ничего не трогать до конца функц�
 	local theMarker = createMarker ( x, y, z, "corona", 1, r, g, b, 170 )
 	table.insert(a,pos)
 	table.insert(c,theMarker)
+	
+	hFile = fileOpen("pos.txt", false) 
+    if hFile then 
+        local temp 
+        while not fileIsEOF(hFile) do 
+        temp = fileRead(hFile, 500) 
+    end 
+        fileWrite(hFile,'{'..x..','..y..','..z..',1,'..spawnPositions[andrey]..'},\n') 
+    else 
+        hFile = fileCreate('pos.txt') 
+        fileWrite(hFile,'{'..x..','..y..','..z..',1,'..spawnPositions[andrey]..'},\n') 
+    end 
+    fileClose(hFile) 
 	outputChatBox("Punkt zombie został dodany!")
 end
 bindKey("num_3","down",addPos2)--Бинд кнопки для добавления позиции
