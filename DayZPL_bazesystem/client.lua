@@ -1,7 +1,7 @@
 ﻿local screenWidth, screenHeight = guiGetScreenSize()
 local windowWidth, windowHeight = 700, 700
 local windowX, windowY = (screenWidth / 2) - (windowWidth / 2), (screenHeight / 2) - (windowHeight / 2)
-local window = guiCreateWindow(windowX, windowY, windowWidth, windowHeight, "Panel baz", false)
+local window = guiCreateWindow(windowX, windowY, windowWidth, windowHeight, "Панель редактирования баз", false)
 
 guiWindowSetSizable(window, false)
 guiWindowSetMovable(window, false)
@@ -29,12 +29,12 @@ nameedit = guiCreateEdit (0.75, 0.04, 0.35, 0.03, "", true, window)
 customType = guiCreateComboBox (0.25, 0.145, 0.35, 0.2, "Mała", true, window )
 guiComboBoxAddItem(customType, "Mała") guiComboBoxAddItem(customType, "Średnia") guiComboBoxAddItem(customType, "Duża") guiComboBoxAddItem(customType, "Mega") guiComboBoxAddItem(customType, "Vip")
 create = guiCreateButton (0.01, 0.185, 0.587, 0.03, "Utwórz", true, window, "create" )
-redact = guiCreateButton (0.01, 0.22, 0.587, 0.03, "Zedytuj", true, window, "redact" )
+redact = guiCreateButton (0.01, 0.22, 0.587, 0.03, "Zapisz", true, window, "redact" )
 
 deletebase = guiCreateButton (0.61, 0.15, 0.38, 0.03, "Usuń bazę", true, window, "deletebase" )
 tpin = guiCreateButton (0.61, 0.185, 0.25, 0.03, "Teleport: Wnętrze bazy", true, window, "tpin" )
 tpout = guiCreateButton (0.61, 0.22, 0.25, 0.03, "Teleport: Zewnątrz bazy", true, window, "tpout" )
-refreshgridd = guiCreateButton (0.87, 0.185, 0.12, 0.066, "Zaktualizuj", true, window, "refreshgridd" )
+refreshgridd = guiCreateButton (0.87, 0.185, 0.12, 0.066, "Odśwież", true, window, "refreshgridd" )
 --Игроки в базе
 playergridlist = guiCreateGridList (0.01, 0.57, 0.6, 0.375, true, window)
 column1 = guiGridListAddColumn(playergridlist, "Serial", 0.9)
@@ -73,7 +73,8 @@ addEventHandler("show",getRootElement(),show)
 
 addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 	function()
-		if guiComboBoxGetItemText(customType, guiComboBoxGetSelected(customType)) == "Mała" then
+		if source == create then
+				if guiComboBoxGetItemText(customType, guiComboBoxGetSelected(customType)) == "Mała" then
 					objectedit = 1
 				elseif guiComboBoxGetItemText(customType, guiComboBoxGetSelected(customType)) == "Średnia" then
 					objectedit = 2
@@ -87,13 +88,12 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 					outputChatBox("Wybierz rozmiar bazy!")
 					return
 				end
-		if source == create then
-			triggerServerEvent("bazecreate", localPlayer, localPlayer, "brak", guiGetText(owneredit), objectedit, guiGetText(passedit), guiGetText(dayedit), guiGetText(nameedit))
+			triggerServerEvent("bazecreate", localPlayer, localPlayer, "none", guiGetText(owneredit), objectedit, guiGetText(passedit), guiGetText(dayedit), guiGetText(nameedit))
 				setTimer(refreshgrid, 1000, 1)
 		elseif source == redact then
 			if (guiGridListGetSelectedItem(gridlist) ~= -1) then
 				local id = guiGridListGetItemText(gridlist, guiGridListGetSelectedItem(gridlist), 1)
-				triggerServerEvent("redactBase", localPlayer, localPlayer, id, guiGetText(owneredit), guiGetText(passedit), guiGetText(dayedit), guiGetText(nameedit), objectedit)
+				triggerServerEvent("redactBase", localPlayer, localPlayer, id, guiGetText(owneredit), guiGetText(passedit), guiGetText(dayedit), guiGetText(nameedit))
 			end
 			setTimer(refreshgrid, 1000, 1)
 		elseif source == gridlist then
@@ -104,18 +104,6 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 						guiSetText(passedit, baze["pass"])
 						guiSetText(dayedit, math.floor((baze["day"]-getRealTime().timestamp)/86400))
 						guiSetText(nameedit, baze["owner"])
-						if baze["object"] == 2681 then
-							bbname = "Mała"
-						elseif baze["object"] == 2754 then
-							bbname = "Średnia"
-						elseif baze["object"] == 2754 then
-							bbname = "Duża"
-						elseif baze["object"] == 2779 then
-							bbname = "Mega"
-						elseif baze["object"] == 2779 then
-							bbname = "Vip"
-						end
-						guiSetText(customType, bbname)
 					end
 				end
 			end
@@ -124,7 +112,7 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 				for i,v in ipairs(bazadann) do
 					if (guiGridListGetSelectedItem(gridlist) ~= -1) then
 						if v["id"] == tonumber(guiGridListGetItemText(gridlist, guiGridListGetSelectedItem(gridlist), 1)) then
-							if v["human"] ~= "brak" then
+							if v["human"] ~= "none" then
 								for i,vel in ipairs(fromJSON(v["human"])) do
 									if vel[1] then
 										local row = guiGridListAddRow(playergridlist)
@@ -167,7 +155,7 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 			if (guiGridListGetSelectedItem(gridlist) ~= -1) then
 			local id = guiGridListGetItemText(gridlist, guiGridListGetSelectedItem(gridlist), 1)
 			local id = tonumber(id)
-				triggerServerEvent("bazedel", localPlayer, localPlayer, "brak", id)
+				triggerServerEvent("bazedel", localPlayer, localPlayer, "none", id)
 				setTimer(refreshgrid, 2000, 1)
 			end
 		elseif source == playergrid then
@@ -248,7 +236,7 @@ local x,y,z = getElementPosition(getLocalPlayer())
 	if bazadann then
 		for i, row in pairs(bazadann) do
 		local px,py,pz = tonumber(row['x']),tonumber(row['y']),tonumber(row['z']) -- Вход	
-		if tostring(row['serialowner']) == "brak" then
+		if tostring(row['serialowner']) == "none" then
 			namebase = "Baza nr "..tonumber(row['id']).."\nNazwa: Na sprzedaż\nRozmiar: "..tostring(row['namebaze']).."("..tonumber(row['object'])..")\nDni ważności: BAZA NIEZAJĘTA"
 		else
 			namebase = "Baza nr "..tonumber(row['id']).."\nNazwa: "..tostring(row['owner']).."\nRozmiar: "..tostring(row['namebaze']).."("..tonumber(row['object'])..")\nDni ważności: "..tostring(math.floor((row["day"]-getRealTime().timestamp)/86400))
@@ -271,7 +259,7 @@ guiGridListClear(gridlist)
 guiGridListClear(playergridlist)
 	if bazadann then
 		for index, baze in ipairs(bazadann) do
-			if baze["serialowner"] == "brak" then owner = "Brak" else owner = baze["serialowner"] end
+			if baze["serialowner"] == "none" then owner = "Brak" else owner = baze["serialowner"] end
 			local row = guiGridListAddRow(gridlist)
 			guiGridListSetItemText(gridlist, row, 1, baze["id"], false, false)
 			guiGridListSetItemText(gridlist, row, 2, baze["namebaze"], false, false)
@@ -287,7 +275,7 @@ setTimer(refreshgrid, 3000, 1)
 
 addEventHandler('onClientResourceStart', resourceRoot,
 function()
-txd = engineLoadTXD ( "stena.txd" ) -- Mała
+txd = engineLoadTXD ( "stena.txd" ) -- маленькая
 engineImportTXD ( txd, 2681 )
 col = engineLoadCOL ( "stena.col" )
 engineReplaceCOL ( col, 2681 )
@@ -295,7 +283,7 @@ dff = engineLoadDFF ( "stena.dff", 0 )
 engineReplaceModel ( dff, 2681 )
 engineSetModelLODDistance(2681, 500)
 
-txd = engineLoadTXD ( "stena2.txd" ) -- Średnia\Duża
+txd = engineLoadTXD ( "stena2.txd" ) -- средняя\большая
 engineImportTXD ( txd, 2754 )
 col = engineLoadCOL ( "stena2.col" )
 engineReplaceCOL ( col, 2754 )

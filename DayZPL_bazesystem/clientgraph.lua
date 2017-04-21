@@ -16,8 +16,8 @@ guiCreateLabel(0.011, 0.1, 0.20, 0.03, "Nazwa:", true, windowpl )
 guiCreateLabel(0.011, 0.15, 0.20, 0.03, "Hasło:", true, windowpl )
 ownereditpl = guiCreateEdit (0.25, 0.1, 0.35, 0.04, "", true, windowpl)
 passeditpl = guiCreateEdit (0.25, 0.15, 0.35, 0.04, "", true, windowpl)
-redactpl = guiCreateButton (0.01, 0.2, 0.587, 0.04, "Zedytuj", true, windowpl)
-refreshgriddpl = guiCreateButton (0.01, 0.05, 0.23, 0.04, "Zaktualizuj", true, windowpl)
+redactpl = guiCreateButton (0.01, 0.2, 0.587, 0.04, "Zapisz", true, windowpl)
+refreshgriddpl = guiCreateButton (0.01, 0.05, 0.23, 0.04, "Odśwież", true, windowpl)
 --Игроки в базеf
 playergridlistpl = guiCreateGridList (0.01, 0.25, 0.6, 0.67, true, windowpl)
 column1pl = guiGridListAddColumn(playergridlistpl, "Serial", 0.9)
@@ -93,7 +93,7 @@ addEventHandler("refreshpl",getRootElement(),refreshpl)
 addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 	function()
 		if source == redactpl then
-			if guiComboBoxGetItemText(customTypepl, guiComboBoxGetSelected(customTypepl)) ~= "Wybierz ID bazy" then
+			if guiComboBoxGetItemText(customTypepl, guiComboBoxGetSelected(customTypepl)) ~= "Выбери id" then
 				local id = guiComboBoxGetItemText(customTypepl, guiComboBoxGetSelected(customTypepl))
 				if guiGetText(passeditpl) ~= "" and guiGetText(ownereditpl) ~= "" then
 					triggerServerEvent("redactBasepl", localPlayer, localPlayer, id, guiGetText(passeditpl), guiGetText(ownereditpl))
@@ -106,7 +106,7 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
 			if bazadann then
 				for index, baze in ipairs(bazadann) do
 					if tonumber(guiComboBoxGetItemText(customTypepl, guiComboBoxGetSelected(customTypepl))) == tonumber(baze["id"]) then
-						if baze["human"] ~= "brak" then
+						if baze["human"] ~= "none" then
 							for i,vel in ipairs(fromJSON(baze["human"])) do
 								if vel[1] then
 									local row = guiGridListAddRow(playergridlistpl)
