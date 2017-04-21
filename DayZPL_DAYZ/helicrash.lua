@@ -1,6 +1,10 @@
 function destroyHeli(col,obj)
-	destroyElement(col)
-	destroyElement(obj)
+	if col then
+		destroyElement(col)
+	end
+	if obj then
+		destroyElement(obj)
+	end
 end
 
 Hel = {
@@ -15,7 +19,6 @@ Hel = {
 		{"WSS Wintoriez",2431,1,0},
 		{"WSS Wintoriez kamuflaż",2434,1,0},
        	{"Pieniądze",2245,1,0},
-		{"Жилет большой вместимости Зеленый",2179,1,0},
 		{"Kominiarka z czaszką - czarna",2294,1,0},
 		{"Strój górski - zielony",2223,1,0},
 		{"Hełm militarny - zielony",2346,1,0},
@@ -112,10 +115,10 @@ function startHeli(playerSource)
 						killTimer(heliTimer)
 					end
 				end
-			end,100,0,heliObject,rx,ry,rz,x,y,z)
+			end,100,81,heliObject,rx,ry,rz,x,y,z)
 
-	setTimer(destroyHeli,7200000,1,heliCol,heliObject)
-	setTimer(destroyHeli,7200000,1,heliBlib,heliObject)
+	setTimer(destroyHeli,7000000,1,heliCol,heliObject)
+	setTimer(destroyHeli,7000000,1,heliBlib)
 end
 setTimer(startHeli,7200000,0)
-addCommandHandler ( "heli", startHeli)
+addCommandHandler("heli",startHeli)
