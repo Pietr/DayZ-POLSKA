@@ -2,6 +2,10 @@
     <info type="script" version="1.0"></info>	
 	<script src="lv_in.lua" type="server" />
 	<script src="lv_out.lua" type="server" />
+	<script src="fab_in.lua" type="server" />
+	<script src="fab_out.lua" type="server" />
+	<script src="hp2_in.lua" type="server" />
+	<script src="hp2_out.lua" type="server" />
 	<script src="sf_in.lua" type="server" />
 	<script src="sf_out.lua" type="server" />
 	<script src="police_sf_in.lua" type="server" />
