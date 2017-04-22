@@ -1,7 +1,7 @@
 ﻿local screenWidth, screenHeight = guiGetScreenSize()
 local windowWidth, windowHeight = 700, 700
 local windowX, windowY = (screenWidth / 2) - (windowWidth / 2), (screenHeight / 2) - (windowHeight / 2)
-local window = guiCreateWindow(windowX, windowY, windowWidth, windowHeight, "Панель редактирования баз", false)
+local window = guiCreateWindow(windowX, windowY, windowWidth, windowHeight, "System baz", false)
 
 guiWindowSetSizable(window, false)
 guiWindowSetMovable(window, false)

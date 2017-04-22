@@ -47,7 +47,8 @@ AnimalItems = {
 bossBlood = { 
 
 	{"Pieniądze",2976,0.15,0,10},
-
+	{"AK-74",2976,0.15,0,1},
+	{"AK-MAG",2976,0.15,0,5},
 }
 
 bossAll = { 

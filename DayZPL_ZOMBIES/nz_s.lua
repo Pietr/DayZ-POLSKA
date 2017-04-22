@@ -133,8 +133,6 @@ function activateZombie (zomb, x, y, z, ztype)
 			setElementData ( zomb, "fast", true )
 			setElementData(zomb, "damage", fast_damage)
 			setElementData(zomb, "speed", "run")
-			--Тварини
-			--Хищник
 		elseif ztype == 4 then
 		setElementData ( zomb, "killer", true )
 			setElementData(zomb, "blood", bear_blood)
@@ -153,14 +151,11 @@ function activateZombie (zomb, x, y, z, ztype)
 			setElementData ( zomb, "fox", true )
 			setElementData(zomb, "damage", fox_damage)
 			setElementData(zomb, "speed", "sprint")
-			--Здобич
 		elseif ztype == 7 then
 			setElementData ( zomb, "animal", true )
 			setElementData(zomb, "blood", animal_blood)
 			setElementData(zomb, "damage", animal_damage)
 			setElementData(zomb, "speed", "sprint")
-			--Боси
-			--Кровосос
 		elseif ztype == 8 then
 			setElementData ( zomb, "zombie", true )
 			setElementData ( zomb, "boss_blood", true )
