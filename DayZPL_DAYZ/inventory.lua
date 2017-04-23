@@ -2292,7 +2292,7 @@ function updatePos()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos)
 			triggerServerEvent("destroyAttachTent",getLocalPlayer(),getLocalPlayer())
@@ -2307,7 +2307,7 @@ function updatePos2()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos2)
 			triggerServerEvent("destroyAttachTent2",getLocalPlayer(),getLocalPlayer())
@@ -2322,7 +2322,7 @@ function updatePos3()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos3)
 			triggerServerEvent("destroyAttachTent3",getLocalPlayer(),getLocalPlayer())
@@ -2337,7 +2337,7 @@ function updatePos_wirefrance()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos_wirefrance)
 			triggerServerEvent("destroyAttachWireFence",getLocalPlayer(),getLocalPlayer())
@@ -2353,7 +2353,7 @@ function updatePos_meshok10()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos_meshok10)
 			triggerServerEvent("destroyAttachMeshok10",getLocalPlayer(),getLocalPlayer())
@@ -2368,7 +2368,7 @@ function updatePos_meshok()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos_meshok)
 			triggerServerEvent("destroyAttachMeshok",getLocalPlayer(),getLocalPlayer())
@@ -2383,7 +2383,7 @@ function updatePos_Pokr()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos_Pokr)
 			triggerServerEvent("destroyAttachPokr",getLocalPlayer(),getLocalPlayer())
@@ -2398,7 +2398,7 @@ function updatePos_Esh()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos_Esh)
 			triggerServerEvent("destroyAttachEsh",getLocalPlayer(),getLocalPlayer())
@@ -2412,7 +2412,7 @@ function updatePos_Esh10()
 	if getElementData(getLocalPlayer(),"setTent") == true then
 		local x,y,z = getElementPosition(getLocalPlayer())
 		local dist = math.floor(getDistanceBetweenPoints2D(rendx,rendy,x,y))
-		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy napisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
+		dxDrawText("DYSTANS: "..dist.." MAX: "..max_dist.."\nNależy nacisnąć spację aby postawić przedmiot.\nWciśnij Q aby anulować akcję.",sW/2,sH/2,sW/2,sH/2+300,tocolor(255, 255, 255),1,"default-bold","center","center")
 		if dist > max_dist then
 			removeEventHandler("onClientRender",root,updatePos_Esh10)
 			triggerServerEvent("destroyAttachEsh10",getLocalPlayer(),getLocalPlayer())
