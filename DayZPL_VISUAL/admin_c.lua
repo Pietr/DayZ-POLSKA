@@ -455,7 +455,7 @@ function gui_admin()
         GUIEditor.tab[1] = guiCreateTab("Меню DayZ", GUIEditor.tabpanel[1])
 
         GUIEditor.gridlist[1] = guiCreateGridList(7, 10, 200, 273, false, GUIEditor.tab[1])
-        GUIEditor.column[1] = guiGridListAddColumn(GUIEditor.gridlist[1], "Игроки:", 0.9)
+        GUIEditor.column[1] = guiGridListAddColumn(GUIEditor.gridlist[1], "Gracze: ", 0.9)
         GUIEditor.button[1] = guiCreateButton(213, 10, 152, 29, "Убить", false, GUIEditor.tab[1])
         GUIEditor.label[1] = guiCreateLabel(214, 46, 151, 19, "Krew:", false, GUIEditor.tab[1])
         GUIEditor.label[2] = guiCreateLabel(213, 67, 152, 21, "Ludzkość:", false, GUIEditor.tab[1])

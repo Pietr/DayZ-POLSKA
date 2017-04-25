@@ -25,8 +25,8 @@ addEventHandler("system.spawnVehicle", getRootElement(), function(target, vehicl
 			setElementData(vehCol,"vehicle_armor",1000)
 			warpPedIntoVehicle(target, veh)
 			
-			outputChatBox("[System] Спавн: "..vehicle.." для "..getPlayerName(target), source, 255, 255, 255, true)
-			outputChatBox("[System] Спавн: Админ "..getPlayerName(source).."#FFFFFF те "..vehicle, target, 255, 255, 255, true)
+			outputChatBox("[System] Zrespiono: "..vehicle.." przez "..getPlayerName(target), source, 255, 255, 255, true)
+			outputChatBox("[System] Admin "..getPlayerName(source).."#FFFFFF zrespił "..vehicle, target, 255, 255, 255, true)
 	end
 	end
 end)
@@ -34,8 +34,8 @@ end)
 	addEvent("system.vehicleFunctions.destroy", true)
 	addEventHandler("system.vehicleFunctions.destroy", getRootElement(), function(target)
 		if isObjectInACLGroup("user." .. getAccountName(getPlayerAccount(source)), aclGetGroup("Admin")) and isPedInVehicle(target) then
-			outputChatBox("[System] Удалил: "..getPlayerName(target).."#FFFFFF - "..getVehicleName(getPedOccupiedVehicle(target)), source, 255, 255, 255, true)
-			outputChatBox("[System] Удалил: Админ "..getPlayerName(source).."#FFFFFF твою машину", target, 255, 255, 255, true)
+			outputChatBox("[System] Usunął: "..getPlayerName(target).."#FFFFFF - "..getVehicleName(getPedOccupiedVehicle(target)), source, 255, 255, 255, true)
+			outputChatBox("[System] Admin "..getPlayerName(source).."#FFFFFF zniszczył twój samochód.", target, 255, 255, 255, true)
 			setElementData(getElementData(getPedOccupiedVehicle(target), "parent"), "MAX_Slots", 0)
 			setElementData(getElementData(getPedOccupiedVehicle(target), "parent"), "Engine_inVehicle", 0)
 			setElementData(getElementData(getPedOccupiedVehicle(target), "parent"), "Tire_inVehicle", 0)

@@ -54,7 +54,7 @@ items = {
 		"Piła spalinowa",
     },
     
-    ["AMUNICJA"] = {
+    ["Amunicja"] = {
 		"51mm NATO",--, 'magm4.png',256,256,"Описание1", "Подробное описание"},
 		"BGM-71 TOW",--, 'magm4.png',256,256,"Описание1", "Подробное описание"},
         "STANAG",
@@ -74,7 +74,7 @@ items = {
 		"MAGNUM-MAG",
     },
     
-    ["ŻYWNOŚĆ"] = {
+    ["Żywność"] = {
 		"Sardynki w puszce",--,'22.dds',256,256,"Описание1", "Подробное описание"},
 		"Puszka spaghetti",--,'21.dds',256,256,"Описание1", "Подробное описание"},
 		"Konserwa z tuńczyka",--,'23.dds',256,256,"Описание1", "Подробное описание"},
@@ -116,7 +116,7 @@ items = {
 		"Grilowane mięso",--,'cola.png', 256, 256,"Описание1", "Подробное описание"},
     },
     
-   ["Рюкзаки"] = {
+   ["Plecaki"] = {
 		--Рюкзак 35 слот
 		"Zielony górski plecak",
 		"Czerwony górski plecak",
@@ -162,7 +162,7 @@ items = {
 		"Plecak Coyote",--, 'wood.png',128,128,"Описание1", "Подробное описание", "Ubierz plecak"},
 	},
     
-	["Пояс"] = {
+	["Rzeczy"] = {
 	
 		"Plan - blok z piasku",
 		"Plan - worki z piaskiem",
@@ -226,7 +226,7 @@ items = {
 		"Kompas",--, 'wood.png',128,128,"Описание1", "Подробное описание"},
 	},
     
-	["Медикаменты"] = {
+	["Leki"] = {
 		"Bandaż",--, '4.dds',128,128,"Описание1", "Подробное описание","Zabandażuj"},
 		"Płyn fizjologiczny",--, 'morphine.png',128,128,"Описание1", "Подробное описание","Zaaplikuj"},
 		"Termofor",--, 'morphine.png',128,128,"Описание1", "Подробное описание","Zaaplikuj"},
@@ -240,7 +240,7 @@ items = {
 		"Arbidol",--, 'morphine.png',128,128,"Описание1", "Подробное описание","Zaaplikuj"},
 	},
     
-	["Обвеси"] = {
+	["Kamizelki"] = {
 	--Броники навески
 		"Kamizelka z futerału i kieszeniami", -- 10
 		"Kamizelka wstrząsoodporna",
@@ -276,7 +276,7 @@ items = {
 		"Kamizelka zbrojna z kamuflażem №2",
 	},
     
-   ["Костюм"] = {
+   ["Ubrania"] = {
 		--Костюми..
 		"Strój - szary",
 		"Strój - brązowy",
@@ -297,7 +297,6 @@ items = {
 		"Strój wojskowy №4",
 		"Strój wojskowy №5",
 		"Strój wojskowy №6",
-		"Костюм спортивный (Синий)",
 		"Strój - czarny",
 		"Strój TTsKO",
 		"Strój górski - brązowy",
@@ -306,7 +305,7 @@ items = {
 		"Strój - orzeł",
 	},
     
-    ["UBRANIA"] = {
+    ["Akcesoria (ubr)"] = {
        	--Для голови
 		"Kominiarka z czaszką - czarna",
 		"Kominiarka - beżowa",
@@ -463,7 +462,7 @@ items = {
 		"Okulary pilotki",
     },
     
-    ["Статс"] = {
+    ["Statystyki"] = {
 		"Inventory",
 		"Inventory_Setting",
 		"bandit",
