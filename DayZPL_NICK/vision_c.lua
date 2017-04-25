@@ -171,20 +171,20 @@ local alltxt = ""
 	if getElementHealth(ped) > 0 then
 	txt = getElementData(ped,"blood")
 	else
-	txt = "ТРУП"
+	txt = "TRUP"
 	end
 	
 	if getElementData(ped,"blood") == 5000 or getElementData(ped,"blood") == 15000 or getElementData(ped,"blood") == 20000 then
-	txt1 = "ЗОМБИ"
+	txt1 = "ZOMBIE"
 	color5 = tocolor(255,255,0,255)
 	elseif getElementData(ped,"blood") == 7000 or getElementData(ped,"blood") == 5000 or getElementData(ped,"blood") == 2000 then
-	txt1 = "ТВАРИНИ"
+	txt1 = "ZWIERZĘ"
 	color5 = tocolor(255,255,0,255)
 	elseif getElementData(ped,"blood") == 75000 or getElementData(ped,"blood") == 50000  then
-	txt1 = "БОСС"
+	txt1 = "BOSS"
 	color5 = tocolor(255,255,0,255)
 	elseif getElementData(ped,"blood") == 12000 then
-	txt1 = "ЛЮДИНА"
+	txt1 = "GRACZ"
 	color5 = tocolor(255,0,0,255)
 	end
 
