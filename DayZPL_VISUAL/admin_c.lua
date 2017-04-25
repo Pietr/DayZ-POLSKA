@@ -447,47 +447,47 @@ local isItemSelected = false
 local vehicleBlip = createElement("vehicleBlipRoot", "vehicleBlipRoot")
 
 function gui_admin()
-        GUIEditor.window[1] = guiCreateWindow(635, 25, 646, 350, "Админ Панель by Fanbox", false)
+        GUIEditor.window[1] = guiCreateWindow(635, 25, 646, 350, "Panel administratora", false)
         guiWindowSetSizable(GUIEditor.window[1], false)
 	    guiSetVisible(GUIEditor.window[1], false)
         GUIEditor.tabpanel[1] = guiCreateTabPanel(9, 23, 627, 317, false, GUIEditor.window[1])
 
-        GUIEditor.tab[1] = guiCreateTab("Меню DayZ", GUIEditor.tabpanel[1])
+        GUIEditor.tab[1] = guiCreateTab("Menu DayZ", GUIEditor.tabpanel[1])
 
         GUIEditor.gridlist[1] = guiCreateGridList(7, 10, 200, 273, false, GUIEditor.tab[1])
         GUIEditor.column[1] = guiGridListAddColumn(GUIEditor.gridlist[1], "Gracze: ", 0.9)
-        GUIEditor.button[1] = guiCreateButton(213, 10, 152, 29, "Убить", false, GUIEditor.tab[1])
+        GUIEditor.button[1] = guiCreateButton(213, 10, 152, 29, "Zabij", false, GUIEditor.tab[1])
         GUIEditor.label[1] = guiCreateLabel(214, 46, 151, 19, "Krew:", false, GUIEditor.tab[1])
         GUIEditor.label[2] = guiCreateLabel(213, 67, 152, 21, "Ludzkość:", false, GUIEditor.tab[1])
-        GUIEditor.label[4] = guiCreateLabel(213, 88, 152, 22, "Прожито:", false, GUIEditor.tab[1])
+        GUIEditor.label[4] = guiCreateLabel(213, 88, 152, 22, "Przeżył:", false, GUIEditor.tab[1])
         GUIEditor.label[5] = guiCreateLabel(213, 112, 152, 21, "Zabitych zombie:", false, GUIEditor.tab[1])
-        GUIEditor.label[6] = guiCreateLabel(213, 132, 152, 20, "Убито И-ков:", false, GUIEditor.tab[1])
-        GUIEditor.label[7] = guiCreateLabel(213, 152, 152, 19, "Сытность:", false, GUIEditor.tab[1])
-        GUIEditor.label[8] = guiCreateLabel(213, 173, 152, 18, "Жажда:", false, GUIEditor.tab[1])
-        GUIEditor.label[9] = guiCreateLabel(213, 192, 152, 20, "Перелом: false", false, GUIEditor.tab[1])
-        GUIEditor.label[10] = guiCreateLabel(214, 212, 151, 21, "Кома: false", false, GUIEditor.tab[1])
-        GUIEditor.button[2] = guiCreateButton(218, 242, 137, 17, "Обновить", false, GUIEditor.tab[1])
+        GUIEditor.label[6] = guiCreateLabel(213, 132, 152, 20, "Zabitych ludzi:", false, GUIEditor.tab[1])
+        GUIEditor.label[7] = guiCreateLabel(213, 152, 152, 19, "Sytość:", false, GUIEditor.tab[1])
+        GUIEditor.label[8] = guiCreateLabel(213, 173, 152, 18, "Pragnienie:", false, GUIEditor.tab[1])
+        GUIEditor.label[9] = guiCreateLabel(213, 192, 152, 20, "Złamanie: false", false, GUIEditor.tab[1])
+        GUIEditor.label[10] = guiCreateLabel(214, 212, 151, 21, "Zemdlenie: false", false, GUIEditor.tab[1])
+        GUIEditor.button[2] = guiCreateButton(218, 242, 137, 17, "Zaktualizuj", false, GUIEditor.tab[1])
         GUIEditor.button[3] = guiCreateButton(434, 258, 183, 25, "Zamknij", false, GUIEditor.tab[1])
-        GUIEditor.button[4] = guiCreateButton(397, 12, 220, 27, "Отображение Т\С на карте", false, GUIEditor.tab[1])
-        GUIEditor.button[6] = guiCreateButton(398, 46, 219, 29, "Админ палатка (Переложить все)", false, GUIEditor.tab[1])
+        GUIEditor.button[4] = guiCreateButton(397, 12, 220, 27, "Pokaż/ukryj na mapie", false, GUIEditor.tab[1])
+        GUIEditor.button[6] = guiCreateButton(398, 46, 219, 29, "Namiot admina", false, GUIEditor.tab[1])
 
 ----
-		GUIEditor.tab[2] = guiCreateTab( "Система транспорта",  GUIEditor.tabpanel[1] )
+		GUIEditor.tab[2] = guiCreateTab( "Pojazdy",  GUIEditor.tabpanel[1] )
 		
 		mainv = guiCreateGridList(10, 15, 300, 137, false, GUIEditor.tab[2])
-		vcolumn1 = guiGridListAddColumn( mainv, "TRANSPORT", 1 )
-		vcolumn2 = guiGridListAddColumn( mainv, "Координаты X", 0.25 )
-		vcolumn3 = guiGridListAddColumn( mainv, "Координаты Y", 0.25 )
-		vcolumn4 = guiGridListAddColumn( mainv, "Координаты Z", 0.25 )
+		vcolumn1 = guiGridListAddColumn( mainv, "POJAZDY", 1 )
+		vcolumn2 = guiGridListAddColumn( mainv, "Pozycja X", 0.25 )
+		vcolumn3 = guiGridListAddColumn( mainv, "Pozycja Y", 0.25 )
+		vcolumn4 = guiGridListAddColumn( mainv, "Pozycja Z", 0.25 )
 		
 		Amainv = guiCreateGridList(10, 150, 300, 137, false, GUIEditor.tab[2])
-		Avcolumn1 = guiGridListAddColumn( Amainv, "Палатка", 1 )
-		Avcolumn2 = guiGridListAddColumn( Amainv, "Координаты X", 0.25 )
-		Avcolumn3 = guiGridListAddColumn( Amainv, "Координаты Y", 0.25 )
-		Avcolumn4 = guiGridListAddColumn( Amainv, "Координаты Z", 0.25 )
+		Avcolumn1 = guiGridListAddColumn( Amainv, "Namiot", 1 )
+		Avcolumn2 = guiGridListAddColumn( Amainv, "Pozycja X", 0.25 )
+		Avcolumn3 = guiGridListAddColumn( Amainv, "Pozycja Y", 0.25 )
+		Avcolumn4 = guiGridListAddColumn( Amainv, "Pozycja Z", 0.25 )
 		
-		GUIEditor.button[50] = guiCreateButton(325, 15, 82, 25, "ТП Транспор", false, GUIEditor.tab[2])
-		GUIEditor.button[80] = guiCreateButton(410, 15, 82, 25, "ТП Палатка", false, GUIEditor.tab[2])
+		GUIEditor.button[50] = guiCreateButton(325, 15, 82, 25, "TP do pojazdu", false, GUIEditor.tab[2])
+		GUIEditor.button[80] = guiCreateButton(410, 15, 82, 25, "TP do namiotu", false, GUIEditor.tab[2])
 		
 		GUIEditor.button[54] = guiCreateButton(325, 45, 25, 25, "10", false, GUIEditor.tab[2])
 		GUIEditor.button[55] = guiCreateButton(350, 45, 25, 25, "30", false, GUIEditor.tab[2])
@@ -497,44 +497,44 @@ function gui_admin()
 		GUIEditor.button[69] = guiCreateButton(450, 45, 25, 25, "100", false, GUIEditor.tab[2])
 		GUIEditor.button[60] = guiCreateButton(475, 45, 25, 25, "140", false, GUIEditor.tab[2])
 		
-		GUIEditor.button[53] = guiCreateButton(325, 75, 175, 25, "Броня", false, GUIEditor.tab[2])
-		GUIEditor.button[61] = guiCreateButton(325, 100, 175, 25, "Свеча + Аккумулятор", false, GUIEditor.tab[2])
+		GUIEditor.button[53] = guiCreateButton(325, 75, 175, 25, "Pancerz", false, GUIEditor.tab[2])
+		GUIEditor.button[61] = guiCreateButton(325, 100, 175, 25, "Świeca + akumulator", false, GUIEditor.tab[2])
 		
 		GUIEditor.button[62] = guiCreateButton(325, 125, 25, 25, "2", false, GUIEditor.tab[2])
 		GUIEditor.button[63] = guiCreateButton(350, 125, 25, 25, "3", false, GUIEditor.tab[2])
 		GUIEditor.button[64] = guiCreateButton(375, 125, 25, 25, "4", false, GUIEditor.tab[2])
 		GUIEditor.button[65] = guiCreateButton(400, 125, 25, 25, "6", false, GUIEditor.tab[2])
 		GUIEditor.button[66] = guiCreateButton(425, 125, 25, 25, "8", false, GUIEditor.tab[2])
-		GUIEditor.button[67] = guiCreateButton(325, 150, 175, 25, "ON", false, GUIEditor.tab[2])
-		GUIEditor.button[68] = guiCreateButton(325, 175, 175, 25, "Розобрать", false, GUIEditor.tab[2])
+		GUIEditor.button[67] = guiCreateButton(325, 150, 175, 25, "WŁĄCZ", false, GUIEditor.tab[2])
+		GUIEditor.button[68] = guiCreateButton(325, 175, 175, 25, "Zdemontuj wszystko", false, GUIEditor.tab[2])
 		
-		GUIEditor.button[70] = guiCreateButton(325, 200, 175, 25, "Конвой (Оружия)", false, GUIEditor.tab[2])
-		GUIEditor.button[71] = guiCreateButton(325, 225, 175, 25, "Конвой (Мед)", false, GUIEditor.tab[2])
-		GUIEditor.button[72] = guiCreateButton(325, 250, 175, 25, "Конвой (Одежда)", false, GUIEditor.tab[2])
+		GUIEditor.button[70] = guiCreateButton(325, 200, 175, 25, "Przedmioty (BROŃ)", false, GUIEditor.tab[2])
+		GUIEditor.button[71] = guiCreateButton(325, 225, 175, 25, "Przedmioty (Leki)", false, GUIEditor.tab[2])
+		GUIEditor.button[72] = guiCreateButton(325, 250, 175, 25, "Przedmioty (Ubrania)", false, GUIEditor.tab[2])
 	
 ----	
-        GUIEditor.tab[3] = guiCreateTab("Телепорты", GUIEditor.tabpanel[1])
-        GUIEditor.button[10] = guiCreateButton(3, 6, 194, 29, "Зона 51", false, GUIEditor.tab[3])
-        GUIEditor.button[11] = guiCreateButton(207, 6, 223, 29, "Авианосец", false, GUIEditor.tab[3])
-        GUIEditor.button[12] = guiCreateButton(440, 6, 177, 29, "Магазин", false, GUIEditor.tab[3])
-        GUIEditor.button[13] = guiCreateButton(4, 41, 193, 28, "Больница Лс", false, GUIEditor.tab[3])
-        GUIEditor.button[14] = guiCreateButton(208, 40, 222, 29, "Больница ЛВ", false, GUIEditor.tab[3])
-        GUIEditor.button[15] = guiCreateButton(440, 39, 177, 30, "Больница СФ", false, GUIEditor.tab[3])
-        GUIEditor.button[16] = guiCreateButton(4, 74, 193, 29, "Аеро ЛС", false, GUIEditor.tab[3])
-        GUIEditor.button[17] = guiCreateButton(207, 74, 223, 28, "Аеро СФ", false, GUIEditor.tab[3])
-        GUIEditor.button[18] = guiCreateButton(439, 74, 178, 27, "Аеро ЛВ", false, GUIEditor.tab[3])
+        GUIEditor.tab[3] = guiCreateTab("Teleport", GUIEditor.tabpanel[1])
+        GUIEditor.button[10] = guiCreateButton(3, 6, 194, 29, "Area 51", false, GUIEditor.tab[3])
+        GUIEditor.button[11] = guiCreateButton(207, 6, 223, 29, "Lotniskowiec", false, GUIEditor.tab[3])
+        GUIEditor.button[12] = guiCreateButton(440, 6, 177, 29, "Sklep", false, GUIEditor.tab[3])
+        GUIEditor.button[13] = guiCreateButton(4, 41, 193, 28, "Szpital LS", false, GUIEditor.tab[3])
+        GUIEditor.button[14] = guiCreateButton(208, 40, 222, 29, "Szpital LV", false, GUIEditor.tab[3])
+        GUIEditor.button[15] = guiCreateButton(440, 39, 177, 30, "Szpital SF", false, GUIEditor.tab[3])
+        GUIEditor.button[16] = guiCreateButton(4, 74, 193, 29, "Lotnisko LS", false, GUIEditor.tab[3])
+        GUIEditor.button[17] = guiCreateButton(207, 74, 223, 28, "Lotnisko SF", false, GUIEditor.tab[3])
+        GUIEditor.button[18] = guiCreateButton(439, 74, 178, 27, "Lotnisko LV", false, GUIEditor.tab[3])
         GUIEditor.label[19] = guiCreateLabel(10, 121, 19, 27, "X:", false, GUIEditor.tab[3])
         GUIEditor.edit[2] = guiCreateEdit(32, 121, 161, 19, "", false, GUIEditor.tab[3])
         GUIEditor.label[20] = guiCreateLabel(206, 121, 18, 31, "Y:", false, GUIEditor.tab[3])
         GUIEditor.edit[3] = guiCreateEdit(224, 121, 165, 19, "", false, GUIEditor.tab[3])
         GUIEditor.label[21] = guiCreateLabel(402, 121, 18, 36, "Z:", false, GUIEditor.tab[3])
         GUIEditor.edit[4] = guiCreateEdit(422, 121, 163, 18, "", false, GUIEditor.tab[3])
-        GUIEditor.button[20] = guiCreateButton(139, 153, 315, 37, "ТЕЛЕПОРТ ПО КОРДИНАТАМ", false, GUIEditor.tab[3])
-        GUIEditor.label[21] = guiCreateLabel(5, 195, 612, 48, "                                      Запрещено: Телепорт на базы игроков  \n                                 Пример: X: 1 Y: 2 Z: 2 - Центыр Карты(ферма)", false, GUIEditor.tab[3])
+        GUIEditor.button[20] = guiCreateButton(139, 153, 315, 37, "TELEPORTUJ", false, GUIEditor.tab[3])
+        GUIEditor.label[21] = guiCreateLabel(5, 195, 612, 48, "                                      Zabrania się: Teleport do bazy gracza", false, GUIEditor.tab[3])
 
-        GUIEditor.button[19] = guiCreateButton(6, 249, 611, 34, "Zamknij меню", false, GUIEditor.tab[3])
+        GUIEditor.button[19] = guiCreateButton(6, 249, 611, 34, "Zamknij menu", false, GUIEditor.tab[3])
 		
-		GUIEditor.tab[4] = guiCreateTab("Базы", GUIEditor.tabpanel[1])
+		GUIEditor.tab[4] = guiCreateTab("Bazy", GUIEditor.tabpanel[1])
 		GUIEditor.button[21] = guiCreateButton(5, 5, 25, 282, "1", false, GUIEditor.tab[4])
 		GUIEditor.button[22] = guiCreateButton(30, 5, 25, 282, "2", false, GUIEditor.tab[4])
 		GUIEditor.button[23] = guiCreateButton(55, 5, 25, 282, "3", false, GUIEditor.tab[4])
@@ -564,9 +564,9 @@ function gui_admin()
 		--[[
 		--Кари
 		GUIEditor.tab[5] = guiCreateTab("TRANSPORT", GUIEditor.tabpanel[1])
-		GUIEditor.button[46] = guiCreateButton(5, 55, 135, 20, "Ремонт", false, GUIEditor.tab[5])
-		GUIEditor.button[47] = guiCreateButton(5, 80, 135, 20, "Удалить", false, GUIEditor.tab[5])
-		GUIEditor.button[48] = guiCreateButton(5, 105, 135, 20, "Бум", false, GUIEditor.tab[5])
+		GUIEditor.button[46] = guiCreateButton(5, 55, 135, 20, "Napraw", false, GUIEditor.tab[5])
+		GUIEditor.button[47] = guiCreateButton(5, 80, 135, 20, "Usuń", false, GUIEditor.tab[5])
+		GUIEditor.button[48] = guiCreateButton(5, 105, 135, 20, "Wybuchnij", false, GUIEditor.tab[5])
 		]]
 
 	--kill
@@ -576,7 +576,7 @@ addEventHandler ( "onClientGUIClick", GUIEditor.button[1],
 		if (getPlayerFromName(playerName)) then
 			triggerServerEvent("onAdminkill", localPlayer, playerName)
 		else
-			outputChatBox("Вибери кого убить", 255, 0, 0)
+			outputChatBox("Wybierz kogo zabić!", 255, 0, 0)
 				end
 		guiSetVisible(GUIEditor.window[1], true)
 		showCursor(true)
@@ -589,7 +589,7 @@ addEventHandler ( "onClientGUIClick", GUIEditor.button[1],
 		if (getPlayerFromName(playerName)) then
 			triggerServerEvent("onAdminSetTOPTent", localPlayer, playerName)
 		else
-			outputChatBox("Вибери кому видать", 255, 0, 0)
+			outputChatBox("Wybierz, aby zobaczyć!", 255, 0, 0)
 				end
 		guiSetVisible(GUIEditor.window[1], true)
 		showCursor(true)
@@ -824,20 +824,20 @@ if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F
 	    guiSetVisible(GUIEditor.label[10], false)
 		GUIEditor.label[1] = guiCreateLabel(214, 46, 151, 19, "Krew: "..blood.."", false, GUIEditor.tab[1])
         GUIEditor.label[2] = guiCreateLabel(213, 67, 152, 21, "Ludzkość: "..humanity.."", false, GUIEditor.tab[1])
-        GUIEditor.label[4] = guiCreateLabel(213, 88, 152, 22, "Прожито: "..alivetime.."мин.", false, GUIEditor.tab[1])
+        GUIEditor.label[4] = guiCreateLabel(213, 88, 152, 22, "Przeżył: "..alivetime.."мин.", false, GUIEditor.tab[1])
         GUIEditor.label[5] = guiCreateLabel(213, 112, 152, 21, "Zabitych zombie: "..zkills.."", false, GUIEditor.tab[1])
-        GUIEditor.label[6] = guiCreateLabel(213, 132, 152, 20, "Убито И-ков: "..murders.."", false, GUIEditor.tab[1])
-        GUIEditor.label[7] = guiCreateLabel(213, 152, 152, 19, "Сытность: "..food.."", false, GUIEditor.tab[1])
-        GUIEditor.label[8] = guiCreateLabel(213, 173, 152, 18, "Жажда: "..thirst.."", false, GUIEditor.tab[1])
+        GUIEditor.label[6] = guiCreateLabel(213, 132, 152, 20, "Zabitych ludzi: "..murders.."", false, GUIEditor.tab[1])
+        GUIEditor.label[7] = guiCreateLabel(213, 152, 152, 19, "Sytość: "..food.."", false, GUIEditor.tab[1])
+        GUIEditor.label[8] = guiCreateLabel(213, 173, 152, 18, "Pragnienie: "..thirst.."", false, GUIEditor.tab[1])
 		if brokenbone then
-        GUIEditor.label[9] = guiCreateLabel(213, 192, 152, 20, "Перелом: true", false, GUIEditor.tab[1])
+        GUIEditor.label[9] = guiCreateLabel(213, 192, 152, 20, "Złamanie: true", false, GUIEditor.tab[1])
 		else
-		GUIEditor.label[9] = guiCreateLabel(213, 192, 152, 20, "Перелом: false", false, GUIEditor.tab[1])
+		GUIEditor.label[9] = guiCreateLabel(213, 192, 152, 20, "Złamanie: false", false, GUIEditor.tab[1])
 		end
 		if inComa then
-        GUIEditor.label[10] = guiCreateLabel(214, 212, 151, 21, "Кома: true", false, GUIEditor.tab[1])
+        GUIEditor.label[10] = guiCreateLabel(214, 212, 151, 21, "Zemdlenie: true", false, GUIEditor.tab[1])
 		else
-		GUIEditor.label[10] = guiCreateLabel(214, 212, 151, 21, "Кома: false", false, GUIEditor.tab[1])
+		GUIEditor.label[10] = guiCreateLabel(214, 212, 151, 21, "Zemdlenie: false", false, GUIEditor.tab[1])
 		end
 		end
     end
@@ -851,9 +851,9 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
               local x, y, z = guiGetText(GUIEditor.edit[2]), guiGetText(GUIEditor.edit[3]), guiGetText(GUIEditor.edit[4])
 			    if x and y and z then
                   setElementPosition(getLocalPlayer(), x, y, z)
-				  outputChatBox("Вы успешно телепортированы по координатам: #00DD00X:"..x.." Y:"..y.." Z:"..z.." !",255, 255, 255, true)
+				  outputChatBox("Pomyśłnie teleportowano do #00DD00X:"..x.." Y:"..y.." Z:"..z.." !",255, 255, 255, true)
 			    else
-			      outputChatBox("Заполните все поля!",255, 0, 0)
+			      outputChatBox("Wypełnij wszystkie pola!",255, 0, 0)
 			    end
            end
     end)
@@ -863,63 +863,63 @@ addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[10]) then
               setElementPosition( localPlayer, 213.10000610352, 1933.8000488281, 23.200000762939)
-              outputChatBox( "Вы успешно телепортированы на  #00DD00Зону 51!", 255, 255, 255, true)
+              outputChatBox( "Pomyślnie teleportowano do  #00DD00Area 51!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[11]) then
               setElementPosition( localPlayer, -1326.6999511719, 502.39999389648, 18.200000762939)
-              outputChatBox( "Вы успешно телепортированы на  #00DD00Авианосец!", 255, 255, 255, true)
+              outputChatBox( "Pomyślnie teleportowano do  #00DD00lotniskowca!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[12]) then
               setElementPosition( localPlayer, 2575.1721191406,2808.9436035156,12)
-              outputChatBox( "МАГАЗ", 255, 255, 255, true)
+              --outputChatBox( "МАГАЗ", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[13]) then
               setElementPosition( localPlayer, 1172.91, -1323.281, 15.399)
-              outputChatBox( "Вы успешно телепортированы в больницу #00DD00ЛС!", 255, 255, 255, true)
+              --outputChatBox( "Вы успешно телепортированы в больницу #00DD00ЛС!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[14]) then
               setElementPosition( localPlayer, 1607.409, 1815.964, 10.82)
-              outputChatBox( "Вы успешно телепортированы в больницу #00DD00ЛВ!", 255, 255, 255, true)
+              --outputChatBox( "Вы успешно телепортированы в больницу #00DD00ЛВ!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[15]) then
               setElementPosition( localPlayer, -2652.419, 639.107, 14.453)
-              outputChatBox( "Вы успешно телепортированы в больницу #00DD00СФ!", 255, 255, 255, true)
+              --outputChatBox( "Вы успешно телепортированы в больницу #00DD00СФ!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[16]) then
               setElementPosition( localPlayer, 1957.475, -2183.716, 13.547)
-              outputChatBox( "Вы успешно телепортированы к #00DD00Аеро ЛС!", 255, 255, 255, true)
+              --outputChatBox( "Вы успешно телепортированы к #00DD00Аеро ЛС!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[17]) then
               setElementPosition( localPlayer, -1544.908, -440.322, 6)
-              outputChatBox( "Вы успешно телепортированы к #00DD00Аеро СФ!", 255, 255, 255, true)
+              --outputChatBox( "Вы успешно телепортированы к #00DD00Аеро СФ!", 255, 255, 255, true)
            end
     end)
 	addEventHandler ( "onClientGUIClick", getResourceRootElement(getThisResource()),
     function ( )
            if (source == GUIEditor.button[18]) then
               setElementPosition( localPlayer, 1715.084, 1616.271, 10.083)
-              outputChatBox( "Вы успешно телепортированы к #00DD00Аеро ЛВ!", 255, 255, 255, true)
+              --outputChatBox( "Вы успешно телепортированы к #00DD00Аеро ЛВ!", 255, 255, 255, true)
            end
     end)
 	
@@ -985,7 +985,7 @@ if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F
 			local x,y,z = getElementPosition(veh)
 			local col = getElementData(veh,"parent") 
 			if getElementData(col,"fuel") > 11 then
-				guiGridListSetItemText ( mainv, row, vcolumn1, i..") "..getVehicleName ( veh ).." (Залит бензин наверное собрано)", false, false )
+				guiGridListSetItemText ( mainv, row, vcolumn1, i..") "..getVehicleName ( veh ).." (prawd. prywatny)", false, false )
 				guiGridListSetItemColor ( mainv, row, vcolumn1, 255,0,0 )
 			else
 				guiGridListSetItemText ( mainv, row, vcolumn1, i..") "..getVehicleName ( veh ), false, false )
@@ -1003,7 +1003,7 @@ if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F
 		if getElementModel(object) == 2218 or getElementModel(object) == 2220 or getElementModel(object) == 2222 then 
 		local rowa = guiGridListAddRow ( Amainv )
 		local xx,yy,zz = getElementPosition(object)
-		guiGridListSetItemText ( Amainv, rowa, Avcolumn1, "Палатка", false, false )
+		guiGridListSetItemText ( Amainv, rowa, Avcolumn1, "Namiot", false, false )
 		guiGridListSetItemText ( Amainv, rowa, Avcolumn2, xx, false, false )
 		guiGridListSetItemText ( Amainv, rowa, Avcolumn3, yy, false, false )
 		guiGridListSetItemText ( Amainv, rowa, Avcolumn4, zz, false, false )
@@ -1019,8 +1019,8 @@ end
 	guiSetVisible(GUIEditor.window[1],not guiGetVisible(GUIEditor.window[1]))	
 	showCursor(not isCursorShowing())
 
- else 
- outputChatBox("Вы не являетесь администратором",255, 0, 0)
+-- else 
+-- outputChatBox("Nie jesteś administratorem!",255, 0, 0)
  end
 end
 addCommandHandler ("unionfan", open_menu)
@@ -1045,7 +1045,7 @@ if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F
 			local x,y,z = getElementPosition(veh)
 			local col = getElementData(veh,"parent") 
 			if getElementData(col,"fuel") > 11 then
-				guiGridListSetItemText ( mainv, row, vcolumn1, i..") "..getVehicleName ( veh ).." (Залит бензин наверное собрано)", false, false )
+				guiGridListSetItemText ( mainv, row, vcolumn1, i..") "..getVehicleName ( veh ).." (prawd. prywatny)", false, false )
 				guiGridListSetItemColor ( mainv, row, vcolumn1, 255,0,0 )
 			else
 				guiGridListSetItemText ( mainv, row, vcolumn1, i..") "..getVehicleName ( veh ), false, false )
@@ -1063,7 +1063,7 @@ if serial == "A80157878519CE6B328D3CA9B7609B12" or serial == "E82E605B8538056F2F
 		if getElementModel(object) == 2218 or getElementModel(object) == 2220 or getElementModel(object) == 2222 then 
 		local rowa = guiGridListAddRow ( Amainv )
 		local xx,yy,zz = getElementPosition(object)
-		guiGridListSetItemText ( Amainv, rowa, Avcolumn1, "Палатка", false, false )
+		guiGridListSetItemText ( Amainv, rowa, Avcolumn1, "Namiot", false, false )
 		guiGridListSetItemText ( Amainv, rowa, Avcolumn2, xx, false, false )
 		guiGridListSetItemText ( Amainv, rowa, Avcolumn3, yy, false, false )
 		guiGridListSetItemText ( Amainv, rowa, Avcolumn4, zz, false, false )
@@ -1080,7 +1080,7 @@ end
 	--showCursor(not isCursorShowing())
 	showCursor(false)
 
- else 
- outputChatBox("Вы не являетесь администратором",255, 0, 0)
+ --else 
+ --outputChatBox("Nie jesteś administratorem!",255, 0, 0)
  end
 end)

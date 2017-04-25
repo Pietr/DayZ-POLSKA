@@ -7,8 +7,8 @@ addEvent("onAdminkill", true)
 addEventHandler("onAdminkill", root,
 function(pName)
 	setElementData(getPlayerFromName(pName), "blood", -18)
-	outputChatBox("Вы убили игрока: "..pName, source, 255, 255, 0)
-	outputChatBox("Вас убил админ", getPlayerFromName(pName), 255, 255, 0)
+	outputChatBox("Zabiłeś "..pName, source, 255, 255, 0)
+	outputChatBox("Zostałeś zabity", getPlayerFromName(pName), 255, 255, 0)
 end )
 
 
@@ -224,7 +224,6 @@ function manipulateVehicle(typ,veh)
 		setElementData(col,"Paczka krwii",7)
 		setElementData(col,"Morfina",7)
 		setElementData(col,"Paczka krwii",7)
-		setElementData(col,"Аптечка",7)
 		setElementData(col,"Paczka krwii",7)
 		setElementData(col,"Środki przeciwbólowe",7)
 		setElementData(col,"Pieniądze",500)
