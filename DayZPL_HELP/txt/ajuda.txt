@@ -1,1 +1,46 @@
-﻿wkrótce 1
+﻿BAZY
+
+Na serwerze dostępne są różnego rodzaju bazy (koszt): Mała(10), Śerdnia(15), Duża(25), Mega(35).
+Można w nich chować namioty i pojazdy lądowe, powietrzne. Każda baza posiada limit!
+Łatwy panel zarządzania pozwoli Ci zarządzać kilkoma bazami, zmieniać cih dane, sprawdzić dni ważności i dodawać/usuwać członków.
+Bazę można postawić w PRAWIE dowolnym miejscu (zapis w regulaminie reguluje zakazane strefy).
+Jest to jedyny wspomagacz który można kupić na serwerze!
+Więcej informacji w zakładce SKLEP na forum www.DayZ-POLSKA.tk
+
+---------------------------------------------------------------------------------------------------------------------
+ZOMBIE
+
+Uważaj na zombie! Na serwerze możesz naleźć: wolne, szybkie i strzelające NPC!
+Strzelające NPC są głównie przy miejscach militarnych.
+Szybkie w miejscach militarnych, ukrytych (metro, M na mapie), przy rozbitych pojazdach.
+Wolne znajdziesz na wsiach, miastach etc...
+
+---------------------------------------------------------------------------------------------------------------------
+MONTAŻ BRONI NA POJEŹDZIE
+
+Na pojazdach(ID):
+Yosemite(554), FBI Rancher(490), Hotdog(588), Landstalker(400), Mesa(500), Cargobob(548), Patriot(470), Raindance(563), Enforcer(427)
+Można zamontować broń M134 Minigun, amunicja: 51mm NATO.
+
+---------------------------------------------------------------------------------------------------------------------
+CRAFTING
+
+Na serwerze można znaleźć plany przedmiotów. Używamy je jak zwykłe przedmioty (2x LPM).
+Jeżeli będziesz miał wymagane surowce to będziesz mógł wytworzyć przedmiot.
+
+---------------------------------------------------------------------------------------------------------------------
+GRANATNIK
+
+Póki co tylko M4A1 CCO oferuje opcję wyrzutu granatów. Trzymając PPM należy kliknąć F lub G aby zmienić tryb strzelania.
+
+---------------------------------------------------------------------------------------------------------------------
+PANCERZ NA POJAZDACH
+
+Na pojazdach możesz zamontować Pancerz sam. który daje Ci dodatkowe punkty HP pojazdu.
+
+---------------------------------------------------------------------------------------------------------------------
+SKLEP
+
+W K.A.C.C. Military Fuels znajdziesz opuszczoną fabrykę a w niej sklep i regenerację HP.
+Pieniądze możesz zyskać zabijając zombie, plądrując, sprzedając przedmioty w sklepie.
+Nie jest to gotówka przypisywana to konta, lecz w formie przedmiotu w ekwipunku.

@@ -1,1 +1,121 @@
-﻿wkrótce 3
+﻿Niniejszy regulamin jest objęty prawami autorskimi DayZ-POLSKA. Zabraniane jest jego rozpowszechnianie na innych serwerach/forach. Zezwalamy na odpowiednie przekierowania do tegoż regulaminu. Każdy gracz przed rozpoczęciem rozgrywki na naszym serwerze jest zobowiązany do przeczytania i respektowania tegoż regulaminu.
+
+§1. Zachowania graczy i administratorów
+
+a) Zachowania graczy
+Zakazane jest wyzywanie, zastraszanie, poniżanie, prześladowanie innych graczy,
+Zakazane jest podszywanie się pod osobę znajdującą się w składzie administracji,
+Zakazane jest przeszkadzanie moderatorom/administratorom podczas wykonywania prac,
+Zakazane jest nękanie administracji i graczy,
+Zakazany jest spam/przeklinanie/krytykowanie serwera na chacie głównym, lokalnym, grupowym, Radnio-Chat (Kara surowa),
+Zakazane jest prowokowanie graczy do robienia rzeczy sprzecznych z regulaminem serwera,
+Zakazane jest "żebranie" itemów/pojazdów od administracji,
+Zakazane jest posiadanie kilku kont na jednym serialu,
+Zakazane jest oszukiwanie administracji,
+Zakazane jest włamywanie się do baz,
+Zakazane jest posiadanie tzw. niewidocznych nicków lub zawierające same znaki (np. . , ! @ # $ etc...)
+Zakazane jest wykorzystywanie wszelkich błędów do wzbogacenia się lub do uprzykrzania komuś gry,
+Zakazane jest zabijanie administratora/moderatora podczas gdy wykonuje swe czynności (np. sprawdzenie gracza),
+Zakazane jest rozpowszechnianie wszelkich informacji (IP,WWW, etc...) o innych serwerach MTA,
+Zakazane jest zabijanie osób z administracji podczas interwencji,
+Zakazane jest pisanie zdań wielkimi literami, tzw. Caps Lock,
+Gracz ma prawo prosić innych o pomoc, nie tylko administrację,
+Gracz ma prawo kontaktować się z administracją za pośrednictwem PW w celach pomocniczych,
+Gracz ma prawo na składanie skarg na innych graczy/administratorów,
+Gracz ma prawo do wypowiadanie się w skargach w których jest oskarżającym/oskarżonym lub wie coś na temat skargi,
+Gracz ma prawo do składania podań na wyższą rangę jak dana rekrutacja jest otwarta,
+Gracz ma prawo do wypowiadania się w sprawach serwerowych,
+Gracz ma prawo pisać propozycje dot. serwera lub nawet udostępnić kod własnego skryptu,
+Gracz ma prawo pisać odwołanie od kary (wyjątkiem są kary za skargi lub PERMy),
+Gracz musi zgłaszać wszelkie odkryte błędy w grze na forum, w temacie opisać ogólnie, a na PW do administratora Pietr szczegółowo,
+Gracz musi zgłosić każdy odkryty błąd/bug do 24H od jego odkrycia,
+Skargi za bany/kicki/muty są automatycznie odrzucane, do tego służy odpowiednia apelacja,
+
+b) Zachowania administratorów/moderatorów
+Zakazane jest wykorzystywanie rangi do wzbogacenia się na serwerze/realnie,
+Zakazane jest prześladowanie graczy,
+Zakazane jest udostępnianie/spectowanie/teleportowanie gracza w celu zdradzenia jego pozycji lub zabicia go,
+Zakazane jest bezpodstawne kickowanie/banowanie/mutowanie graczy bez podania powodu,
+Zakazane jest dawanie jetpacka osobie o niższej randze,
+Zakazane jest teleportowania graczy, wyjątkiem jest błąd z teksturami lub ewent, ale za zgodą samego gracza,
+Zakazane jest tworzenia zrzutów nie więcej jak dwa razy dziennie,
+Zakazane jest dawanie graczom przedmiotów/żetonów/doświadczenia/pojazdów,
+Każdy MODERATOR/MOD-CHAT wchodzi w skład administracji,
+Każda osoba z administracji ma prawo do pomyłki, w razie niewinności należy złożyć odpowiednią apelację,
+Osoba o niższej randze nie może podważać osoby o wyższej,
+Kolejność rang:
+
+Administrator
+Junior Administrator
+Moderator
+MOD-CHAT
+SVIP
+VIP
+Gracz
+(Wszystkie niewspomniane rangi)
+
+Ranga MOD-CHAT ma prawo do:
+Kick
+Mute
+Ban
+Flip
+Przeglądanie banów
+
+Ranga MODERATOR ma prawo do:
+Kick
+Mute
+Ban
+Freeze
+JetPack
+Flip
+Spec
+Teleport
+Przeglądanie banów
+
+
+§2. Bazy
+Bazy są przypinane tylko i wyłącznie do gracza,
+Właściciela bazy może zmienić tylko i wyłącznie osoba składająca podanie na forum,
+Każdy gracz na serwerze ma prawo do posiadania nie więcej jak 3 bazy,
+Każda baza dodawana jest do 24H od weryfikacji kodu (termin może się zwiększyć, po wcześniejszym poinformowaniu),
+Bazy mogą stać tylko na ziemi,
+Baza dodawana jest po weryfikacji kodu SMS lub innych sposobów płatności,
+Bazy nie mogą stać w tych miejscach (oznaczone kolorem czerwonym): http://dayz-polska.tk/mapa.jpg
+Bazy mają odpowiednie limity, które należy przestrzegać,
+W celu postawienia bazy nie mogą zostać usunięte żadne obiekty,
+Bazy nie mogą stać w miejscach przeszkadzających w grze i na respach,
+Bazy można powiększyć, wysyłając SMS'a o tej samej treści i na ten sam numer co aktualna baza i składając odpowiednie podanie,
+Zakazane jest niszczenie/okradanie pojazdów/namiotów w bazach (wyjątkiem jest właściciel grupy).
+Dodajemy graczy na własną odpowiedzialność,
+Bazy nie można przepisać na inną osobę, gdy posiadamy blokadę konta.
+
+§3. Rozgrywka
+Zakazane jest używanie wspomagaczy,
+Zakazane jest ukrywanie pojazdów w budynkach, do których aby wejść potrzeba użyć bugu/usunąć obiekt,
+Zakazane jest używanie wulgarnych/obrażających/podszywających się nicków,
+Zakazane jest kopiowanie przedmiotów/pojazdów,
+Zakazane są działania, które mogą zaszkodzić serwerowi,
+Zakazane jest kampienie na spawnach,
+Wszelkie sprawy do administracji muszą być kierowane na PRIV na forum,
+Administracja nie zwraca pojazdów/przedmiotów w grze utraconych w jakikolwiek sposób,
+Administrator/moderator nie musi pomagać lub odpowiadać graczu,
+Administrator/moderator ma prawo do teleportacji do gracza bez podania powodu,
+Administrator ma prawo do wejścia do bazy w celu rewizji,
+Administrator/moderator nadaje karę wg. zaszłej sytuacji,
+Administrator/moderator ma prawo użycia jetpacka w celach sprawdzenia obiektów,
+Administrator/moderator może zabić gracza, gdy próbuje go zabić/celować podczas interwencji.
+Sprawy nieujęte w tym regulaminie będą rozstrzygane przez administratora. 
+
+§4. Kary
+Wg. §3 podpunktu 12 administrator/moderator może sam wymierzyć karę.
+Każdy z administracji może użyć następujących kar za przewinienia:
+
+Blokada SERIALu/IP/Konta
+KICK
+MUTE
+Blokada SERIALU powoduje blokadę konta. Wszystkie usługi (bazy, konta premium, dodatki) nie zostaną przedłużone o długość blokady konta.
+
+Kary za przekroczenie limitu w bazie:
+
+Detonacja losowych pojazdów by wyrównać limit (np. limit pojazdów w pazie: 6, pojazdy w bazie: 9 - zostaną zdetonowane 3 pojazdy, gdy w okolicy wybuchną inne pojazdy to nie nasz problem)
+Zmniejszenie ważności bazy o 7 dni

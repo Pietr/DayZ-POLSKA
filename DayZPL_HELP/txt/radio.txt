@@ -1,1 +1,65 @@
-﻿wkrótce 2
+﻿Serwer został w głównej mierze zrobiony przez graczy dla graczy.
+Znudziły Ci się ciągłe gonitwy za graczami bo serwer na którym grałeś nie oferował nic nowego?
+Chcesz poczuć prawdziwy klimat DayZ na platformie MTA dla GTA: San Andreas? Mamy dla Ciebie właśnie ten serwer!
+
+Czeka na ciebie nowo powstała rozbudowana mapa. Nie tylko edytowane już domyślne lokacje z gry (LS, LV, SF, wsie) ale i nowe wyspy.
+Jedna z nich znajduje się na obrzeżach miasta SF i powiększa go nawet dwukrotnie!
+
+Specjalnie stworzone miejsca gwarantują Ci długi czas eksplorowania mapy w poszukiwaniu rzadkich przedmiotów jak i pojazdów.
+Dogodnie ukryte miejsca w głębi miast, nowych zniszczonych metrach czy wyspach może zagwarantować Ci ukrycie swego dobytku przed innymi graczami.
+Jednak, gdybyś chciał mieć 100% gwarancję możesz zakupić bazę - jedyny wspomagacz na serwerze!
+
+Nowo prze konwertowane obiekty z klimatycznych gier zapewnią mega ciekawość wśród eksplorowania mapy. Nie są to jeden, dwa, piętnaście czy dwadzieścia pięć obiektów.
+Nie, nie, nie. Jest ich nawet kilkaset! Cały serwer waży ok. 1.2GB! Fajnie by było mieć cały czas z górki... W życiu nie jest tak łatwo. Zwłaszcza po apokalipsie.
+Nie wszystkie znane ci dotąd dojazdy do lokacji będą dostępne. Musisz wykazać się sprytem, iść na piechotę lub poszukać innej, nowej drogi!
+
+Dogodny zestaw broni umożliwi ci dobranej tej jedynej. Lecz nie zapominaj, że o broń tu ciężko a gdzie o amunicję...
+Szeroki arsenał dla twojej ekipy. Od broni białej do ciężkich broni na pojazdy przez pistolety, karabiny, karabiny wyborowe.
+Część broni została przystosowana pod ciuchy z kamuflażem! Również możemy znaleźć odmiany z tłumikiem.
+Każda z broni ma swoje unikalne DMG i promień rażenia. Nie ucieknie Ci żaden gracz, zombie czy NPC!
+
+Jak to mówią. Do wyboru do koloru.
+Oferujemy szeroki wachlarz opcji personalizacji postaci. W sumie 200 rodzai strojów. Począwszy od nakrycia głowy po sam strój.
+Dostępne są kamizelki, które redukują otrzymywane obrażenia czy dodają miejsce w ekwipunku.
+Zaś kaski nie pełnią tylko rolę ozdobną. Potrafią zabezpieczyć twoją głowę przed strzałem w nią.
+Plecaki - tu nie ma co się rozwodzić nad ilością slotów. Po prostu jest wystarczająca.
+Aby przewozić większą ilość przedmiotów należy skorzystać z pojazdów a jak jeszcze więcej to z pojazdów specjalnych.
+
+Pojazdy to nieodłączna część serii DayZ.
+Klimatyczne pojazdy pokryte rdzą, prosto z Rosji czy pojazdy specjalne.
+Wyżej widać tira + przyczepę co pozwoli nam przemycić większą ilość przedmiotów.
+Znajdziemy również różnej maści pojazdy powietrzne. W tym huntery - tak strzelające rakietami helki.
+Jednak tych helek jest tylko 3 na całą mapę. Osłaniane są przez zombie, uzbrojone NPC i znajdują się w trudno
+dostępnych miejscach.
+W sumie 333 pojazdy w 40 rodzajach porozrzucanych po całej mapie.
+
+Funkcjonalności:
+* Serwer w pełni spolszczony (wiadomości, przedmity, etc...),
+* Budowa serwera nastawiona na optymalność (możesz komfortowo grać na słabym PC),
+* Rozbudowany system grup z własnymi do spersonalizowania rangami i możliwościami,
+* Chat lokalny, grupowy, globalny,
+* Tryb pierwszej osoby,
+* Montaż miniguna na niektórych pojazdach,
+* Montaż rakiet do S.W.A.T,
+* Przyklejanie się do niektórych pojazdów,
+* Czołganie,
+* Zjazd po linie z helki,
+* Radio internetowe w pojazdach,
+* Kilka rodzai namiotów,
+* Plany które możemy wykorzystać do budowy przedmiotów,
+* Rozbudowany system stawiania obiektów, namiotów,
+* 2 rodzaje inwentarzy (oba dostępne pod J),
+* Rozbudowana mapa z nowymi tunelami metra w miastach,
+* Wiele nowych szpitali (nawet w Area),
+* Możliwość wejścia do niektórych popularnych budynków (szpitale, policja),
+* Wiele rodzai zombie (chodzące, biegające - głównie miejsca militarne, bossy),
+* Zombie nie respią się przy graczu. Mają ściśle ustalone respy na mapie.
+* System chodzących po farmach zwierząt,
+* System strzelających NPC do gracza (głównie miejsca militarne i respy rzadkich pojazdów)
+* System promieniowania,
+* System zmęczenia,
+* System nieprzytomności,
+* Anty wychodzenie podczas strzelaniny,
+* Logowanie na serial,
+* Nowe i podmienione dźwięki 3D,
+I wiele, wiele więcej...
