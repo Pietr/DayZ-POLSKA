@@ -75,6 +75,10 @@ function globalMessage(thePlayer, cmd, ...)
 		return
 	elseif (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup("Moderator"))) then
 	    outputChatBox("#FFFAFA[MOD-CHAT]#FF0000 "..name..": #ffffff"..message, getRootElement(), 255, 255, 255, true)
+		outputServerLog("[MOD] "..getPlayerName(thePlayer)..":#ffffff  "..message)
+		return
+	elseif (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup("Modchat"))) then
+	    outputChatBox("#FFFAFA[MOD-CHAT]#FF0000 "..name..": #ffffff"..message, getRootElement(), 255, 255, 255, true)
 		outputServerLog("[MOD-CHAT] "..getPlayerName(thePlayer)..":#ffffff  "..message)
 		return
 	elseif (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup("Everyone"))) then
@@ -107,7 +111,7 @@ end
 
 function checkForColorCodes(name)
   if string.find(name, "#%x%x%x%x%x%x") then
-    cancelEvent(true, "Usuń kolor - #")
+    cancelEvent(true, "Usuń kolor z nicku - #")
   end
 end
 addEventHandler("onPlayerConnect", root, checkForColorCodes)
@@ -115,10 +119,21 @@ addEventHandler("onPlayerConnect", root, checkForColorCodes)
 addEventHandler ( 'onPlayerChangeNick',root, 
     function ( _,Nick )
         if string.find ( Nick,'#' ) then
-            kickPlayer ( source,root,'usuń kolor z nicku! - #' )
+			kickPlayer(source,"usuń kolor z nicku!")
         end
     end
 )
 
+function welcomemsg()
+	setTimer ( function ()
+	outputChatBox ("#FF0000[SERWER] #FFFFFFWitaj na oficjalnym serwerze DayZ-POLSKA.tk!",source, 255, 0, 0,true )
+	outputChatBox ("#FF0000[SERWER] #FFFFFFZapoznaj się z panelem pomocy pod F1",source, 255, 0, 0,true )
+	outputChatBox ("#FF0000[SERWER] #FFFFFFOficjalne forum: www.DayZ-POLSKA.tk",source, 255, 0, 0,true )
+	outputChatBox ("#FF0000-----------------------------------------------------------------------------",source, 255, 0, 0,true )
+	outputChatBox ("#FF0000[SERWER] Jeżeli jesteś tu pierwszy raz skorzystaj z szybkiego serwera do pobierania plików!",source, 255, 0, 0,true )
+	outputChatBox ("#FF0000[SERWER] 85.255.7.122:22003",source, 255, 0, 0,true )
+	outputChatBox ("#FF0000[SERWER] Nie zajmuj niepotrzebnie slotów i ograniczonej tu aktualnie dla ciebie przepustowości.",source, 255, 0, 0,true )
+	end, 2000, 1, source )		
 
-
+end
+addEventHandler("onPlayerConnect", root, welcomemsg)
