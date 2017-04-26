@@ -1,4 +1,12 @@
-﻿BAZY
+﻿WYDAJNOŚĆ
+
+Z racji, że jest wiele nowych przekonwertowanych obiektów i sami wiemy jakim silnikiem gry dysponujemy
+proponujemy w razie problemów z wydajnością/stabilnością gry przede wszystkim wyłączyć cienie objętościowe.
+Jeżeli dalej będą występować problemy zmień inne opcje graficzne. Dalej masz problem?
+Napisz na forum!
+
+---------------------------------------------------------------------------------------------------------------------
+BAZY
 
 Na serwerze dostępne są różnego rodzaju bazy (koszt): Mała(10), Śerdnia(15), Duża(25), Mega(35).
 Można w nich chować namioty i pojazdy lądowe, powietrzne. Każda baza posiada limit!
