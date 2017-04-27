@@ -74,7 +74,7 @@ function globalMessage(thePlayer, cmd, ...)
 		outputServerLog("[ADMIN] "..getPlayerName(thePlayer)..":#ffffff  "..message)
 		return
 	elseif (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup("Moderator"))) then
-	    outputChatBox("#FFFAFA[MOD-CHAT]#FF0000 "..name..": #ffffff"..message, getRootElement(), 255, 255, 255, true)
+	    outputChatBox("#FFFAFA[MOD]#FF0000 "..name..": #ffffff"..message, getRootElement(), 255, 255, 255, true)
 		outputServerLog("[MOD] "..getPlayerName(thePlayer)..":#ffffff  "..message)
 		return
 	elseif (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup("Modchat"))) then
