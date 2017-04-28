@@ -136,4 +136,4 @@ function welcomemsg()
 	end, 2000, 1, source )		
 
 end
-addEventHandler("onPlayerConnect", root, welcomemsg)
+--addEventHandler("onPlayerConnect", root, welcomemsg)
