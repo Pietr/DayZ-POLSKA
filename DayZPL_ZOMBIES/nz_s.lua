@@ -4,9 +4,9 @@ fast_blood = 15000*0.6 -- krew szybkiego
 sold_blood = 20000*0.6 -- krew mocnego
 zomb_blood = 5000*0.6  -- krew zwykłego
 
-fast_damage = 3111*0.5 -- DMG szybkiego
-sold_damage = 4112*0.5 -- DMG mocnego
-zomb_damage = 1121*0.5 -- DMG zwykłego
+fast_damage = 3111*0.2 -- DMG szybkiego
+sold_damage = 4112*0.2 -- DMG mocnego
+zomb_damage = 1121*0.2 -- DMG zwykłego
 
 --Zwierzęta
 bear_blood = 20000 
