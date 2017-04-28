@@ -28,7 +28,7 @@ end
 addEventHandler ( "onPlayerQuit", root, ClearPlayerLeaving ) 
 
 function setslot(player, commandName, amount)
-	if not (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(source)), aclGetGroup("Admin"))) then return end
+	--if not (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(source)), aclGetGroup("Admin"))) then return end
 	if not amount then
 		outputConsole ( "Syntax: res <max_slot>" )
 		return
@@ -41,7 +41,7 @@ end
 addCommandHandler("setslot", setslot)
 
 function getslot()
-	if not (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(source)), aclGetGroup("Admin"))) then return end
+	--if not (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(source)), aclGetGroup("Admin"))) then return end
 	outputChatBox( "Limit slotów: "..maxplayers, source, 55, 125, 255 ) 
 	outputChatBox( "Zajęte zarezerwowane: "..resonline, source, 55, 125, 255 ) 	
 	outputChatBox( "Online: "..getPlayerCount() .."/"..maxplayers+resonline, source, 55, 125, 255 ) 
