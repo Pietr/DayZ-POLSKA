@@ -82,8 +82,6 @@ if serial1 == "A80157878519CE6B328D3CA9B7609B12" then
 			getElementModel(object) == 1748
 
 			then 
-			local serial = getElementData(col,"serial")
-			local name = getElementData(col,"name")
 
 			if getElementData(col,"MAX_Slots") == 252 then
 				guiGridListSetItemText (w.gridList.main, row, w.gridList.column1,"Namiot (wojskowy)", false, false )
@@ -102,8 +100,6 @@ if serial1 == "A80157878519CE6B328D3CA9B7609B12" then
 			guiGridListSetItemText ( w.gridList.main, row, w.gridList.column2, x, false, false )
 			guiGridListSetItemText ( w.gridList.main, row, w.gridList.column3, y, false, false )
 			guiGridListSetItemText ( w.gridList.main, row, w.gridList.column4, z, false, false )
-			guiGridListSetItemText ( w.gridList.main, row, w.gridList.column5, name, false, false )
-			guiGridListSetItemText ( w.gridList.main, row, w.gridList.column6, serial, false, false )
 	end
 	end
 	guiSetVisible(w.main, true)

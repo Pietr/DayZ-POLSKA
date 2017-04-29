@@ -54,6 +54,7 @@ function saveDataBased()
 			local x,y,z = getElementPosition(tent)
 			local col = getElementData(tent,"parent")
 			local rotx,roty,rot = getElementRotation(getElementData(tent,"parent"))
+			if not rot then rot = 0 end
 			local dataT = {}
 			local noDeleteTent = false
 			for i,v in ipairs(serverData["items"]) do
@@ -193,6 +194,7 @@ function createNewTent(row,class)
 		setElementData(tentCol,"parent",tent)
 		setElementData(tent,"parent",tentCol)
 		setElementData(tentCol,"tent",true)
+		setElementData(tentCol,"vehicle",true)
 		for i,v in pairs(data) do
 			setElementData(tentCol,v[1],v[2])
 		end
