@@ -63,7 +63,7 @@ function createBase(row)
 	local marker2 = createMarker ( x,y,-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
 
 	addCommandHandler ( pass,function (source)
-		if isElement(marker) and isElement(marker) then
+		if isElement(marker) and isElement(marker2) then
 			if isElementWithinMarker ( source, marker ) then
 				setElementPosition ( getPedOccupiedVehicle ( source ) or source,  x,y,-95+3 )
 			elseif isElementWithinMarker ( source, marker2 ) then
@@ -101,7 +101,7 @@ function bazedel(source,cmd,id)
 			local base_o = getElementData(v,"base_o")
 			local marker = getElementData(v,"marker")
 			local marker2 = getElementData(v,"marker2")
-			local passer = getElementData(v,"pass")
+			passer = getElementData(v,"pass")
 			destroyElement(base_o)
 			destroyElement(marker)
 			destroyElement(marker2)
@@ -137,13 +137,13 @@ function createNewBase(source,cmd,owner,obj,pass,day,namebase)
 		outputChatBox("Wpisz hasło bazy!",source)
 		return false
 	end	
-	--[[local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases"),-1)
+	local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases"),-1)
 	for index, baze in ipairs(bazas) do
 		if baze["pass"] == pass then
-			outputChatBox("Нельзя использовать этот пароль!",source,255,255,255)
+			outputChatBox("Użyj innego hasła!",source,255,255,255)
 			return
 		end
-	end]]
+	end
 	day = tonumber(day)
 	if not day then
 		outputChatBox("Wpisz termin bazy!",source)
@@ -225,50 +225,51 @@ function createNewBase(source,cmd,owner,obj,pass,day,namebase)
 		end
 	end
 	-- Запись в базу данных
-	local result = dbQuery( database, "INSERT INTO `bases` VALUES ('"..baseID.."', '"..namebase.."', '"..objj.."', '"..x.."', '"..y.."', '"..z.."', '"..vrot.."', '"..pass.."', '"..namebaze.."', '"..math.floor(getRealTime().timestamp+(86400*day)).."', '"..toJSON(friends).."', '"..owner.."');")
+	local result = dbQuery( database, "INSERT INTO `bases` VALUES ('"..baseID.."', '"..owner.."', '"..objj.."', '"..x.."', '"..y.."', '"..z.."', '"..vrot.."', '"..pass.."', '"..namebaze.."', '"..math.floor(getRealTime().timestamp+(86400*day)).."', '"..toJSON(friends).."', '"..owner.."');")
 	friends = nil
 end
 addEvent("bazecreate",true)
 addEventHandler("bazecreate",getRootElement(),createNewBase)
 
 function redactBase(source,id,owner,pass,day,namebase)
-if not (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(source)), aclGetGroup("Admin"))) then return end
-local namebase = tostring(namebase)
-local colvo = string.len(namebase)
-if colvo > 40 then
-outputChatBox("Nazwa bazy może mieć maks. 40 znaków!",source, 255, 255, 255) 
-return end
-if not (id or owner or pass or day) then outputChatBox("Wypełnij wymagane pola!",source) return end
-local id = tonumber(id)
-local owner = tostring(owner)
-local pass = tostring(pass)
-local day = tonumber(day)
---[[local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases"),-1)
-for index, baze in ipairs(bazas) do
-	if baze["pass"] == pass then
-		outputChatBox("Нельзя использовать этот пароль!",source,255,255,255)
-		return
+	if not (isObjectInACLGroup("user." ..getAccountName(getPlayerAccount(source)), aclGetGroup("Admin"))) then return end
+	namebase = tostring(namebase)
+	local colvo = string.len(namebase)
+	if colvo > 40 then
+		outputChatBox("Nazwa bazy może mieć maks. 40 znaków!",source, 255, 255, 255) 
+	return end
+	if not (id or owner or pass or day) then outputChatBox("Wypełnij wymagane pola!",source) return end
+	id = tonumber(id)
+	owner = tostring(owner)
+	pass = tostring(pass)
+	day = tonumber(day)
+	local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases"),-1)
+	for index, baze in ipairs(bazas) do
+		if baze["pass"] == pass then
+			outputChatBox("Użyj innego hasła!",source,255,255,255)
+			return
+		end
 	end
-end]]
-for i, v in ipairs(getElementsByType("colshape")) do
-	if getElementData(v,"base") and getElementData(v,"id") == id then
-		local markerred = getElementData(v,"marker")
-		local markerred2 = getElementData(v,"marker2")
-		local passer = getElementData(v,"pass")
-		destroyElement(markerred)
-		destroyElement(markerred2)
-		--destroyElement(passer)
-		removeCommandHandler(getElementData(v,"pass"))
-		setElementData(v,"pass",nil)
+	for i, v in ipairs(getElementsByType("colshape")) do
+		if getElementData(v,"base") and getElementData(v,"id") == id then
+			local markerred = getElementData(v,"marker")
+			local markerred2 = getElementData(v,"marker2")
+			passer = getElementData(v,"pass")
+			destroyElement(markerred)
+			destroyElement(markerred2)
+			--destroyElement(passer)
+			removeCommandHandler(getElementData(v,"pass"))
+			setElementData(v,"pass",passer)
+		end
 	end
-end
-dbQuery( database, "UPDATE `bases` SET serialowner='"..owner.."', pass='"..pass.."', owner='"..namebase.."', day='"..math.floor(getRealTime().timestamp+(86400*(day+1))).."' WHERE id='"..id.."';")
-	
+	dbQuery( database, "UPDATE `bases` SET serialowner='"..owner.."', pass='"..pass.."', owner='"..namebase.."', day='"..math.floor(getRealTime().timestamp+(86400*(day+1))).."' WHERE id='"..id.."';")
 	local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases WHERE id='"..id.."'"),-1)
 	for index, baze in ipairs(bazas) do
 		object = tonumber(baze['object'])
-			markerr = createMarker ( baze['x'], baze['y'], baze['z']-1, "cylinder", 3, 255, 255, 255, 20 ) -- Вход
-			markerr2 = createMarker ( baze['x'],baze['y'],-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
+		id2 = tonumber(baze['id'])
+		if id == id2 then
+			local markerr = createMarker ( baze['x'], baze['y'], baze['z']-1, "cylinder", 3, 255, 255, 255, 20 ) -- Вход
+			local markerr2 = createMarker ( baze['x'],baze['y'],-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
 			addCommandHandler ( pass,function (source)
 			if isElement(markerr) and isElement(markerr2) then
 				if isElementWithinMarker ( source, markerr ) then
@@ -278,9 +279,7 @@ dbQuery( database, "UPDATE `bases` SET serialowner='"..owner.."', pass='"..pass.
 				end
 			end
 			end)
-	end
-	
-	for i, v in ipairs(getElementsByType("colshape")) do
+			for i, v in ipairs(getElementsByType("colshape")) do
 		if getElementData(v,"base") and getElementData(v,"id") == id then
 			setElementData(v,"base",true)
 			setElementData(v,"marker",markerr)
@@ -289,43 +288,58 @@ dbQuery( database, "UPDATE `bases` SET serialowner='"..owner.."', pass='"..pass.
 			--error("Redact")
 		end
 	end
+		end
+	end
+	
+	--[[for i, v in ipairs(getElementsByType("colshape")) do
+		if getElementData(v,"base") and getElementData(v,"id") == id then
+			setElementData(v,"base",true)
+			setElementData(v,"marker",markerr)
+			setElementData(v,"marker2",markerr2)
+			setElementData(v,"pass",pass)
+			--error("Redact")
+		end
+	end]]
 
 end
 addEvent("redactBase",true)
 addEventHandler("redactBase",getRootElement(),redactBase)
 
 function redactBasepl(source,id,pass,namebase)
-local namebase = tostring(namebase)
+namebase = tostring(namebase)
+id = tonumber(id)
+pass = tonumber(pass)
 local colvo = string.len(namebase)
 if colvo > 40 then
 outputChatBox("Nazwa bazy może mieć maks. 40 znaków!",source, 255, 255, 255) 
 return end
 if not (id or namebase or pass) then outputChatBox("Wypełnij wszystkie pola!",source) return end
---[[local id = tonumber(id)
+local id = tonumber(id)
 local pass = tostring(pass)
 local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases"),-1)
 for index, baze in ipairs(bazas) do
 	if baze["pass"] == pass then
-		outputChatBox("Нельзя использовать этот пароль!",source,255,255,255)
+		outputChatBox("Użyj innego hasła!",source,255,255,255)
 		return
 	end
-end]]
+end
 for i, v in ipairs(getElementsByType("colshape")) do
 	if getElementData(v,"base") and getElementData(v,"id") == id then
 		local markerred = getElementData(v,"marker")
 		local markerred2 = getElementData(v,"marker2")
+		passer = getElementData(v,"pass")
 		destroyElement(markerred)
 		destroyElement(markerred2)
 		removeCommandHandler(getElementData(v,"pass"))
-		setElementData(v,"pass",nil)
+		setElementData(v,"pass",passer)
 	end
 end
-dbQuery( database, "UPDATE `bases` SET owner='"..namebase.."', pass='"..pass.."' WHERE id='"..id.."';")
+local result = dbQuery( database, "UPDATE `bases` SET owner='"..namebase.."', pass='"..pass.."' WHERE id='"..id.."';")
 	
 	local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases WHERE id='"..id.."'"),-1)
 	for index, baze in ipairs(bazas) do
-		markerr = createMarker ( baze['x'], baze['y'], baze['z']-1, "cylinder", 3, 255, 255, 255, 20 ) -- Вход
-		markerr2 = createMarker ( baze['x'],baze['y'],-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
+		local markerr = createMarker ( baze['x'], baze['y'], baze['z']-1, "cylinder", 3, 255, 255, 255, 20 ) -- Вход
+		local markerr2 = createMarker ( baze['x'],baze['y'],-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
 		addCommandHandler ( pass,function (source)
 		if isElement(markerr) and isElement(markerr2) then
 			if isElementWithinMarker ( source, markerr ) then
@@ -335,9 +349,7 @@ dbQuery( database, "UPDATE `bases` SET owner='"..namebase.."', pass='"..pass.."'
 			end
 		end
 		end)
-	end
-	
-	for i, v in ipairs(getElementsByType("colshape")) do
+		for i, v in ipairs(getElementsByType("colshape")) do
 		if getElementData(v,"base") and getElementData(v,"id") == id then
 			setElementData(v,"base",true)
 			setElementData(v,"marker",markerr)
@@ -346,6 +358,17 @@ dbQuery( database, "UPDATE `bases` SET owner='"..namebase.."', pass='"..pass.."'
 			outputChatBox(pass,source,255,255,255)
 		end
 	end
+	end
+	
+	--[[for i, v in ipairs(getElementsByType("colshape")) do
+		if getElementData(v,"base") and getElementData(v,"id") == id then
+			setElementData(v,"base",true)
+			setElementData(v,"marker",markerr)
+			setElementData(v,"marker2",markerr2)
+			setElementData(v,"pass",pass)
+			outputChatBox(pass,source,255,255,255)
+		end
+	end]]
 
 end
 addEvent("redactBasepl",true)
@@ -361,22 +384,22 @@ local bazas = dbPoll(dbQuery(database, "SELECT * FROM bases"),-1)
 				for i=1, 1 do
 					table.insert(friends,{"ergrgo",1})
 				end
-				dbQuery( database, 'UPDATE `bases` SET owner="none", pass="'..pass..'", human="none", serialowner="none" WHERE id="'..baze['id']..'";')
-				local id = baze["id"]
+				local result = dbQuery( database, 'UPDATE `bases` SET owner="none", pass="'..pass..'", human="none", serialowner="none" WHERE id="'..baze['id']..'";')
+				id = baze["id"]
 				for i, v in ipairs(getElementsByType("colshape")) do
 					if getElementData(v,"base") and getElementData(v,"id") == id then
 						local marker = getElementData(v,"marker")
 						local marker2 = getElementData(v,"marker2")
-						local passer = getElementData(v,"pass")
+						passer = getElementData(v,"pass")
 						destroyElement(marker)
 						destroyElement(marker2)
 						removeCommandHandler(getElementData(v,"pass"))
-						setElementData(v,"pass",nil)
+						setElementData(v,"pass",passer)
 						--error("Check")
 					end
 				end
-						markerr = createMarker ( baze['x'], baze['y'], baze['z']-1, "cylinder", 3, 255, 255, 255, 20 ) -- Вход
-						markerr2 = createMarker ( baze['x'],baze['y'],-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
+						local markerr = createMarker ( baze['x'], baze['y'], baze['z']-1, "cylinder", 3, 255, 255, 255, 20 ) -- Вход
+						local markerr2 = createMarker ( baze['x'],baze['y'],-95, "cylinder", 3, 255, 255, 255, 20 ) -- Выход
 						addCommandHandler ( pass,function (source)
 							if isElement(markerr) and isElement(markerr2) then
 								if isElementWithinMarker ( source, markerr ) then
@@ -478,7 +501,7 @@ end)
 addEvent("trigaddserial", true)
 addEventHandler("trigaddserial", getRootElement(), function(friend, id)
 	--if isObjectInACLGroup("user." .. getAccountName(getPlayerAccount(source)), aclGetGroup("Admin")) then
-		dbQuery(database, "UPDATE `bases` SET human='"..friend.."' WHERE id='"..tonumber(id).."';")
+		local result = dbQuery(database, "UPDATE `bases` SET human='"..friend.."' WHERE id='"..tonumber(id).."';")
 	--end
 end)
 
