@@ -1069,23 +1069,23 @@ function onPlayerEnterDayzVehicle(veh,seat)
 
 	if (getElementData(col,"fuel") or 0) <= 1 then
 		if not getElementModel(veh) == 509 then
-			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","В транспорте нету Свеч!",22,255,0)
+			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","W pojeździe nie ma świec!",22,255,0)
 			setVehicleEngineState ( veh, false )
 			return
 		end
 	end
 	if (getElementData(col,"fuel") or -1) <= 0 then
-			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Нет топлива!",22,255,0)
+			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Brak paliwa w pojeździe!",22,255,0)
 			setVehicleEngineState ( veh, false )
 			return
 			end
 	if (getElementData(col,"fuel") or 0) < 0 then 
-			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Нет топлива!",22,255,0)
+			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Brak paliwa w pojeździe!",22,255,0)
 			setVehicleEngineState ( veh, false ) 
 			return 
 			end
 	setVehicleEngineState ( veh, true )
-	--bindKey(source,"k","down",setEngineStateByPlayer)
+	bindKey(source,";","down",setEngineStateByPlayer)
 end
 addEventHandler ( "onPlayerVehicleEnter", getRootElement(), onPlayerEnterDayzVehicle )
 
@@ -1095,7 +1095,7 @@ addEventHandler ( "onPlayerVehicleEnter", getRootElement(), onPlayerEnterDayzVeh
 function onPlayerExitDayzVehicle(veh,seat)
 	if seat == 0 then
 		setVehicleEngineState ( veh, false )
-		--unbindKey(source,"k","down",setEngineStateByPlayer)
+		unbindKey(source,";","down",setEngineStateByPlayer)
 
 	end	
 end

@@ -45,8 +45,7 @@ AnimalItems = {
 }
 
 bossBlood = { 
-
-	{"Pieniądze",2976,0.15,0,10},
+	{"Pieniądze",2976,0.15,0,5},
 	{"AK-74",2976,0.15,0,1},
 	{"AK-MAG",2976,0.15,0,5},
 }
@@ -1060,7 +1059,7 @@ zombieKilled = function(killer, headshot)
 		end
 		elseif getElementData ( source, "boss_blood" ) then
 		for i,item in ipairs(bossBlood) do
-			setElementData(pedCol, item[1], math.random(2,item[5]))
+			setElementData(pedCol, item[1], math.random(1,item[5]))
 		end
 		elseif getElementData ( source, "boss_all" ) then
 		for i,item in ipairs(bossAll) do

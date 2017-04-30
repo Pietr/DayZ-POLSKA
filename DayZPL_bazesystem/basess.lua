@@ -549,3 +549,20 @@ function createRandomPassword (sym_num)
 	end
 	return pass
 end
+
+function freezeon(theVehicle)
+	local xxx,yyy,zzz = getElementPosition(theVehicle)
+	if zzz < -74 then
+		setElementFrozen ( theVehicle, false )
+		outputChatBox("freeze off",source,209,252,115)
+	end
+end
+addEventHandler("onPlayerVehicleEnter",getRootElement(),freezeon)
+function freezeoff(theVehicle)
+	local xxx,yyy,zzz = getElementPosition(theVehicle)
+	if zzz < -74 then
+		setElementFrozen ( theVehicle, true )
+		outputChatBox("freeze on",source,209,252,115)
+	end
+end
+addEventHandler("onPlayerVehicleExit",getRootElement(),freezeoff)

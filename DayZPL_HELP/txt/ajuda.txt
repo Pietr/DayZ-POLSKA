@@ -10,7 +10,7 @@ BAZY
 
 Na serwerze dostępne są różnego rodzaju bazy (koszt): Mała(10), Śerdnia(15), Duża(25), Mega(35).
 Można w nich chować namioty i pojazdy lądowe, powietrzne. Każda baza posiada limit!
-Łatwy panel zarządzania pozwoli Ci zarządzać kilkoma bazami, zmieniać cih dane, sprawdzić dni ważności i dodawać/usuwać członków.
+Łatwy panel zarządzania pozwoli Ci zarządzać kilkoma bazami, zmieniać ich dane, sprawdzić dni ważności i dodawać/usuwać członków.
 Bazę można postawić w PRAWIE dowolnym miejscu (zapis w regulaminie reguluje zakazane strefy).
 Jest to jedyny wspomagacz który można kupić na serwerze!
 Więcej informacji w zakładce SKLEP na forum www.DayZ-POLSKA.tk

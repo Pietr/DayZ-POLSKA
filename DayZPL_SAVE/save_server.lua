@@ -170,6 +170,9 @@ function createNewVehicle(row)
 	local health = tonumber(row['health'])
 	veh = createVehicle(model,x,y,z,0,0,r)
 	vehCol = createColSphere(x,y,z,3)
+	if z < -74 then
+		setElementFrozen ( veh, true )
+	end
 	attachElements(vehCol,veh,0,0,1.5)
 	setElementData(vehCol,"parent",veh)
 	setElementData(veh,"parent",vehCol)

@@ -1,30 +1,30 @@
 --By Fanbox 
 
-fast_blood = 15000*0.6 -- krew szybkiego
-sold_blood = 20000*0.6 -- krew mocnego
-zomb_blood = 5000*0.6  -- krew zwykłego
+fast_blood = 5000-- krew szybkiego
+sold_blood = 2000-- krew mocnego
+zomb_blood = 2000  -- krew zwykłego
 
-fast_damage = 3111*0.2 -- DMG szybkiego
-sold_damage = 4112*0.2 -- DMG mocnego
-zomb_damage = 1121*0.2 -- DMG zwykłego
+fast_damage = 242 -- DMG szybkiego
+sold_damage = 452 -- DMG mocnego
+zomb_damage = 211 -- DMG zwykłego
 
 --Zwierzęta
 bear_blood = 20000 
 wolf_blood = 7000 
 fox_blood = 5000 
 
-bear_damage = 6111 
-wolf_damage = 3112 
-fox_damage = 1121 
+bear_damage = 105
+wolf_damage = 166
+fox_damage = 144
 
 animal_blood = 2000 
-animal_damage = 100 
+animal_damage = 10
 
 boss_blood_blood = 75000 
-boss_blood_damage = 5123
+boss_blood_damage = 351
 
 boss_all_blood = 12000 
-boss_all_damage = 2
+boss_all_damage = 120
 
 
 function chasedStartAttack (zomb)
@@ -171,7 +171,7 @@ function activateZombie (zomb, x, y, z, ztype)
 			setElementData(zomb, "damage", boss_all_blood)
 			setElementData(zomb, "speed", "sprint")
 		elseif ztype == 10 then
-			setElementData ( zomb, "zombie", true )
+			setElementData ( zomb, "bot", true )
 			setElementData ( zomb, "pila", true )
 			setElementData(zomb, "blood", boss_all_blood)
 			setElementData(zomb, "damage", boss_all_damage)

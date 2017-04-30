@@ -366,25 +366,25 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 	end
 --Урон Зомби
 	if attacker and getElementData(attacker,"zombie") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-1221)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,7)
 		if number == 4 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
 		end
 		if getElementData(getLocalPlayer(), "infection_zom") == 0 then
-		local aleatory = math.random(1,5)
+		local aleatory = math.random(1,15)
         if aleatory == 3 then
         setElementData(getLocalPlayer(), "infection_zom", 1)
 		end
 		end
 		if getElementData(getLocalPlayer(), "infection_zom") == 1 then
-		local aleatory = math.random(1,7)
+		local aleatory = math.random(1,20)
         if aleatory == 3 then
         setElementData(getLocalPlayer(), "infection_zom", 2)
 		end
 		end
 		if getElementData(getLocalPlayer(), "infection_zom") == 2 then
-		local aleatory = math.random(1,8)
+		local aleatory = math.random(1,25)
         if aleatory == 3 then
         setElementData(getLocalPlayer(), "infection_zom", 3)
 		end
@@ -393,7 +393,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 
 	--Урон ведмедя
 	if attacker and getElementData(attacker,"bear") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-3121)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,2)
 		if number == 2 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
@@ -401,7 +401,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 	end
 	--Урон вовк
 	if attacker and getElementData(attacker,"wolf") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-1981)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,4)
 		if number == 2 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
@@ -409,7 +409,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 	end
 	--Урон лисиця
 	if attacker and getElementData(attacker,"fox") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-1421)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,5)
 		if number == 2 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
@@ -417,7 +417,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 	end
 	--Кровосос
 	if attacker and getElementData(attacker,"boss_blood") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-5612)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,2)
 		if number == 2 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
@@ -425,7 +425,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 	end
 		--Всі боси
 	if attacker and getElementData(attacker,"boss_all") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-4241)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,5)
 		if number == 2 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
@@ -434,7 +434,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 	
 	--Всі боси
 	if attacker and getElementData(attacker,"bot") then
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-5000)
+		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
 		local number = math.random(1,5)
 		if number == 2 then
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
