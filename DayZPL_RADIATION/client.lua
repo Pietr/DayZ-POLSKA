@@ -120,41 +120,44 @@ local antiradiation = "Maska" -- Захист
 -- СИСТЕМА 
 local player = getLocalPlayer()
 
-function checkradiation()
-if not getElementData(player,"radiation") then
-setElementData(player,"radiation",0)
+function create_rad_zone()
+	for _, doz in ipairs(radiation_zone) do
+		x,y,z = doz[1],doz[2],doz[2] ---Центер маркера
+		radarea = createMarker (x,y,z,"cylinder",doz[4],255,0,0,0) -- 300 радиус маркера
+	end
 end
-local radiation = getElementData(player,"radiation")
+create_rad_zone()
 
-for _, doz in ipairs(radiation_zone) do
-x,y,z = doz[1],doz[2],doz[2] ---Центер маркера
-radarea = createMarker (x,y,z,"cylinder",doz[4],255,0,0,0) -- 300 радиус маркера
+function checkradiation()
+	if not getElementData(player,"radiation") then
+		setElementData(player,"radiation",0)
+	end
+	local radiation = getElementData(player,"radiation")
 
-    if isElementWithinMarker(player, radarea) then
-	radiationadd()
+	if isElementWithinMarker(player, radarea) then
+		radiationadd()
 	end
 	if radiation >= radmid then
-	if getElementData ( localPlayer, "clothHeadN") == antiradiation then
-	setElementData(player,"blood",getElementData(player,"blood")-removebloodfive*0.8)
-	return true
-	end
-	setElementData(player,"blood",getElementData(player,"blood")-removebloodfive)
+		if getElementData ( localPlayer, "clothHeadN") == antiradiation then
+			setElementData(player,"blood",getElementData(player,"blood")-removebloodfive*0.8)
+			return true
+		end
+		setElementData(player,"blood",getElementData(player,"blood")-removebloodfive)
 	end
 	if radiation >= radmax then
-	if getElementData ( localPlayer, "clothHeadN") == antiradiation then
-	setElementData(player,"blood",getElementData(player,"blood")-removebloodfive*0.6)
-	return true
-	end
-	setElementData(player,"blood",getElementData(player,"blood")-removeblood)
-	end
+		if getElementData ( localPlayer, "clothHeadN") == antiradiation then
+			setElementData(player,"blood",getElementData(player,"blood")-removebloodfive*0.6)
+			return true
+		end
+		setElementData(player,"blood",getElementData(player,"blood")-removeblood)
 	end
 end
 setTimer(checkradiation,10000,0)
 
 function radiationadd()
-setElementData(player,"radiation",getElementData(player,"radiation")+radadd)
-if getElementData(getLocalPlayer(),"Dozymetr") >= 1 then
-radsound = playSound("radsound.mp3")
-setSoundVolume(radsound, 0.1)
-end	
+	setElementData(player,"radiation",getElementData(player,"radiation")+radadd)
+	if getElementData(getLocalPlayer(),"Dozymetr") >= 1 then
+		radsound = playSound("radsound.mp3")
+		setSoundVolume(radsound, 0.1)
+	end	
 end
