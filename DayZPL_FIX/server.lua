@@ -99,7 +99,7 @@ end
 
 
 -- Update Checker
-if ( get ( "*_AutoUpdateCheck" ) == 'true' ) then 
+--[[if ( get ( "*_AutoUpdateCheck" ) == 'true' ) then 
 	function checkForUpdate ( )
 		callRemote ( "http://community.mtasa.com/mta/resources.php", function ( data, d )
 				if d then
@@ -115,4 +115,4 @@ if ( get ( "*_AutoUpdateCheck" ) == 'true' ) then
 	end
 	checkForUpdate ( )
 	setTimer ( checkForUpdate, 600*1000, 0 ) -- check ever 10 mins
-end 
+end ]]--
