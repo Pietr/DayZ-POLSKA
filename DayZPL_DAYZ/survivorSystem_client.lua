@@ -11,61 +11,61 @@ local playerSizeX = 25
 local playerSizeY = 25
 
 --Бинокль
-local textures = {}; 
+local textures = {};
 
 local function render_crosshair ()
-local screenw, screenh = guiGetScreenSize (); 
-local s = screenw * 0.5; 
-local u,v = (screenw - s)*0.2, (screenh - s)*0.2;
-local black = tocolor (0, 0, 0, 255);
+	local screenw, screenh = guiGetScreenSize ();
+	local s = screenw * 0.5;
+	local u,v = (screenw - s)*0.2, (screenh - s)*0.2;
+	local black = tocolor (0, 0, 0, 255);
 
-dxDrawRectangle (0, 0, screenw, v, black);
-dxDrawRectangle (0, 0, u, screenh, black);
-dxDrawRectangle (0, screenh, screenw, -v, black);
-dxDrawRectangle (screenw, screenh, -u, -screenh, black);
-dxDrawImage (u, v, screenw-2*u, screenh-2*v, textures ["crosshair"]);
+	dxDrawRectangle (0, 0, screenw, v, black);
+	dxDrawRectangle (0, 0, u, screenh, black);
+	dxDrawRectangle (0, screenh, screenw, -v, black);
+	dxDrawRectangle (screenw, screenh, -u, -screenh, black);
+	dxDrawImage (u, v, screenw-2*u, screenh-2*v, textures ["crosshair"]);
 end;
 
 local function on_weapon_aimed (key, state)
-local weapon_binocular = 43; 
-if getPedWeapon (getLocalPlayer ()) == weapon_binocular then 
-if state == "down" then 
-showPlayerHudComponent ("crosshair", false)
-addEventHandler ("onClientHUDRender", getRootElement (), render_crosshair);
-toggleControl ("fire", false) 
-showChat(false)
-else 
-removeEventHandler ("onClientHUDRender", getRootElement (), render_crosshair); 
-showChat(true)
-toggleControl ("fire", true) 
+	local weapon_binocular = 43;
+	if getPedWeapon (getLocalPlayer ()) == weapon_binocular then
+		if state == "down" then
+			showPlayerHudComponent ("crosshair", false)
+			addEventHandler ("onClientHUDRender", getRootElement (), render_crosshair);
+			toggleControl ("fire", false)
+			showChat(false)
+		else
+			removeEventHandler ("onClientHUDRender", getRootElement (), render_crosshair);
+			showChat(true)
+			toggleControl ("fire", true)
+		end;
+	end;
 end;
-end;
-end; 
 
 addEventHandler ("onClientResourceStart", getResourceRootElement (getThisResource ()),
-function () 
-textures ["crosshair"] = dxCreateTexture ("images/binoculars.png", "argb", true, "wrap"); 
-if not textures ["crosshair"] then
-return;
-end;
-bindKey ("aim_weapon", "both", on_weapon_aimed);
-addEventHandler ("onClientPlayerWeaponSwitch", getRootElement (), 
-function (previousWeaponSlot)
-local weaponslot_type_binocular = 9; 
-if previousWeaponSlot == weaponslot_type_binocular then 
-if not isPlayerHudComponentVisible ("crosshair") then 
-showPlayerHudComponent ("crosshair", true);
-showChat(true)
-toggleControl ("fire", true) 
-end;
-end; 
+function ()
+	textures ["crosshair"] = dxCreateTexture ("images/binoculars.png", "argb", true, "wrap");
+	if not textures ["crosshair"] then
+		return;
+	end;
+	bindKey ("aim_weapon", "both", on_weapon_aimed);
+	addEventHandler ("onClientPlayerWeaponSwitch", getRootElement (),
+	function (previousWeaponSlot)
+		local weaponslot_type_binocular = 9;
+		if previousWeaponSlot == weaponslot_type_binocular then
+			if not isPlayerHudComponentVisible ("crosshair") then
+				showPlayerHudComponent ("crosshair", true);
+				showChat(true)
+				toggleControl ("fire", true)
+		end;
+	end;
 end);
 
 addEventHandler ("onClientResourceStop", getResourceRootElement (getThisResource ()),
 function ()
 unbindKey ("aim_weapon", "both", on_weapon_aimed);
-showChat(true) 
-toggleControl ("fire", true) 
+showChat(true)
+toggleControl ("fire", true)
 if not isPlayerHudComponentVisible ("crosshair") then
 showPlayerHudComponent ("crosshair", true);
 end;
@@ -104,8 +104,8 @@ addEventHandler("onClientResourceStart", getResourceRootElement(),function()
 	xsize = mapSizeX+180
 	rr = dxCreateRenderTarget(xsize,xsize,true)
 	rr2 = dxCreateRenderTarget(xsize,xsize,true)
-	centerleft = xsize / 2 
-	centertop = mapSizeY / 2 
+	centerleft = xsize / 2
+	centertop = mapSizeY / 2
 	blipsize = 16
 end)
 
@@ -122,31 +122,31 @@ function()
 	x,y = guiGetSize(versionLabel,true)
 	guiSetPosition( versionLabel, 1-x, 1-y*1.8, true )
 	guiSetAlpha(versionLabel,0.5)
-	
+
 	versionLabel2 = guiCreateLabel(1,1,0.3,0.3,"".. string.sub(getPlayerSerial(getLocalPlayer()), 27) .."",true)
 	guiSetSize(versionLabel2, guiLabelGetTextExtent ( versionLabel2 ), guiLabelGetFontHeight ( versionLabel2 ), false )
 	x,y = guiGetSize(versionLabel2,true)
 	guiSetPosition(versionLabel2, 1-x, 1-y*2.6, true )
 	guiSetAlpha(versionLabel2,0.5)
-	
+
 end)
 
 setPedTargetingMarkerEnabled(false)
 function playerStatsClientSite()
 	if getElementData(getLocalPlayer(),"logedin") then
 		toggleControl ("radar",false)
-		showPlayerHudComponent("clock",false) 
+		showPlayerHudComponent("clock",false)
 		showPlayerHudComponent("radar",false)
-		showPlayerHudComponent("money",false) 
-		showPlayerHudComponent("health",false) 
-		showPlayerHudComponent("weapon",false) 
-		showPlayerHudComponent("ammo",false) 
+		showPlayerHudComponent("money",false)
+		showPlayerHudComponent("health",false)
+		showPlayerHudComponent("weapon",false)
+		showPlayerHudComponent("ammo",false)
 		showPlayerHudComponent("breath",false)
 		setPlayerHudComponentVisible("area_name",false)
 		setPlayerHudComponentVisible("vehicle_name",false)
 		 --if getElementData(getLocalPlayer(),"Mapa") >= 1  then
 			--toggleControl ("radar",true)
-		--end 
+		--end
 	end
 end
 setTimer(playerStatsClientSite,1000,0)
@@ -159,7 +159,7 @@ else
 setElementData(source,"banditskilled",getElementData(source,"banditskilled") + 1)
 end
 setElementData(targetPlayer,"blood",-3)
-end 
+end
 end
 addEventHandler("onClientPlayerStealthKill",getRootElement(),killKnifeStelth)
 
@@ -174,18 +174,18 @@ function playerZoom (key,keyState)
 	if key == "n" then
 		if getElementData(getLocalPlayer(),"Gogle NV") >= 1 then
 			if nightvision then
-			
+
 				guiSetVisible(nightvisionimage,false)
 				guiSetVisible(infravision,false)
-				
+
 				nightvision = false
 				setCameraGoggleEffect("normal")
-			else 
+			else
 				nightvision = true
-				
+
 				guiSetVisible(nightvisionimage,true)
 				guiSetVisible(infravision,false)
-				
+
 				setCameraGoggleEffect("nightvision")
 			end
 		end
@@ -193,17 +193,17 @@ function playerZoom (key,keyState)
 		if getElementData(getLocalPlayer(),"Gogle IR") >= 1 then
 			if infaredvision then
 				infaredvision = false
-				
+
 				guiSetVisible(infravision,false)
 				guiSetVisible(nightvisionimage,false)
-				
+
 				setCameraGoggleEffect("normal")
-			else 
+			else
 				 infaredvision = true
-				 
+
 				 guiSetVisible(infravision,true)
 				 guiSetVisible(nightvisionimage,false)
-				 
+
 				setCameraGoggleEffect("thermalvision")
 			end
 		end
@@ -312,22 +312,22 @@ function getWeaponDamage (weapon)
 				if weapon2[1] == "M1911" or weapon2[1] == "M1911 z tłumikiem" or weapon2[1] == "GLOCK 19" or weapon2[1] == "GLOCK 19 z tłumikiem" or weapon2[1] == "MAGNUM" then
 					return weapon2[2]*0.3
 				end
-			end	
+			end
 			return weapon2[2]
 		end
 	end
 end
 
-clothBody = { 
+clothBody = {
 		{"Kamizelka z futerału i kieszeniami",0.55},
 		{"Kamizelka wstrząsoodporna",0.65},
 		{"Kamizelka PRESS",0.65},
 		{"Kamizelka PRESS - niebieska",0.75},
 		{"Kamizelka zbrojna z kamuflażem - PRESS",0.75},
-		{"Kamizelka zbrojna z kamuflażem - PRESS №2",0.75},	
-} 
+		{"Kamizelka zbrojna z kamuflażem - PRESS №2",0.75},
+}
 
-	
+
 clothHead = {
 
 		{"Hełm balistyczny - zielony",0.55},
@@ -431,7 +431,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 			setElementData(getLocalPlayer(),"bleeding",getElementData(getLocalPlayer(),"bleeding") + math.floor(loss*10))
 		end
 	end
-	
+
 	--Всі боси
 	if attacker and getElementData(attacker,"bot") then
 		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-(getElementData(attacker,"damage") or 800))
@@ -468,38 +468,38 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 		if number == 2 then
 			setElementData(getLocalPlayer(),"pain",true)
 		end
-		
-		
-		
+
+
+
 		damage = getWeaponDamage (weapon)
-		
-		if bodypart == 3 then 
-		for _, add in ipairs(clothBody) do
-		if getElementData ( getLocalPlayer(), "clothBody" ) == add[1] then 
-		damage = damage*add[2]
+
+		if bodypart == 3 then
+			for _, add in ipairs(clothBody) do
+				if getElementData ( getLocalPlayer(), "clothBody" ) == add[1] then
+					damage = damage*add[2]
+				end
+			end
 		end
-		end
-		end
-		
+
 		--[[if bodypart == 9 then
 			damage = damage*1.5
 			headshot = true
 		end
 		]]
-		
-		if bodypart == 9 then 
-		for _, add in ipairs(clothHead) do
-		if getElementData ( getLocalPlayer(), "clothHead" ) == add[1] then 
-		damage = damage*add[2]
-		else
-		headshot = true
-		setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-getElementData(getLocalPlayer(),"blood"))
+
+		if bodypart == 9 then
+			for _, add in ipairs(clothHead) do
+				if getElementData ( getLocalPlayer(), "clothHead" ) == add[1] then
+					damage = damage*add[2]
+				else
+					headshot = true
+					setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-getElementData(getLocalPlayer(),"blood"))
+				end
+			end
 		end
-		end
-		end
-		
-		
-		
+
+
+
 		if bodypart == 7 or bodypart == 8 then
 			setElementData(getLocalPlayer(),"brokenbone",true)
 		end
@@ -518,7 +518,7 @@ function playerGetDamageDayZ ( attacker, weapon, bodypart, loss )
 			if getElementData(attacker,"humanity") > 2000 then
 				setElementData(attacker,"bandit",false)
 			end
-		end	
+		end
 		if getElementData(getLocalPlayer(),"blood") <= 0 then
 			if not getElementData(getLocalPlayer(),"isDead") then
 				triggerServerEvent("kilLDayZPlayer",getLocalPlayer(),attacker,headshot,getWeaponNameFromID (weapon))
@@ -581,7 +581,7 @@ function pedGetDamageDayZ ( attacker, weapon, bodypart, loss )
 			end
 		end
 	end
-	
+
 	if attacker and attacker == getLocalPlayer() then
 		damage = 100
 		if weapon == 37 then
@@ -603,7 +603,7 @@ function pedGetDamageDayZ ( attacker, weapon, bodypart, loss )
 				triggerServerEvent("onZombieGetsKilled",source,attacker,headshot)
 			end
 		end
-	end	
+	end
 end
 addEventHandler ( "onClientPedDamage", getRootElement(), pedGetDamageDayZ )
 
@@ -619,7 +619,7 @@ function checkStats()
 				triggerServerEvent("kilLDayZPlayer",getLocalPlayer(),false,false)
 			end
 		end
-	end	
+	end
 end
 setTimer(checkStats,3000,0)
 
@@ -643,9 +643,9 @@ function createBloodForBleedingPlayers ()
 				if pdistance <= 120 then
 					fxAddBlood ( px,py,pz,0,0,0,number, 1 )
 				end
-			end	
+			end
 		end
-	end	
+	end
 end
 setTimer(createBloodForBleedingPlayers,300,0)
 
@@ -658,7 +658,7 @@ function checkBrokenbone()
 			toggleControl ( "jump", true )
 			toggleControl ( "sprint", true )
 		end
-	end	
+	end
 end
 setTimer(checkBrokenbone,1400,0)
 
@@ -667,12 +667,12 @@ function setPain()
 		if getElementData(getLocalPlayer(),"pain") then
 			local x,y,z = getElementPosition(getLocalPlayer())
 			createExplosion (x,y,z+15,8,false,1.0,false)
-			local x, y, z, lx, ly, lz = getCameraMatrix() 
-			x, lx = x + 1, lx + 1 
-			setCameraMatrix(x,y,z,lx,ly,lz) 
+			local x, y, z, lx, ly, lz = getCameraMatrix()
+			x, lx = x + 1, lx + 1
+			setCameraMatrix(x,y,z,lx,ly,lz)
 			setCameraTarget (getLocalPlayer())
 		end
-	end	
+	end
 end
 setTimer(setPain,1500,0)
 
@@ -682,7 +682,7 @@ function checkCold()
 			setElementData(getLocalPlayer(),"cold",true)
 			setElementData(getLocalPlayer(), "grip",1)
 		end
-	end	
+	end
 end
 setTimer(checkCold,3000,0)
 
@@ -692,8 +692,8 @@ function setCold()
 			local x,y,z = getElementPosition(getLocalPlayer())
 			createExplosion (x,y,z+15,8,false,0.5,false)
 			local x, y, z, lx, ly, lz = getCameraMatrix() -- Get the current location and lookat of camera
-		end	
-	end	
+		end
+	end
 end
 setTimer(setCold,1500,0)
 
@@ -711,7 +711,7 @@ if getElementData(getLocalPlayer(),"logedin") then
     if getElementData(getLocalPlayer(),"infection_zom") == 1 then
 	   setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-math.random(232,481))
     end
-  end 
+  end
 end
 setTimer(checkInfection1,15000,0)
 
@@ -720,7 +720,7 @@ if getElementData(getLocalPlayer(),"logedin") then
     if getElementData(getLocalPlayer(),"infection_zom") == 2 then
 	   setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-math.random(431,683))
     end
-  end 
+  end
 end
 setTimer(checkInfection2,25000,0)
 
@@ -729,7 +729,7 @@ if getElementData(getLocalPlayer(),"logedin") then
     if getElementData(getLocalPlayer(),"infection_zom") == 3 then
 	   setElementData(getLocalPlayer(),"blood",getElementData(getLocalPlayer(),"blood")-math.random(732,981))
     end
-  end 
+  end
 end
 setTimer(checkInfection3,35000,0)
 
@@ -738,7 +738,7 @@ function infectionSound()
 		local x, y, z = getElementPosition ( getLocalPlayer ( ) )
         if getElementData(getLocalPlayer(),"infection_zom") >= 1 then
 		local soun = math.random(0,2)
-		cough = playSound3D("sounds/cough_"..soun..".ogg", x, y, z, false) 
+		cough = playSound3D("sounds/cough_"..soun..".ogg", x, y, z, false)
 		setSoundMaxDistance(cough,20)
 
         end
@@ -768,19 +768,19 @@ if getElementData(getLocalPlayer(),"logedin") then
 	end
 setTimer ( checkPlayerSickness, 300000,0)
 ]]
-playTrapSoundClient = function() 
-            local x,y,z = getElementPosition ( source ) 
-            local trap = playSound3D ( "sounds/trap.ogg", x, y, z,false)   
-			setSoundMaxDistance(trap,20)			
- end 
- addEvent("playTrapSound", true) 
- addEventHandler("playTrapSound", getRootElement(), playTrapSoundClient) 
- 
+playTrapSoundClient = function()
+            local x,y,z = getElementPosition ( source )
+            local trap = playSound3D ( "sounds/trap.ogg", x, y, z,false)
+			setSoundMaxDistance(trap,20)
+ end
+ addEvent("playTrapSound", true)
+ addEventHandler("playTrapSound", getRootElement(), playTrapSoundClient)
+
 function playTrapSound_voul()
     if getElementData(getLocalPlayer(), "logedin") then
-        local x,y,z = getElementPosition ( source ) 
+        local x,y,z = getElementPosition ( source )
 		local voul = math.random(0,4)
-		voul = playSound3D("sounds/scream_short_"..voul..".ogg", x, y, z, false) 
+		voul = playSound3D("sounds/scream_short_"..voul..".ogg", x, y, z, false)
 		setSoundMaxDistance(voul,20)
 		local animR = math.random(1,4)
 		if animR == 1 then
@@ -797,8 +797,8 @@ function playTrapSound_voul()
 		end,2000,1)
     end
 	end
-addEvent("playTrapSound_voul", true) 
-addEventHandler("playTrapSound_voul", getRootElement(),playTrapSound_voul) 
+addEvent("playTrapSound_voul", true)
+addEventHandler("playTrapSound_voul", getRootElement(),playTrapSound_voul)
 
 
 
@@ -827,7 +827,7 @@ function updateIcons ()
 					dxDrawText (text, sx-(w/2), sy, sx-(w/2), sy, tocolor ( 255, 255, 255, 200 ), 1.02, "default-bold" )
 					end
 				end
-			end		
+			end
 		end
 		if not playerTarget then return end
 		local x,y,z = getElementPosition(playerTarget)
@@ -840,7 +840,7 @@ function updateIcons ()
 		end
 		local w = dxGetTextWidth(text,distance*0.033,"default-bold")
 		--dxDrawText (text,x-(w/2),y,x-(w/2), y, tocolor (  255, 255, 255, 200 ), distance*0.033, "default-bold" )
-	end	
+	end
 end
 addEventHandler ( "onClientRender", getRootElement(), updateIcons )
 
@@ -877,7 +877,7 @@ function dayZDeathInfo()
 end
 addEvent("onClientPlayerDeathInfo",true)
 addEventHandler("onClientPlayerDeathInfo",getRootElement(),dayZDeathInfo)
- 
+
 function showDayZDeathScreen()
     fadeCamera(true, 1.5)
     deadBackground = guiCreateStaticImage(0,0,1,1,"images/dead.jpg",true)
@@ -887,10 +887,10 @@ function showDayZDeathScreen()
 	guiLabelSetColor ( deadText, 249,60,4 )
 end
 --[[
-function showWhiteScreen ( attacker, weapon, bodypart )     
+function showWhiteScreen ( attacker, weapon, bodypart )
 if weapon ~= 17 then
-whitescreen = guiCreateStaticImage(0,0,1,1,"images/white.png",true)    
-setTimer(destroyElement,1000,1,whitescreen)  
+whitescreen = guiCreateStaticImage(0,0,1,1,"images/white.png",true)
+setTimer(destroyElement,1000,1,whitescreen)
 end
 end
 ]]
@@ -930,7 +930,7 @@ end
 local screenWidth, screenHeight = guiGetScreenSize()
 local boxSpace = dxGetFontHeight(1,"default-bold")+dxGetFontHeight(1,"default-bold")*0.3
 
-addEventHandler("onClientRender", getRootElement(), 
+addEventHandler("onClientRender", getRootElement(),
 function()
 	for id, value in pairs(theTexts) do
 		dxDrawingColorText(value[1],screenWidth*0.30125, screenHeight-id*boxSpace+0.998, screenWidth*0.7, screenHeight-(id-1)*boxSpace, tocolor(0,0,0,255),170, 1.0, "sans", "center", "center")
@@ -948,16 +948,16 @@ function setVolume()
 		value = 40
 	elseif getPedMoveState (getLocalPlayer()) == "jog" then
 		value = 80
-	elseif getPedMoveState (getLocalPlayer()) == "sprint" then	
+	elseif getPedMoveState (getLocalPlayer()) == "sprint" then
 		value = 100
-	elseif getPedMoveState (getLocalPlayer()) == "crouch" then	
+	elseif getPedMoveState (getLocalPlayer()) == "crouch" then
 		value = 0
 	elseif not getPedMoveState (getLocalPlayer()) then
 		value = 20
 	end
 	if isPedInVehicle (getLocalPlayer()) then
 		value = 100
-	end	
+	end
 	if value > 100 then
 		value = 100
 	end
@@ -975,34 +975,34 @@ function setVisibility()
 		value = 60
 	elseif getPedMoveState (getLocalPlayer()) == "jog" then
 		value = 60
-	elseif getPedMoveState (getLocalPlayer()) == "sprint" then	
+	elseif getPedMoveState (getLocalPlayer()) == "sprint" then
 		value = 60
-	elseif getPedMoveState (getLocalPlayer()) == "crouch" then	
+	elseif getPedMoveState (getLocalPlayer()) == "crouch" then
 		value = 20
-	elseif not getPedMoveState (getLocalPlayer()) then	
+	elseif not getPedMoveState (getLocalPlayer()) then
 		value = 20
 	end
 	if isPedInVehicle (getLocalPlayer()) then
 		value = 0
-	end	
+	end
 	setElementData(getLocalPlayer(),"visibly",value)
 end
 setTimer(setVisibility,300,0)
 
-bindKey("aim_weapon","both",function (_,state) 
-	if getPedWeaponSlot(getLocalPlayer()) == 6 and getElementData(getLocalPlayer(),"selectedWeapon") ~= "Lee Enfield" or getPedWeaponSlot(getLocalPlayer()) == 9 then 
-		if state == "down" then 
-			alpha = 0 
-		elseif state == "up" then 
-			alpha = 255 
+bindKey("aim_weapon","both",function (_,state)
+	if getPedWeaponSlot(getLocalPlayer()) == 6 and getElementData(getLocalPlayer(),"selectedWeapon") ~= "Lee Enfield" or getPedWeaponSlot(getLocalPlayer()) == 9 then
+		if state == "down" then
+			alpha = 0
+		elseif state == "up" then
+			alpha = 255
 		end
 		for i,v in pairs (clothSlots) do
 			local object = getElementData(getLocalPlayer(),i.."Object" )
 			if object and isElement ( object ) then
-				setElementAlpha ( object, alpha ) 
+				setElementAlpha ( object, alpha )
 			end
 		end
-	end 
+	end
 end)
 
 local weaponObject = {
@@ -1015,51 +1015,51 @@ local weaponObject = {
 	["2444"] = true,
 	["2266"] = true,
 	}
-	
+
 local weaponObject2 = {
 	["1731"] = true,
 	["1712"] = true,
 
 }
 
-bindKey("aim_weapon","both",function (_,state) 
-	if getPedWeaponSlot(getLocalPlayer()) == 6 or getPedWeaponSlot(getLocalPlayer()) == 9 then 
-		if state == "down" then 
+bindKey("aim_weapon","both",function (_,state)
+	if getPedWeaponSlot(getLocalPlayer()) == 6 or getPedWeaponSlot(getLocalPlayer()) == 9 then
+		if state == "down" then
 			alpha = 0
-		elseif state == "up" then 
-			alpha = 255 
+		elseif state == "up" then
+			alpha = 255
 		end
-		for _, obj in ipairs(getElementsByType ("object",root,true)) do 
-			if isElementAttachedToBone(obj) then 
+		for _, obj in ipairs(getElementsByType ("object",root,true)) do
+			if isElementAttachedToBone(obj) then
 				local id = getElementModel(obj)
 				if weaponObject[""..tostring(id)] then
 					setElementAlpha(obj,alpha)
 					break
 				end
-			end	
+			end
 		end
-	end 
+	end
 end)
 
 
-bindKey("aim_weapon","both",function (_,state) 
-	if getPedWeaponSlot(getLocalPlayer()) == 6 or getPedWeaponSlot(getLocalPlayer()) == 9 then 
-		if state == "down" then 
+bindKey("aim_weapon","both",function (_,state)
+	if getPedWeaponSlot(getLocalPlayer()) == 6 or getPedWeaponSlot(getLocalPlayer()) == 9 then
+		if state == "down" then
 			alpha = 0
-		elseif state == "up" then 
-			alpha = 255 
+		elseif state == "up" then
+			alpha = 255
 		end
-		for _, obj in ipairs(getElementsByType ("object",root,true)) do 
-			if isElementAttachedToBone(obj) then 
+		for _, obj in ipairs(getElementsByType ("object",root,true)) do
+			if isElementAttachedToBone(obj) then
 				local id = getElementModel(obj)
 				if weaponObject2[""..tostring(id)] then
 					setElementAlpha(obj,alpha)
 					break
 				end
 
-			end	
+			end
 		end
-	end 
+	end
 end)
 
 local details = {
@@ -1094,9 +1094,9 @@ addEventHandler("onClientVehicleDamage",getRootElement(),function(attacker,weapo
 					if detale > 0 then
 						setElementData(parent,details[random][1],detale - 1)
 						setElementData(parent,details[random][1].."dam",0)
-						checkVehicleMovable(source) 
+						checkVehicleMovable(source)
 						break
-					end	
+					end
 				else
 					setElementData(parent, data[1].."dam", detail_dam+1)
 					break
@@ -1160,23 +1160,23 @@ function fireBTR()
 end
 
 
-function disableFireSwat ( theVehicle, seat ) 
-if ( getElementModel ( theVehicle ) == 601 ) then 
-toggleControl ( "vehicle_fire", false ) 
-else 
-toggleControl ( "vehicle_fire", true ) 
-end 
-end 
+function disableFireSwat ( theVehicle, seat )
+	if ( getElementModel ( theVehicle ) == 601 ) then
+		toggleControl ( "vehicle_fire", false )
+	else
+		toggleControl ( "vehicle_fire", true )
+	end
+end
 
 addEventHandler ( "onClientPlayerVehicleEnter", getLocalPlayer(), disableFireSwat )
 
-function disableFireSwat1 ( theVehicle, seat ) 
-if ( getElementModel ( theVehicle ) == 601 ) then 
-toggleControl ( "lctrl_fire", false ) 
-else 
-toggleControl ( "lctrl_fire", true ) 
-end 
-end 
+function disableFireSwat1 ( theVehicle, seat )
+	if ( getElementModel ( theVehicle ) == 601 ) then
+		toggleControl ( "lctrl_fire", false )
+	else
+		toggleControl ( "lctrl_fire", true )
+	end
+end
 addEventHandler ( "onClientPlayerVehicleEnter", getLocalPlayer(), disableFireSwat1 )
 
 function renderVehCross ()
@@ -1188,9 +1188,9 @@ end
 addEventHandler('onClientRender', root, renderVehCross )
 
 function SwatFireEnter ( theVehicle, seat )
-local col = getElementData(theVehicle,"parent") 
-    if ( getElementModel ( theVehicle ) == 601 ) then 
-	    if getElementData(col,"raket") > 0 then	  
+local col = getElementData(theVehicle,"parent")
+    if ( getElementModel ( theVehicle ) == 601 ) then
+	    if getElementData(col,"raket") > 0 then
 			bindKey("mouse1","down",fireBTR)
 			triggerEvent("displayClientInfo",getLocalPlayer(),"","W pojeździe jest "..getElementData(col,"raket").." rakiet.",0,255,0)
         else
@@ -1218,18 +1218,18 @@ bindKey("vehicle_secondary_fire", "down", vehicleWeaponFire, "secondary")
 
 function eventVehicleFire(theVehicle)
     local theVehicle = getPedOccupiedVehicle(getLocalPlayer())
-	local col = getElementData(theVehicle,"parent") 
+	local col = getElementData(theVehicle,"parent")
 	if getElementData(col,"raket") > 0 then
 		bindKey("mouse1","down",fireBTR)
-		setElementData(col,"raket",getElementData(col,"raket")- 1)   
+		setElementData(col,"raket",getElementData(col,"raket")- 1)
 		local sound = playSound("sounds/hydraGunSound.ogg")
-		setSoundVolume(sound, 0.6) 
+		setSoundVolume(sound, 0.6)
 	end
 	if getElementData(col,"raket") == 0 then
 		unbindKey("mouse1","down",fireBTR)
 		triggerEvent("displayClientInfo",getLocalPlayer(),"","W pojeździe nie ma rakiet!",255,22,0)
 	end
-end  
+end
 addEvent("onClientVehicleWeaponFire", false)
 addEventHandler("onClientVehicleWeaponFire", getLocalPlayer(), eventVehicleFire)
 -------------------------------------------------
@@ -1241,15 +1241,15 @@ function checkVehicleMovable(veh)
 			local tires,engine,parts = getVehicleAddonInfos (model)
 			if((getElementData(col,"Tire_inVehicle") or 0) < tonumber(tires)) then
 				setVehicleEngineState (veh,false)
-				return	
+				return
 			end
 			if((getElementData(col,"Engine_inVehicle") or 0) < tonumber(engine)) then
 				setVehicleEngineState(veh,false)
 				return
 			end
-			if((getElementData(col,"Parts_inVehicle") or 0) < tonumber(parts)) then 
-			   setVehicleEngineState(veh,false) 
-			   return 
+			if((getElementData(col,"Parts_inVehicle") or 0) < tonumber(parts)) then
+			   setVehicleEngineState(veh,false)
+			   return
 			end
 		end
 	end
@@ -1279,7 +1279,7 @@ addEventHandler("onClientVehicleEnter", getRootElement(),
         if thePlayer == getLocalPlayer() then
 			if seat == 0 then
 				bindKey ( "l", "down", showLightState_panel )
-				addEventHandler("onClientRender",root, showPanel_main ) 
+				addEventHandler("onClientRender",root, showPanel_main )
 				lightState = getVehicleOverrideLights ( source ) or 0
 			end
 		end
@@ -1333,7 +1333,7 @@ addEventHandler("onClientRender",getRootElement(),function()
 		local maxfuel = getElementData(veh,"maxfuel")
 		if maxfuel == false or nil then return end
 		if fuel == false or nil then return end
-	
+
 		if fuel > maxfuel/2 then
 			color.fuel_r = 0
 			color.fuel_g = 255
@@ -1346,7 +1346,7 @@ addEventHandler("onClientRender",getRootElement(),function()
 			color.fuel_r = 255
 			color.fuel_g = 0
 			color.fuel_b = 0
-		end	
+		end
 		--statusbar fuel
 		if maxfuel == 140 then
 		maxpalivo = -1.35
@@ -1371,7 +1371,7 @@ addEventHandler("onClientRender",getRootElement(),function()
 		color1,color2,color3 = 215,200,105
 		dxDrawText ( " ON",sW * 0.070,sH * 0.410-0.001,sW * 0.060,sH * 0.015, tocolor ( color1,color2,color3, 200 ), 1, "sans", "left", "top", false, false, true)
 		end
-		
+
 		local speed = getElementSpeed(getPedOccupiedVehicle(getLocalPlayer()), "кмч")
         if not speed then return end
         dxDrawText ( "SPD "..speed,sW * 0.007,sH * 0.330-0.001,sW * 0.060,sH * 0.015, tocolor ( color1,color2,color3, 200 ), 1, "sans", "left", "top", false, false, true)
@@ -1389,7 +1389,7 @@ addEventHandler("onClientRender",getRootElement(),function()
 		-- statusbar health
 		local health = math.floor(getElementHealth(veh) or 0)
 		dxDrawBox(sW * 0.11,sH * 0.446,5,-105,tocolor(0,0,0,100),tocolor(color1,color2,color3,50))
-		dxDrawBox(sW * 0.11,sH * 0.446,5,health/-9.6,tocolor(0,255,0,100),tocolor(color1,color2,color3,50)) 
+		dxDrawBox(sW * 0.11,sH * 0.446,5,health/-9.6,tocolor(0,255,0,100),tocolor(color1,color2,color3,50))
 		-- box name detail
 		dxDrawBox(sW * 0.005,sH * 0.330,sW * 0.060,sH * 0.015,tocolor(0,0,0,100),tocolor(color1,color2,color3,50))
 		dxDrawBox(sW * 0.005,sH * 0.350,sW * 0.060,sH * 0.015,tocolor(0,0,0,100),tocolor(color1,color2,color3,50))
@@ -1411,16 +1411,16 @@ addEventHandler("onClientRender",getRootElement(),function()
 		--dxDrawBox(sW * 0.100,sH * 0.410,sW * 0.003,sH * 0.015,tocolor(0,255,0,100),tocolor(255,255,255,50)) -- far
 		-- text for box 1 name detail
 		dxDrawText ("Akumulator",sW * 0.007,sH * 0.350-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")
-		dxDrawText ("Koła",sW * 0.007,sH * 0.370-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")	
-		dxDrawText ("Świeca",sW * 0.007,sH * 0.390-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")	
-		dxDrawText ("Benzyna",sW * 0.007,sH * 0.430-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")	
+		dxDrawText ("Koła",sW * 0.007,sH * 0.370-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")
+		dxDrawText ("Świeca",sW * 0.007,sH * 0.390-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")
+		dxDrawText ("Benzyna",sW * 0.007,sH * 0.430-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")
 		dxDrawText ("Reflektory",sW * 0.007,sH * 0.410-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans")
 		-- text for box 2 kolvo detail
 		dxDrawText ("".. math.floor(tostring(getElementData(getElementData(veh,"parent"),"Engine_inVehicle") or 0)) .."/".. tostring(getElementData(veh,"needengines")).. "",sW * 0.072,sH * 0.350-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans") -- engine
 		dxDrawText ("".. math.floor(tostring(getElementData(getElementData(veh,"parent"),"Tire_inVehicle") or 0)) .."/".. tostring(getElementData(veh,"needtires")).."",sW * 0.072,sH * 0.370-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans") -- tire
 		dxDrawText ("".. math.floor(tostring(getElementData(getElementData(veh,"parent"),"Parts_inVehicle") or 0)) .."/"..tostring(getElementData(veh,"needparts")).."",sW * 0.072,sH * 0.390-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),1,"sans") -- need parts
 		dxDrawText ("".. math.floor(tostring(getElementData(getElementData(veh,"parent"),"fuel") or 0)).."/"..tostring(getElementData(veh,"maxfuel")).."",sW * 0.070,sH * 0.430-0.001,sW * 0.060,sH * 0.015,tocolor(color1,color2,color3,200),0.9,"sans") -- fuel
-	end	
+	end
 end)
 
 function dxDrawBox(x, y, w, h, rcolor, lcolor)
@@ -1458,7 +1458,7 @@ addEventHandler("onClientResourceStart",resourceRoot,function()
 			setElementData(inVehicle,"vehicle:receiver",false)
 			setElementData(inVehicle,"vehicle:directive",nil)
 			guiSetText(radio["BUTTON_PLAY"],"Włącz")
-		end			
+		end
 	end,false)
 	guiSetVisible(radio["WINDOW"],false)
 end)
@@ -1471,14 +1471,14 @@ bindKey("[","down",function()
 		guiGridListClear(radio["GRIDLIST"])
 		for i, data in ipairs(playlist) do
 			local row = guiGridListAddRow(radio["GRIDLIST"])
-			guiGridListSetItemText(radio["GRIDLIST"],row,radio["COLUMN"],data[1],false,false)  
+			guiGridListSetItemText(radio["GRIDLIST"],row,radio["COLUMN"],data[1],false,false)
 		end
-		if getElementData(inVehicle,"vehicle:receiver") == true then 
+		if getElementData(inVehicle,"vehicle:receiver") == true then
 			guiSetText(radio["BUTTON_PLAY"],"Wyłącz")
 		else
 			guiSetText(radio["BUTTON_PLAY"],"Włącz")
-		end	
-	end	
+		end
+	end
 end)
 
 addEventHandler( "onClientElementStreamIn", getRootElement( ),function ( )
@@ -1504,11 +1504,11 @@ addEventHandler("onClientElementDataChange",getRootElement(),function(dataName)
 		end
 		if dataName == "vehicle:receiver" and getElementData(source,"vehicle:receiver") == false then
 			detach3DSound(source)
-		end	
+		end
 		if dataName == "vehicle:receiver" and getElementData(source,"vehicle:receiver") == true then
 			attach3DSound(source,getElementData(source,"vehicle:directive"))
 		end
-	end	
+	end
 end)
 
 function detach3DSound(fromElement)
@@ -1516,7 +1516,7 @@ function detach3DSound(fromElement)
 		local soundElement = sounds[fromElement]
 		detachElements(soundElement,fromElement)
 		stopSound(soundElement)
-		sounds[fromElement] = nil	
+		sounds[fromElement] = nil
 	end
 end
 addEvent("detach3DSound",true)
@@ -1543,8 +1543,8 @@ end
 function updatePlayTime()
 	if getElementData(getLocalPlayer(),"logedin") then
 		local playtime = getElementData(getLocalPlayer(),"alivetime")
-		setElementData(getLocalPlayer(),"alivetime",playtime+1)	
-	end	
+		setElementData(getLocalPlayer(),"alivetime",playtime+1)
+	end
 end
 setTimer(updatePlayTime,60000,0)
 
@@ -1556,7 +1556,7 @@ function renderComa()
 		triggerServerEvent("setPedComaAnimation",getLocalPlayer(),false)
 		removeEventHandler("onClientRender",root,renderComa)
 		setElementData(getLocalPlayer(),"notComa",otComa+30*1000)
-	end	
+	end
 	if rotate == 180 then
 		if not hourglass then
 			hourglass = setTimer(function() rotate = rotate+4 killTimer(hourglass) hourglass = false end,1000,1)
@@ -1578,7 +1578,7 @@ if getElementData(getLocalPlayer(),"logedin") then
 		if not getElementData(getLocalPlayer(),"inComa") and not getElementData(getLocalPlayer(),"isDead") then
 			if getElementData(getLocalPlayer(),"notComa") > getTimestamp() then return end
 			putPlayerInComa()
-		end	
+		end
 	end
 end
 end
@@ -1592,7 +1592,7 @@ function putPlayerInComa()
 		triggerServerEvent("setPedComaAnimation",getLocalPlayer(),true)
 		addEventHandler("onClientRender",root,renderComa)
 		setTimer(finishComa,math.random(30,60)*1000,1)
-	end	
+	end
 end
 
 function finishComa()
@@ -1602,7 +1602,7 @@ function finishComa()
 		triggerServerEvent("setPedComaAnimation",getLocalPlayer(),false)
 		removeEventHandler("onClientRender",root,renderComa)
 		setElementData(getLocalPlayer(),"notComa",otComa+30*1000)
-	end	
+	end
 end
 
 
@@ -1625,14 +1625,14 @@ function isLeapYear(year)
     if year then year = math.floor(year)
     else year = getRealTime().year + 1900 end
     return ((year % 4 == 0 and year % 100 ~= 0) or year % 400 == 0)
-	
+
 
 end
 
 function drawPlayersInTeam (x,y)
 	local gangname = getElementData(getLocalPlayer(),"gang")
 	if gangname then
-		if gangname == "None" then return end	
+		if gangname == "None" then return end
 		for i, player in ipairs(getElementsByType("player")) do
 			if gangname == getElementData(player,"gang") and player ~= localPlayer then
 				local playerx,playery = getElementPosition ( player )
@@ -1665,7 +1665,7 @@ if getElementData(getLocalPlayer(),"logedin") then
 	dxDrawImageSection(0,0,xsize,xsize,1500+x/2-centerleft,1500-y/2-centerleft,xsize,xsize,mapTexture,0,0,0)
 	drawPlayersInTeam(x,y)
 	dxSetRenderTarget()
-	dxSetRenderTarget(rr2)	
+	dxSetRenderTarget(rr2)
 	dxDrawImage(0,0,xsize,xsize,rr,camrot)
 	dxSetRenderTarget()
 	dxDrawImageSection(mapX+20,mapY-81,mapSizeX,mapSizeY,(xsize-mapSizeX)/2,(xsize-mapSizeY)/2,mapSizeX,mapSizeY,rr2,0,0,0)
@@ -1710,10 +1710,10 @@ fixbag = {
 function renderHUD()
 local weaponfix = getElementData(getLocalPlayer(),"currentweapon_1")
 	if getElementData(getLocalPlayer(),"logedin") then
-		local zone = getZoneName (getElementPosition(getLocalPlayer()))	
+		local zone = getZoneName (getElementPosition(getLocalPlayer()))
 		local x,y = guiGetScreenSize()
 		local paint_color = tocolor(255,255,255)
-		local hud_size = 1 
+		local hud_size = 1
 		local font = "sans"
 		local text_size = dxGetFontHeight ( hud_size, font )
 		local screenWidth,screenHeight = guiGetScreenSize()
@@ -1726,7 +1726,7 @@ local weaponfix = getElementData(getLocalPlayer(),"currentweapon_1")
 		if bala < 0 then
 			bala = 0
 		end
-		local x, y = guiGetScreenSize ( ) 
+		local x, y = guiGetScreenSize ( )
 		posy3= 5
 		posx2= x-55 posy2= posy3+text_size posx3= x-55
 		local weap = getElementData (localPlayer,"selectedWeapon")
@@ -1735,64 +1735,61 @@ local weaponfix = getElementData(getLocalPlayer(),"currentweapon_1")
 		if weap then
 		for _, fix in ipairs(fixbag) do
 			if getPedWeapon(getLocalPlayer()) >= 18 and getPedWeapon(getLocalPlayer()) < 43 then
-				dxDrawText(weap,posx2-289, posy3+text_size+1, xlenght, y,tocolor(0,0,0,255),hud_size,font,"right","top",false,false,false)  
+				dxDrawText(weap,posx2-289, posy3+text_size+1, xlenght, y,tocolor(0,0,0,255),hud_size,font,"right","top",false,false,false)
 				dxDrawText(weap,posx3-290, posy3+text_size, xlenght, y,paint_color,hud_size,font,"right","top",false,false,false)
 			elseif getPedWeapon(getLocalPlayer()) == fix[2]  then
-				dxDrawText(fix[1],posx2-289, posy3+text_size+1, xlenght, y,tocolor(0,0,0,255),hud_size,font,"right","top",false,false,false)  
+				dxDrawText(fix[1],posx2-289, posy3+text_size+1, xlenght, y,tocolor(0,0,0,255),hud_size,font,"right","top",false,false,false)
 				dxDrawText(fix[1],posx3-290, posy3+text_size, xlenght, y,paint_color,hud_size,font,"right","top",false,false,false)
 			end
 			if getPedWeapon(getLocalPlayer()) > 9 then
-				dxDrawText(""..ammotext,posx3-289, posy2+text_size+1, xlenght, y,tocolor(0,0,0,255),hud_size,font,"right","top",false,false,false) 
+				dxDrawText(""..ammotext,posx3-289, posy2+text_size+1, xlenght, y,tocolor(0,0,0,255),hud_size,font,"right","top",false,false,false)
 				dxDrawText(""..ammotext,posx3-290, posy2+text_size, xlenght, y,paint_color,hud_size,font,"right","top",false,false,false)
 			end
 		end
 		end
-		dxDrawText(zone, screenWidth * 0.01, screenHeight* 0.981, xlenght, y,tocolor(0,0,0,255),hud_size,font,"left","top",false,false,false) 
+		dxDrawText(zone, screenWidth * 0.01, screenHeight* 0.981, xlenght, y,tocolor(0,0,0,255),hud_size,font,"left","top",false,false,false)
 		dxDrawText(zone, screenWidth * 0.01, screenHeight* 0.98, xlenght, y,paint_color,hud_size,font,"left","top",false,false,false)
 		if getElementData(getLocalPlayer(),"Zegarek") >= 1 then
 			local hour, minutes = getTime()
-			if minutes < 10 then 
-				add0 = "0" 
-			else 
-				add0 = "" 
+			if minutes < 10 then
+				add0 = "0"
+			else
+				add0 = ""
 			end
 			local time = hour..":"..add0..""..minutes
-			dxDrawText(time,x*0.93-1,posy2+text_size*2+1, xlenght, y,tocolor(0,0,0,255),hud_size+0.1,font,"right","top",false,false,false) 
+			dxDrawText(time,x*0.93-1,posy2+text_size*2+1, xlenght, y,tocolor(0,0,0,255),hud_size+0.1,font,"right","top",false,false,false)
 			dxDrawText(time,x*0.93,posy2+text_size*2, xlenght, y,paint_color,hud_size+0.1,font,"right","top",false,false,false)
-		end	
-	end	
+		end
+	end
 end
 addEventHandler("onClientRender",getRootElement(),renderHUD)
---[[
+
 function shakeCamera(weapon)
-x,y,z = getPedBonePosition ( getLocalPlayer(), 26 )
-if weapon == 22 then
-createExplosion ( x,y,z + 10,12,false,0.1,false)
-elseif weapon == 24 then
-createExplosion ( x,y,z + 10,12,false,0.2,false)
-elseif weapon == 25 then
-createExplosion ( x,y,z + 10,12,false,0.4,false)
-elseif weapon == 26 then
-createExplosion ( x,y,z + 10,12,false,0.5,false)
-elseif weapon == 27 then
-createExplosion ( x,y,z + 10,12,false,0.4,false)
-elseif weapon == 28 then
-createExplosion ( x,y,z + 10,12,false,0.1,false)
-elseif weapon == 29 then
-createExplosion ( x,y,z + 10,12,false,0.1,false)
-elseif weapon == 30 then
-createExplosion ( x,y,z+10,12,false,0.1,false)
-elseif weapon == 31 then
-createExplosion ( x,y,z + 10,12,false,0.1,false)
-elseif weapon == 32 then
-createExplosion ( x,y,z + 10,12,false,0.1,false)
-elseif weapon == 33 then
-createExplosion ( x,y,z + 10,12,false,0.1,false)
-elseif weapon == 38 then
-createExplosion ( x,y,z + 10,12,false,0.5,false)
-end
+	x,y,z = getPedBonePosition ( getLocalPlayer(), 26 )
+	if weapon == 22 then
+		createExplosion ( x,y,z + 10,12,false,0.1,false)
+	elseif weapon == 24 then
+		createExplosion ( x,y,z + 10,12,false,0.2,false)
+	elseif weapon == 25 then
+		createExplosion ( x,y,z + 10,12,false,0.4,false)
+	elseif weapon == 26 then
+		createExplosion ( x,y,z + 10,12,false,0.5,false)
+	elseif weapon == 27 then
+		createExplosion ( x,y,z + 10,12,false,0.4,false)
+	elseif weapon == 28 then
+		createExplosion ( x,y,z + 10,12,false,0.1,false)
+	elseif weapon == 29 then
+		createExplosion ( x,y,z + 10,12,false,0.1,false)
+	elseif weapon == 30 then
+		createExplosion ( x,y,z+10,12,false,0.1,false)
+	elseif weapon == 31 then
+		createExplosion ( x,y,z + 10,12,false,0.1,false)
+	elseif weapon == 32 then
+		createExplosion ( x,y,z + 10,12,false,0.1,false)
+	elseif weapon == 33 then
+		createExplosion ( x,y,z + 10,12,false,0.1,false)
+	elseif weapon == 38 then
+		createExplosion ( x,y,z + 10,12,false,0.5,false)
+	end
 end
 addEventHandler ( "onClientPlayerWeaponFire", getLocalPlayer(), shakeCamera )
-]]
-
-
